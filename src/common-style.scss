@@ -26,3 +26,19 @@ $round-radius: 5px;
     padding: 40px;
     border-radius: $round-radius;
 }
+
+.primary-button {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    border-radius: var(--round-radius);
+    border: none;
+    padding: 0.2em 0.5em;
+}
+
+.secondary-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: var(--round-radius);
+    border: none;
+    padding: 0.2em 0.5em;
+}

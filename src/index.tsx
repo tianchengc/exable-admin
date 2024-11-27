@@ -17,6 +17,7 @@ import { KnowledgeManage } from './pages/knowledge-manage'
 import { NewsManage } from './pages/news-manage'
 import { KinList } from './pages/kin-list'
 import Header from './components/header/header'
+import './theme.css'
 
 
 ReactDOM.render(
