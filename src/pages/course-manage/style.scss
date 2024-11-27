@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#course-container {
+  display: flex;
+  flex-direction: row;
+}
+.course-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px #a89be3 solid;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+  flex-wrap: wrap;
+  cursor: pointer;
+  background-color: #e5e1f7;
+  span {
+    font-size: xx-large;
+    color: black;
+  }
+}

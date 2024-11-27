@@ -1,0 +1,28 @@
+$light-blue: #3781f1;
+$round-radius: 5px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page-layout {
+    .page-header {
+        color: white;
+        text-align: center;
+    }
+
+    .page-content {
+        padding: 16px;
+    }
+}
+
+#login-form {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: $round-radius;
+}

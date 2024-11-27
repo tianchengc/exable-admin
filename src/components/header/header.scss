@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 128px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.logo {
+    flex: 0 0 auto;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.center-logo {
+    text-align: center;
+}
+
+// header.scss
+.header .ant-menu {
+  border-bottom: none; // Remove the border-bottom
+}
+
+.header .ant-menu-item::after {
+  border-bottom: none; // Remove the underline from menu items
+}

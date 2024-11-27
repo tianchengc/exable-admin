@@ -1,0 +1,1 @@
+export const null2Undef = <T = any>(v: T) => v? v as NonNullable<T> : undefined
