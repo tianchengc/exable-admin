@@ -34,9 +34,15 @@
 
 // header.scss
 .header .ant-menu {
-  border-bottom: none; // Remove the border-bottom
+    border-bottom: none; // Remove the border-bottom
 }
 
 .header .ant-menu-item::after {
-  border-bottom: none; // Remove the underline from menu items
+    border-bottom: none; // Remove the underline from menu items
+}
+
+.mail-button {
+    color: var(--text-color);
+    font-size: 1.5em;
+    margin: 0.5em;
 }

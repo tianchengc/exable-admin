@@ -23,10 +23,8 @@ const Header = observer(() => {
                     <img src={logo} alt="Logo" className="logo" />
                     <Menu mode="horizontal" items={menuItems} />
                     <div className="user-actions">
-                        <button>
-                            <MailOutlined />
-                        </button>
-                        <button className="logout-button">Logout</button>
+                        <MailOutlined className="mail-button" />
+                        <button className="secondary-button">Logout</button>
                     </div>
                 </div>
             ) : (
