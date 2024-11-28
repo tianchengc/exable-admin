@@ -1,3 +1,8 @@
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+## License
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. You may use, share, and adapt this project for non-commercial purposes as long as proper credit is given to the original author(s). For more details, visit [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
