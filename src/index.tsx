@@ -17,6 +17,7 @@ import { KnowledgeManage } from './pages/knowledge-manage'
 import { NewsManage } from './pages/news-manage'
 import { KinList } from './pages/kin-list'
 import Header from './components/header/header'
+import Footer from './components/footer'
 import './theme.css'
 
 
@@ -38,6 +39,7 @@ ReactDOM.render(
                         <Route path="/knowledge" component={KnowledgeManage} />
                         <Route path="/news" component={NewsManage} />
                     </Switch>
+                    <Footer />
                 </Router>
             </Provider>
         </GoogleOAuthProvider>
