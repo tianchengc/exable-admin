@@ -1,51 +1,28 @@
+
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-## License
+##  License
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. You may use, share, and adapt this project for non-commercial purposes as long as proper credit is given to the original author(s). For more details, visit [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
-# Getting Started with Create React App
+### :memo: TwoHundredK & Ex-Able End-of-Year Hackathon Overview 
+-   **Duration**: 2 weeks (Nov. 26th to Dec. 10th)
+-   **Objective**: Become React, TypeScript, and CSS expert in 2 weeks
+-   **Project Design**:  [https://js.design/v?i=gNMMz4&p=zCNLbPnMlU&f=0:1978](https://js.design/v?i=gNMMz4&p=zCNLbPnMlU&f=0:1978)
+-   **Key Milestone**: A final Demo Day where teams will present their work and celebrate their achievements.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### :page_facing_up:  [Onboarding Document](https://github.com/tianchengc/exable-admin/wiki/Hackathon-Onboarding-Document)
 
-## Available Scripts
+### :wrench: Setup
 
-In the project directory, you can run:
+Clone this repository and install dependencies
+```bash
+$ git clone https://github.com/tianchengc/exable-admin && npm
+```
 
-### `npm start`
+### :nut_and_bolt: Main Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Name                                                                               | License                                                                                                                           | Description                                                                                                            
+| -- | -- | -- |
+ | [`TailwindCSS`](https://tailwindcss.com/)  | [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md)                     | A utility-first CSS framework for rapid UI development.|
+  | [`Shadcn-UI`](https://ui.shadcn.com/)  | [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/shadcn-ui/ui/blob/main/LICENSE.md)                     | Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.|E_R7P1EVHdgsB4orHxWGAOR9U8yLdONVNe1eS--XV0V7wee2PMwjCdKgS5SqFP-PAVAnPRDX-ctB9lkS?key=EPICO1nsF2BfAVl4JouOjA)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
