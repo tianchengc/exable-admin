@@ -6,6 +6,7 @@ import { ErrorBoundary } from './error-boundary'
 interface PageProps {
   title?: string
   loading?: boolean
+  children?: React.ReactNode
 }
 export const Page: FunctionComponent<PageProps> = (props) => {
     return <>

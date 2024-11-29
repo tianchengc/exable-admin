@@ -6,6 +6,7 @@ import { Card } from 'antd'
 
 interface ErrorBoundaryProps {
     errorMsg?: ''
+    children?: React.ReactNode
 }
 
 export class ErrorBoundary extends Component<ErrorBoundaryProps> {
