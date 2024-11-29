@@ -1,4 +1,6 @@
 import React, { CSSProperties } from 'react';
+import logo from '../assets/logo_image_white.svg';
+import { FacebookFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 
 const Footer = () => {
   const footerStyle: CSSProperties = {
@@ -22,6 +24,7 @@ const Footer = () => {
 
   const logoStyle = {
     height: '40px',
+    padding: '0 2em',
   };
 
   const textStyle: CSSProperties = {
@@ -35,18 +38,18 @@ const Footer = () => {
   };
 
   const iconStyle = {
-    height: '30px',
+    fontSize: '1.5em',
   };
 
   return (
     <footer style={footerStyle}>
       <div style={footerContentStyle}>
-        <img src="path/to/white-logo.png" alt="Logo" style={logoStyle} />
+        <img src={logo} alt="Logo" style={logoStyle} />
         <span style={textStyle}>patientsupport@lunghealth.ca | 514 548 3233</span>
         <div style={iconsStyle}>
-          <img src="path/to/facebook-logo.png" alt="Facebook" style={iconStyle} />
-          <img src="path/to/instagram-logo.png" alt="Instagram" style={iconStyle} />
-          <img src="path/to/linkedin-logo.png" alt="LinkedIn" style={iconStyle} />
+          <FacebookFilled style={iconStyle} />
+          <LinkedinFilled style={iconStyle} />
+          <InstagramFilled style={iconStyle} />
         </div>
       </div>
     </footer>
