@@ -3,36 +3,35 @@ import { FunctionComponent, LegacyRef, useEffect, useMemo, useRef, useState } fr
 import { Page } from '../../components/page'
 import { ICourse } from '../../model'
 import { useGetCourseList } from '../../hooks/use-get-course-list'
-import './style.scss'
+import './style.css'
 import { Editor } from '@tinymce/tinymce-react'
 import { genCoursePicPutUrl, genCourseVideoPutUrl, updateCourse } from '../../network/api'
 import { MinusCircleOutlined, PlusOutlined, UploadOutlined } from '@ant-design/icons'
 import { UploadRequestOption } from 'rc-upload/lib/interface'
-import { useRouteMatch } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import * as _ from 'lodash'
 import { v4 as uuid } from 'uuid'
-import history from '../../stores/history'
 import axios from 'axios'
 import { tryCatch } from '../../utils/try-catch'
 import { lookup as mime } from 'mime-types'
 
 type FromSubmitValues =
-    Pick<ICourse, 'id' | 'title' | 'htmlContent' | 'htmlPrepare' | 'quiz' | 'titleForKin' | 'contentForKin' | 'htmlPreSession' | 'htmlPartPrepare' | 'preSessionTitleForKin' | 'contentTitleForKin' >
+    Pick<ICourse, 'id' | 'title' | 'htmlContent' | 'htmlPrepare' | 'quiz' | 'titleForKin' | 'contentForKin' | 'htmlPreSession' | 'htmlPartPrepare' | 'preSessionTitleForKin' | 'contentTitleForKin'>
     & {
-    videoLink?: string | {
-        file: {
-            response: string
-        }
-    },
-    quizF?: Array<any>
-}
+        videoLink?: string | {
+            file: {
+                response: string
+            }
+        },
+        quizF?: Array<any>
+    }
 
-const QuizFormArea = (props:any) => {
+const QuizFormArea = (props: any) => {
 
     return (
         <>
             <label>Quiz</label>
-            <Form.List name="quizF" initialValue={props.course?.quiz ? JSON.parse(props.course?.quiz):[]}>
+            <Form.List name="quizF" initialValue={props.course?.quiz ? JSON.parse(props.course?.quiz) : []}>
 
                 {(fields, { add, remove }) => (
                     <>
@@ -44,7 +43,7 @@ const QuizFormArea = (props:any) => {
                                     label="Type"
                                 >
                                     <Select
-                                        style={{ width:120 }}
+                                        style={{ width: 120 }}
                                         options={[
                                             {
                                                 value: '0',
@@ -61,7 +60,7 @@ const QuizFormArea = (props:any) => {
                                     {...restField}
                                     name={[name, 'title']}
                                     label={'Title'}
-                                    style={{ width:600 }}
+                                    style={{ width: 600 }}
                                     rules={[{ required: true, message: 'Missing title' }]}
                                 >
                                     <Input placeholder="Title" />
@@ -69,7 +68,7 @@ const QuizFormArea = (props:any) => {
                                 <Form.Item
                                     {...restField}
                                     name={[name, 'optionA']}
-                                    style={{ width:600 }}
+                                    style={{ width: 600 }}
                                     label="optionA/MinValue"
                                     rules={[{ required: true, message: 'Missing optionA' }]}
                                 >
@@ -78,7 +77,7 @@ const QuizFormArea = (props:any) => {
                                 <Form.Item
                                     {...restField}
                                     name={[name, 'optionB']}
-                                    style={{ width:600 }}
+                                    style={{ width: 600 }}
                                     label="optionB/MinValueName"
                                     rules={[{ required: true, message: 'Missing optionB' }]}
                                 >
@@ -87,7 +86,7 @@ const QuizFormArea = (props:any) => {
                                 <Form.Item
                                     {...restField}
                                     name={[name, 'optionC']}
-                                    style={{ width:600 }}
+                                    style={{ width: 600 }}
                                     label="optionC/MaxValue"
                                     rules={[{ required: true, message: 'Missing optionC' }]}
                                 >
@@ -100,7 +99,7 @@ const QuizFormArea = (props:any) => {
                                     label="optionD/MaxValueName"
                                     rules={[{ required: true, message: 'Missing optionD' }]}
                                 >
-                                    <Input placeholder="optionD"/>
+                                    <Input placeholder="optionD" />
                                 </Form.Item>
                                 <Form.Item
                                     {...restField}
@@ -108,7 +107,7 @@ const QuizFormArea = (props:any) => {
                                     style={{ width: 600 }}
                                     label="optionE,Only for select type"
                                 >
-                                    <Input placeholder="optionE"/>
+                                    <Input placeholder="optionE" />
                                 </Form.Item>
                                 <Form.Item
                                     {...restField}
@@ -116,9 +115,9 @@ const QuizFormArea = (props:any) => {
                                     style={{ width: 600 }}
                                     label="optionF,Only for select type"
                                 >
-                                    <Input placeholder="optionF"/>
+                                    <Input placeholder="optionF" />
                                 </Form.Item>
-                                <MinusCircleOutlined onClick={() => remove(name)}/>
+                                <MinusCircleOutlined onClick={() => remove(name)} />
                             </Space>
                         ))}
                         <Form.Item>
@@ -133,14 +132,16 @@ const QuizFormArea = (props:any) => {
     )
 }
 
+
 export const CourseEdit: FunctionComponent<{}> = (props) => {
-    const courseId = Number(useRouteMatch<{id: string}>('/course/:id')?.params.id)
-    console.log('courseId:', courseId)
+    const params = useParams()
+    const courseId = params.id;
+
     const { loading, courseList, } = useGetCourseList()
     const course = _.find(courseList, c => c.id === courseId)
     console.log(course)
     const [form] = Form.useForm()
-    const [showError,setShowError] = useState(false)
+    const [showError, setShowError] = useState(false)
 
     useEffect(() => {
         if (course || courseId) {
@@ -148,12 +149,12 @@ export const CourseEdit: FunctionComponent<{}> = (props) => {
             form.setFieldsValue({
                 id: courseId,
                 ...course
-                
+
             })
         }
     })
-    
-    
+
+
     const { uploadProps: videoUploadProps } = useMemo(() => {
         const uploadProps: UploadProps = {
             name: 'playUrl',
@@ -162,7 +163,7 @@ export const CourseEdit: FunctionComponent<{}> = (props) => {
             maxCount: 1,
             multiple: false,
             accept: '.mp4',
-            customRequest:  async (options: UploadRequestOption) => {
+            customRequest: async (options: UploadRequestOption) => {
                 const [res, err] = await genCourseVideoPutUrl()
                 if (err || !res || !res.putUrl) {
                     message.error('upload failed')
@@ -198,43 +199,44 @@ export const CourseEdit: FunctionComponent<{}> = (props) => {
         return {
             uploadProps,
         }
-    }, [course?.videoLink , form])
-    
+    }, [course?.videoLink, form])
+
 
     const contentRef = useRef<Editor>(null)
     const contentForKinRef = useRef<Editor>(null)
     const prepareRef = useRef<Editor>(null)
     const htmlPreSessionRef = useRef<Editor>(null)
     const htmlPartPrepareRef = useRef<Editor>(null)
+    const navigate = useNavigate()
 
     const onClose = () => {
         setShowError(false)
     }
 
     async function onSubmit(c: FromSubmitValues) {
-        console.log('before',c)
+        console.log('before', c)
         const errorQuestion = c.quizF?.filter(v => {
-            if (v.kind != 1){
+            if (v.kind != 1) {
                 return false
             }
 
-            return  !(Number(v.optionA) && Number(v.optionC))
+            return !(Number(v.optionA) && Number(v.optionC))
         })
-        if (errorQuestion && errorQuestion.length >0){
+        if (errorQuestion && errorQuestion.length > 0) {
             let content = `quiz: ${errorQuestion[0].title}`
-            if (!(Number(errorQuestion[0].optionA))){
+            if (!(Number(errorQuestion[0].optionA))) {
                 content += ', optionA should be a number.'
             }
 
-            if (!(Number(errorQuestion[0].optionC))){
+            if (!(Number(errorQuestion[0].optionC))) {
                 content += ', optionC should be a number.'
             }
 
             message.error(content)
-            console.log('errorQuestion',errorQuestion)
+            console.log('errorQuestion', errorQuestion)
             return
         }
-        console.log('after',c)
+        console.log('after', c)
         const course = {
             ...c,
             videoLink: typeof c.videoLink === 'string' ? c.videoLink : c.videoLink?.file.response,
@@ -243,14 +245,14 @@ export const CourseEdit: FunctionComponent<{}> = (props) => {
             contentForKin: contentForKinRef.current?.editor?.getContent(),
             htmlPreSession: htmlPreSessionRef.current?.editor?.getContent(),
             htmlPartPrepare: htmlPartPrepareRef.current?.editor?.getContent(),
-            
+
             quiz: JSON.stringify(c.quizF)
         }
-        const [ res, err ] = await updateCourse(course)
+        const [res, err] = await updateCourse(course)
         if (err) {
             message.error(err.message)
         } else {
-            history.replace('/course')
+            navigate('/course')
         }
     }
 
@@ -267,54 +269,54 @@ export const CourseEdit: FunctionComponent<{}> = (props) => {
             autoComplete="off"
         >
             <Form.Item label="Course ID" required tooltip="should be 1-12" name='id'>
-                <Input value={courseId} disabled/>
+                <Input value={courseId} disabled />
             </Form.Item>
             <Form.Item label="Title" required name='title'>
-                <Input value={course?.title}/>
+                <Input value={course?.title} />
             </Form.Item>
 
             <Form.Item label="Title (Kins' side)" required name='titleForKin'>
-                <Input value={course?.titleForKin}/>
+                <Input value={course?.titleForKin} />
             </Form.Item>
 
             <Form.Item label="Before Session Title (Kins' side)" required name='preSessionTitleForKin'>
-                <Input value={course?.preSessionTitleForKin}/>
+                <Input value={course?.preSessionTitleForKin} />
             </Form.Item>
 
             <Form.Item label="Content Title (Kins' side)" required name='contentTitleForKin'>
-                <Input value={course?.contentTitleForKin}/>
+                <Input value={course?.contentTitleForKin} />
             </Form.Item>
 
             <Form.Item label="Course Detail" required>
-                <XEditor rrrrref={contentRef} initialValue={course?.htmlContent}/>
+                <XEditor rrrrref={contentRef} initialValue={course?.htmlContent} />
             </Form.Item>
 
             <Form.Item label="Course Detail (Kins' side)" required>
-                <XEditor rrrrref={contentForKinRef} initialValue={course?.contentForKin}/>
+                <XEditor rrrrref={contentForKinRef} initialValue={course?.contentForKin} />
             </Form.Item>
 
             <Form.Item label="Pre-session Content(For course 1)" required>
-                <XEditor rrrrref={htmlPreSessionRef} initialValue={course?.htmlPreSession}/>
+                <XEditor rrrrref={htmlPreSessionRef} initialValue={course?.htmlPreSession} />
             </Form.Item>
 
             <Form.Item label="Before Session Content" required>
-                <XEditor rrrrref={htmlPartPrepareRef} initialValue={course?.htmlPartPrepare}/>
+                <XEditor rrrrref={htmlPartPrepareRef} initialValue={course?.htmlPartPrepare} />
             </Form.Item>
 
             <Form.Item label="Course Prepare (Kins' side)" required>
-                <XEditor rrrrref={prepareRef} initialValue={course?.htmlPrepare}/>
+                <XEditor rrrrref={prepareRef} initialValue={course?.htmlPrepare} />
             </Form.Item>
-            <QuizFormArea course={course} form={form}/>
+            <QuizFormArea course={course} form={form} />
             <Form.Item label="Video" name="videoLink">
                 <Upload {...videoUploadProps}>
-                    <Button icon={<UploadOutlined/>}>Click to Upload Video</Button>
+                    <Button icon={<UploadOutlined />}>Click to Upload Video</Button>
                 </Upload>
             </Form.Item>
             <Form.Item>
                 <Button type="primary" htmlType="submit">Done</Button>
             </Form.Item>
         </Form>
-        {showError&&<Alert
+        {showError && <Alert
             message="Error Text"
             description="Error Description Error Description Error Description Error Description Error Description Error Description"
             type="error"
@@ -324,12 +326,12 @@ export const CourseEdit: FunctionComponent<{}> = (props) => {
     </Page>
 }
 
-async function images_upload_handler (blobInfo: any, progress: any): Promise<string> {
+async function images_upload_handler(blobInfo: any, progress: any): Promise<string> {
     // let param = new FormData();
     // param.append("img", blob.blob());
     // let data = await update_img(param);//update_img是自己定义的上传图片视频方法,需要自行封装，很简单
     // success(data.url);
-    const [info, ] = await genCoursePicPutUrl()
+    const [info,] = await genCoursePicPutUrl()
     if (info && info.putUrl && info.url) {
         console.log()
         mime(blobInfo.filename())
@@ -345,7 +347,7 @@ async function images_upload_handler (blobInfo: any, progress: any): Promise<str
         }
         return info.url
     }
-    
+
     message.error('upload failed')
     throw ''
 }
@@ -354,7 +356,7 @@ const XEditor: FunctionComponent<{
     rrrrref: LegacyRef<Editor>,
     initialValue?: string
 }> = (props) => {
-    return <Editor 
+    return <Editor
         ref={props.rrrrref}
         initialValue={props.initialValue}
         apiKey='d1ldr9eses6e16jj4se054pf9iugv9rl6menk4r50owzsd68'

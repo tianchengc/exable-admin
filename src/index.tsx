@@ -30,11 +30,11 @@ ReactDOM.render(
                     <Menus />
                     <Switch>
                         <Route path="/login" component={Login} />
-                        <Route path="/course" component={CourseManage} exact={true}/>
+                        <Route path="/course" component={CourseManage} exact={true} />
                         <Route path="/course/:id" component={CourseEdit} />
-                        <Route path="/audit" component={KinAudition}/>
-                        <Route path="/kin" component={KinList}/>
-                        <Route path="/admin" component={AdminList}/>
+                        <Route path="/audit" component={KinAudition} />
+                        <Route path="/kin" component={KinList} />
+                        <Route path="/admin" component={AdminList} />
                         <Route path="/resource" component={ResourceManage} />
                         <Route path="/knowledge" component={KnowledgeManage} />
                         <Route path="/news" component={NewsManage} />

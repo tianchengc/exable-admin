@@ -1,14 +1,13 @@
-import { Button, Descriptions, Form, Input, message, Modal, Upload, UploadProps } from 'antd'
+import { Button, Form, Input, message, Modal, Upload, UploadProps } from 'antd'
 import { FunctionComponent, useEffect, useMemo, useState } from 'react'
 import { IKnowledge, INews } from '../../../model'
 import { genNewsPutUrl, modifyNews, newNews } from '../../../network/api'
-import '../style.scss'
+import '../style.css'
 import { lookup as mime } from 'mime-types'
 import axios from 'axios'
 import { UploadRequestOption } from 'rc-upload/lib/interface'
 import { v4 as uuid } from 'uuid'
 import { UploadOutlined } from '@ant-design/icons'
-import { tryCatch } from '../../../utils/try-catch'
 import { NetworkError } from '../../../network'
 
 type FormSubmitValues = IKnowledge & {
@@ -48,7 +47,7 @@ export const NewsModal: FunctionComponent<{
             album: typeof c.albumLink === 'string' ? c.albumLink : c.albumLink?.file.response,
         }
         const req = news?.id ? modifyNews : newNews
-        const [ , err ] = await req(resource)
+        const [, err] = await req(resource)
         if (err) {
             message.error((err as NetworkError)?.serverMessage)
         } else {
@@ -65,7 +64,7 @@ export const NewsModal: FunctionComponent<{
             maxCount: 1,
             multiple: false,
             accept: '.jpg,.png,.jpeg',
-            customRequest:  async (options: UploadRequestOption) => {
+            customRequest: async (options: UploadRequestOption) => {
                 const [res, err] = await genNewsPutUrl()
                 if (err || !res || !res.putUrl) {
                     message.error('upload failed')
@@ -101,9 +100,9 @@ export const NewsModal: FunctionComponent<{
         return {
             uploadProps,
         }
-    }, [news?.album , form])
+    }, [news?.album, form])
 
-    
+
     return <Modal width={'80%'} confirmLoading={confirmLoading} onCancel={props.onCancel} visible={news !== undefined} onOk={onOK}>
         <Form form={form}
             name="video-form"

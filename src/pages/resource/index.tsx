@@ -1,16 +1,13 @@
 import { FunctionComponent, useState } from 'react'
 import { Page } from '../../components/page'
-import { ICourse, IResource, IUser } from '../../model'
-import history from '../../stores/history'
+import { IResource } from '../../model'
 import { useGetResourceList } from './hooks/use-get-resource-list'
-import './style.scss'
+import './style.css'
 
 import Table, { ColumnsType } from 'antd/lib/table'
-import { Button, message, Popconfirm, Tag, Tooltip } from 'antd'
+import { Button, message, Popconfirm, Tooltip } from 'antd'
 import { courseName, NewResourceModal } from './components/new-resource-modal'
-import { render } from 'react-dom'
 import { PlusOutlined } from '@ant-design/icons'
-import { tryCatch } from '../../utils/try-catch'
 import { deleteResource } from '../../network/api'
 
 
@@ -20,7 +17,7 @@ export const ResourceManage: FunctionComponent<{}> = () => {
     function genItemActionButtons(resource: IResource) {
         return <div className='action-container'>
             <Button type='primary' onClick={() => setSelectedResource(resource)}>Edit</Button>
-            {resource.content ? 
+            {resource.content ?
                 <Button type='primary' target='_blank' href={resource.content}>View Content</Button>
                 : null}
             <Popconfirm
@@ -35,11 +32,11 @@ export const ResourceManage: FunctionComponent<{}> = () => {
     }
     function genTitle() {
         return <Button type='primary' onClick={() => setSelectedResource({})} >
-            <PlusOutlined color='white'/>
+            <PlusOutlined color='white' />
         </Button>
     }
 
-    function onDelete(id?: number) { 
+    function onDelete(id?: number) {
         return async () => {
             if (id) {
                 const [, err] = await deleteResource(id)
@@ -93,7 +90,7 @@ export const ResourceManage: FunctionComponent<{}> = () => {
             title: 'Album',
             dataIndex: 'album',
             render: (albumUrl) => <img className='album' src={albumUrl} />
-            
+
         },
         {
             title: 'Course',
@@ -116,7 +113,7 @@ export const ResourceManage: FunctionComponent<{}> = () => {
         setSelectedResource(undefined)
     }
     return <Page title={'Resource Manage'} loading={loading}>
-        <Table columns={columns} dataSource={resourceList!} className='resource-table' title={genTitle}  pagination={false} />
+        <Table columns={columns} dataSource={resourceList!} className='resource-table' title={genTitle} pagination={false} />
         <NewResourceModal resource={selectedResource} onOK={onOk} onCancel={onCancel} />
     </Page>
 }

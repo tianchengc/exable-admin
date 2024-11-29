@@ -2,7 +2,7 @@ import { Descriptions, Modal } from 'antd'
 import { FunctionComponent, useState } from 'react'
 import { IUser } from '../../../model'
 import { markKinApproved } from '../../../network/api'
-import '../style.scss'
+import '../style.css'
 export const KinApprovingModal: FunctionComponent<{
     kin?: IUser,
     onOK: () => void,
@@ -18,7 +18,7 @@ export const KinApprovingModal: FunctionComponent<{
             setConfirmLoading(false)
             props.onOK()
         }
-        
+
     }
     return <Modal width={'80%'} confirmLoading={confirmLoading} onCancel={props.onCancel} visible={props.kin !== undefined} onOk={onOK} okText='Approve' cancelText='Dismiss'>
         <Descriptions title='Basic Info' bordered size='small'>

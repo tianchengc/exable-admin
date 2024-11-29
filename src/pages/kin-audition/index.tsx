@@ -1,19 +1,17 @@
 import { FunctionComponent, useState } from 'react'
 import { Page } from '../../components/page'
-import { ICourse, IUser } from '../../model'
-import history from '../../stores/history'
+import { IUser } from '../../model'
 import { useGetKinList } from './hooks/use-get-kin-list'
-import './style.scss'
+import './style.css'
 
 import Table, { ColumnsType } from 'antd/lib/table'
 import { Button, Tag } from 'antd'
 import { KinApprovingModal } from './components/approving-modal'
 
-
 export const KinAudition: FunctionComponent<{}> = () => {
     const { loading, kinList, refreshKinList } = useGetKinList()
-
     const [selectedKin, setSelectedKin] = useState<IUser | undefined>()
+
     function genAuditionBtn(kin: IUser) {
         if (!kin.kinesiologistInfo.approved) {
             return <Button onClick={() => setSelectedKin(kin)}>Approve</Button>
@@ -22,6 +20,7 @@ export const KinAudition: FunctionComponent<{}> = () => {
 
         }
     }
+
     const columns: ColumnsType<IUser> = [
         {
             title: 'UID',
@@ -53,7 +52,7 @@ export const KinAudition: FunctionComponent<{}> = () => {
             render: (_, u) => {
                 if (u.kinesiologistInfo) {
                     return genAuditionBtn(u)
-                } else { 
+                } else {
                     return <Tag color='volcano' key='NOT FINISHING'>REGISTION NOT FINISHED</Tag>
                 }
             }

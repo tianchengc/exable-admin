@@ -3,7 +3,7 @@ import { observer } from 'mobx-react';
 import UserStore from '../../stores/UserStore';
 import { Menu } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
-import './header.scss'; 
+import './header.css';
 import logo from '../../assets/logo.svg';
 
 const Header = observer(() => {

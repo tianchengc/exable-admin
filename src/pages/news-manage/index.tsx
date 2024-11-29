@@ -1,15 +1,12 @@
 import { FunctionComponent, useState } from 'react'
 import { Page } from '../../components/page'
-import { ICourse, IKnowledge, INews, IResource, IUser } from '../../model'
-import history from '../../stores/history'
+import { INews } from '../../model'
 import { useGetNewsList } from './hooks/use-get-news-list'
-import './style.scss'
+import './style.css'
 
 import Table, { ColumnsType } from 'antd/lib/table'
-import { Button, message, Popconfirm, Tag, Tooltip } from 'antd'
-import { render } from 'react-dom'
+import { Button, message, Popconfirm, Tooltip } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import { tryCatch } from '../../utils/try-catch'
 import { deleteNews } from '../../network/api'
 import { NewsModal } from './components/news-modal'
 
@@ -19,7 +16,7 @@ export const NewsManage: FunctionComponent<{}> = () => {
     const [selectedNews, setSelectedNews] = useState<INews | undefined>(undefined)
     function genItemActionButtons(resource: INews) {
         return <div className='action-container'>
-            {resource.content ? 
+            {resource.content ?
                 <Button type='primary' target='_blank' href={resource.content}>View Content</Button>
                 : null}
             <Button type='primary' onClick={() => setSelectedNews(resource)}>Edit</Button>
@@ -35,11 +32,11 @@ export const NewsManage: FunctionComponent<{}> = () => {
     }
     function genTitle() {
         return <Button type='primary' onClick={() => setSelectedNews({})} >
-            <PlusOutlined color='white'/>
+            <PlusOutlined color='white' />
         </Button>
     }
 
-    function onDelete(id?: number) { 
+    function onDelete(id?: number) {
         return async () => {
             if (id) {
                 const [, err] = await deleteNews(id)
@@ -75,7 +72,7 @@ export const NewsManage: FunctionComponent<{}> = () => {
             title: 'Album',
             dataIndex: 'album',
             render: (albumUrl) => <img className='album' src={albumUrl} />
-            
+
         },
         {
             title: 'Action',

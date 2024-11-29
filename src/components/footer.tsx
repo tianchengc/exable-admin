@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import logo from '../assets/logo_image_white.svg';
 import { FacebookFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons';
 
@@ -13,6 +13,7 @@ const Footer = () => {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '10px 20px',
+    zIndex: 999999
   };
 
   const footerContentStyle = {

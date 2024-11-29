@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react'
-import { useContext, useEffect, useState } from 'react'
-import UserStore from '../stores/UserStore'
-import '../common-style.scss'
-import history from '../stores/history'
+import { useState } from 'react'
+// import UserStore from '../stores/UserStore'
+import '../styles/common-style.css'
 import { Menu } from 'antd'
+import { useNavigate } from 'react-router'
 
 const adminItems = [
     { name: 'Course Manage', url: '/course' },
@@ -23,51 +23,56 @@ const adminItems = [
 ]
 
 export const Menus = observer(() => {
-    const userStore = useContext(UserStore)
+    // const userStore = useContext(UserStore)
+    // const location = useLocation();
+    const navigate = useNavigate();
 
-    useEffect(() => {
-        if (history.location.pathname !== '/login' && !userStore.loggedIn) {
-            history.push('/login')
-        } else if (history.location.pathname === '/') {
-            history.push('/course')
-        }
-    }, [userStore.loggedIn])
+    const userStore = { loggedIn: true }
+
+    // useEffect(() => {
+    //     if (location.pathname !== '/login' && !userStore.loggedIn) {
+    //         navigate('/login')
+    //     } else if (location.pathname === '/') {
+    //         navigate('/course')
+    //     }
+    // }, [userStore.loggedIn])
 
     const [selectedKey, setSelectedKey] = useState(getSelected())
 
     const dom =
-    userStore.loggedIn ? (
-        <Menu onSelect={onMenuItemClicked} selectedKeys={[selectedKey]} theme="dark" style={{ width: '20em' }}>
-            { adminItems.map((element) => {
-                return <Menu.Item key={element.url}>{element.name}</Menu.Item>
-            })}
-            <Menu.Item key="logout">Logout</Menu.Item>
-        </Menu>
-    ) : null
+        userStore.loggedIn ? (
+            <Menu onSelect={onMenuItemClicked} selectedKeys={[selectedKey]} theme="dark" style={{ width: '20em' }}>
+                {adminItems.map((element) => {
+                    return <Menu.Item key={element.url}>{element.name}</Menu.Item>
+                })}
+                <Menu.Item key="logout">Logout</Menu.Item>
+            </Menu>
+        ) : null
     return dom
 
     function onMenuItemClicked(item: IMenuOnSelectArgs) {
-        if (item.key === 'logout') {
-            if (global.confirm('Sure Logout?')) {
-                userStore.clearToken()
-                global.location.reload()
-            }
-            return
-        }
+        // TODO: Implement Logout
+        // if (item.key === 'logout') {
+        //     if (global.confirm('Sure Logout?')) {
+        //         userStore.clearToken()
+        //         global.location.reload()
+        //     }
+        //     return
+        // }
 
         setSelectedKey(item.key)
-        history.push(item.key)
+        navigate(item.key)
     }
 })
 
 interface IMenuOnSelectArgs {
-  item: any;
-  key: string;
-  selectedKeys: string[];
+    item: any;
+    key: string;
+    selectedKeys: string[];
 }
 
 function getSelected() {
-    const url = history.location.pathname
+    const url = location.pathname
     try {
         return adminItems.filter(i => url.includes(i.url))[0].url
     } catch {

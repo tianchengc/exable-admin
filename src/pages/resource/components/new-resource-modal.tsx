@@ -1,14 +1,13 @@
-import { Button, Descriptions, Form, Input, message, Modal, Select, Upload, UploadProps } from 'antd'
+import { Button, Form, Input, message, Modal, Select, Upload, UploadProps } from 'antd'
 import { FunctionComponent, useEffect, useMemo, useState } from 'react'
-import { IResource, IUser } from '../../../model'
+import { IResource } from '../../../model'
 import { genResourcePutUrl, modifyResource, newResource } from '../../../network/api'
-import '../style.scss'
+import '../style.css'
 import { lookup as mime } from 'mime-types'
 import axios from 'axios'
 import { UploadRequestOption } from 'rc-upload/lib/interface'
 import { v4 as uuid } from 'uuid'
 import { UploadOutlined } from '@ant-design/icons'
-import { tryCatch } from '../../../utils/try-catch'
 import { NetworkError } from '../../../network'
 
 type FormSubmitValues = IResource & {
@@ -19,7 +18,7 @@ type FormSubmitValues = IResource & {
     }
 }
 export const NewResourceModal: FunctionComponent<{
-    resource: IResource|undefined,
+    resource: IResource | undefined,
     onOK: () => void,
     onCancel: () => void,
 }> = (props) => {
@@ -48,7 +47,7 @@ export const NewResourceModal: FunctionComponent<{
         }
         const req = resource?.id ? modifyResource : newResource
 
-        const [ , err ] = await req(reqBody)
+        const [, err] = await req(reqBody)
         if (err) {
             message.error((err as NetworkError)?.serverMessage)
         } else {
@@ -65,7 +64,7 @@ export const NewResourceModal: FunctionComponent<{
             maxCount: 1,
             multiple: false,
             accept: '.jpg,.png,.jpeg',
-            customRequest:  async (options: UploadRequestOption) => {
+            customRequest: async (options: UploadRequestOption) => {
                 const [res, err] = await genResourcePutUrl()
                 if (err || !res || !res.putUrl) {
                     message.error('upload failed')
@@ -101,9 +100,9 @@ export const NewResourceModal: FunctionComponent<{
         return {
             uploadProps,
         }
-    }, [resource?.album , form])
+    }, [resource?.album, form])
 
-    
+
     return <Modal width={'80%'} confirmLoading={confirmLoading} onCancel={props.onCancel} visible={props.resource !== undefined} onOk={onOK}>
         <Form form={form}
             name="video-form"
@@ -133,7 +132,7 @@ export const NewResourceModal: FunctionComponent<{
                 <Input />
             </Form.Item>
             <Form.Item name='bindCourse' label='For Course'>
-                <Select defaultValue={0} options={courseValue}/>
+                <Select defaultValue={0} options={courseValue} />
             </Form.Item>
         </Form>
     </Modal>

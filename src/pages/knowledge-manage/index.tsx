@@ -1,25 +1,21 @@
 import { FunctionComponent, useState } from 'react'
 import { Page } from '../../components/page'
-import { ICourse, IKnowledge, IResource, IUser } from '../../model'
-import history from '../../stores/history'
+import { IKnowledge, IResource } from '../../model'
 import { useGetKnowledgeList } from './hooks/use-get-knowledge-list'
-import './style.scss'
+import './style.css'
 
 import Table, { ColumnsType } from 'antd/lib/table'
-import { Button, message, Popconfirm, Tag, Tooltip } from 'antd'
-import { render } from 'react-dom'
+import { Button, message, Popconfirm, Tooltip } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import { tryCatch } from '../../utils/try-catch'
-import { deleteKnowledge, deleteResource } from '../../network/api'
+import { deleteKnowledge } from '../../network/api'
 import { KnowledgeModal } from './components/knowledge-modal'
-
 
 export const KnowledgeManage: FunctionComponent<{}> = () => {
     const { loading, knowledgeList, refreshKnowledgeList } = useGetKnowledgeList()
     const [selectedKnowledge, setSelectedKnowledge] = useState<IKnowledge | undefined>(undefined)
     function genItemActionButtons(resource: IKnowledge) {
         return <div className='action-container'>
-            {resource.content ? 
+            {resource.content ?
                 <Button type='primary' target='_blank' href={resource.content}>View Content</Button>
                 : null}
             <Button type='primary' onClick={() => setSelectedKnowledge(resource)}>Edit</Button>
@@ -35,11 +31,11 @@ export const KnowledgeManage: FunctionComponent<{}> = () => {
     }
     function genTitle() {
         return <Button type='primary' onClick={() => setSelectedKnowledge({})} >
-            <PlusOutlined color='white'/>
+            <PlusOutlined color='white' />
         </Button>
     }
 
-    function onDelete(id?: number) { 
+    function onDelete(id?: number) {
         return async () => {
             if (id) {
                 const [, err] = await deleteKnowledge(id)
@@ -88,7 +84,7 @@ export const KnowledgeManage: FunctionComponent<{}> = () => {
             title: 'Album',
             dataIndex: 'album',
             render: (albumUrl) => <img className='album' src={albumUrl} />
-            
+
         },
         {
             title: 'Action',
