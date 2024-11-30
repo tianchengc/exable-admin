@@ -1,4 +1,3 @@
-import { useMemo } from 'react'
 import { useShowError } from './userError'
 import { useService } from './useService'
 import { getCourseList } from '../network/api'

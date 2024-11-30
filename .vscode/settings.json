@@ -6,8 +6,12 @@
     "typescriptreact",
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll": "always",
+    "source.removeUnusedImports": "always"
   },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "cSpell.words": [
     "Popconfirm"
   ],

@@ -25,14 +25,14 @@ const instance = axios.create({
 export default instance
 
 export class NetworkError extends Error {
-     code?: number
-     serverMessage?: string
-     traceId?: string
+    code?: number
+    serverMessage?: string
+    traceId?: string
 
-     constructor(code: number, serverMessage: string, traceId: string) {
-         super()
-         this.code = code
-         this.serverMessage = serverMessage
-         this.traceId = traceId
-     }
+    constructor(code: number, serverMessage: string, traceId: string) {
+        super()
+        this.code = code
+        this.serverMessage = serverMessage
+        this.traceId = traceId
+    }
 }

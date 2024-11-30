@@ -7,7 +7,9 @@
 #course-container {
   display: flex;
   flex-direction: row;
+  padding-top: 3rem;
 }
+
 .course-block {
   display: flex;
   justify-content: center;
@@ -20,6 +22,7 @@
   flex-wrap: wrap;
   cursor: pointer;
   background-color: #e5e1f7;
+
   span {
     font-size: xx-large;
     color: black;
