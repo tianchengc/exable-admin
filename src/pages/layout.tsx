@@ -4,14 +4,14 @@ import { Menus } from '../components/menu';
 import Footer from '../components/footer';
 
 export const BaseLayout = () => {
-    return (
-        <>
-            <Header />
-            <Menus />
-            <Outlet />
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Menus />
+      <Outlet />
+      <Footer />
+    </>
+  );
 };
 
 export default BaseLayout;
