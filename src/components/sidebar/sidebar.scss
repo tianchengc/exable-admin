@@ -1,0 +1,70 @@
+.sidebar {
+  background-color: #8abad3;
+  padding: 140px 20px; /* distance to top */
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* vertical layout */
+  align-items: center; /* align left */
+  /* text-align: center; */
+  right: 0;
+  position: relative;
+  // z-index: 10;
+}
+
+/* user info */
+.user-info {
+  text-align: center;
+  margin-bottom: 20px; /* deparate from menu */
+  display: flex;
+  flex-direction: column; /* vertical layout */
+  /* align-items: center; vertical  */
+  /* justify-content: center; horizontal */
+}
+
+.user-info .user-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #6b8ca3;
+  border-radius: 50%; /* round shape */
+  margin: 0 auto 10px; /* Center the avatar and set the spacing below */
+}
+
+.user-info p {
+  margin: 5px 0; /* paragraph */
+  color: white; /* text color */
+  font-size: 14px;
+  /* text-align: center; */
+}
+
+/* navigation */
+.menu {
+  width: 100%; /* full width */
+  display: flex;
+  flex-direction: column; /* vertical layout */
+}
+
+.menu a {
+  display: flex; /* horizontal layout */
+  align-items: center; /* vertical center alignment */
+  text-decoration: none; /* Remove underline from hyperlink */
+  padding: 10px 15px;
+  background-color: #6b8ca3; /* button color */
+  color: white; /* text color */
+  font-size: 16px;
+  margin-bottom: 10px; /* space between buttons */
+  border-radius: 20px 0 0 20px; /* Only left sides have rounded corners */
+  width: 109%;
+  /* box-sizing: border-box; */
+  transition: background-color 0.3s; /* Hover background color transition effect */
+}
+
+.menu a:hover {
+  background-color: #587a91;
+}
+
+.menu a .menu-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* space between icon and text */
+}
