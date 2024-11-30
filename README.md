@@ -17,6 +17,8 @@ This project is licensed under the Creative Commons Attribution-NonCommercial 4.
 
 Clone this repository and install dependencies
 
+### :wrench: Run App 
+
 ```bash
-$ git clone https://github.com/tianchengc/exable-admin && npm i
+npm run dev
 ```
