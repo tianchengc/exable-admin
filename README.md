@@ -17,6 +17,11 @@ This project is licensed under the Creative Commons Attribution-NonCommercial 4.
 
 Clone this repository and install dependencies
 
+
+```bash
+npm install
+```
+
 ### :wrench: Run App 
 
 ```bash
