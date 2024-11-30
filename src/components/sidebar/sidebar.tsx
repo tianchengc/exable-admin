@@ -2,7 +2,7 @@
 import bookmark from './asset/bookmark.png';
 import calendar from './asset/calendar.png';
 import user from './asset/user.png';
-import './sidebar.scss';
+import './sidebar.css';
 
 const Sidebar = () => {
   return (
