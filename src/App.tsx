@@ -12,14 +12,13 @@ import { AdminList } from './pages/admin-list';
 import { ResourceManage } from './pages/resource';
 import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
-import Sidebar from './components/sidebar/sidebar';
+import SchedulePage from './pages/schedule';
 
 export default function App() {
   return (
     <React.StrictMode>
       <GoogleOAuthProvider clientId="159397984904-j2na55s5l8emvi4mgv2lb28tmlj6mdfh.apps.googleusercontent.com">
         <Provider>
-          <Sidebar />
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<BaseLayout />}>
@@ -32,6 +31,7 @@ export default function App() {
                 <Route path="/resource" element={<ResourceManage />} />
                 <Route path="/knowledge" element={<KnowledgeManage />} />
                 <Route path="/news" element={<NewsManage />} />
+                <Route path="/schedule" element={<SchedulePage />} />
               </Route>
               <Route path="*" element={<NoMatch />} />
             </Routes>
