@@ -5,15 +5,32 @@
 }
 
 .page-layout {
-    .page-header {
-        color: white;
-        text-align: center;
-    }
-
-    .page-content {
-        padding: 4rem 2rem;
-    }
+    display: flex; 
+    min-height: 100vh;
+    background-color: #fff; 
+    margin: 0;
 }
+
+.page-header {
+    background-color: #235860;
+    color: white;
+    text-align: center;
+    line-height: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.page-content {
+    flex: 1;
+    padding: 4rem 2rem;
+    background-color: #e6f7ff;
+    margin-top: 128px; 
+}
+
 
 #login-form {
     position: fixed;
@@ -21,7 +38,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    border-radius: @apply rounded-[5px]
+    border-radius: 5px;
 }
 
 .primary-button {
@@ -38,4 +55,40 @@
     border-radius: var(--round-radius);
     border: none;
     padding: 0.2em 0.5em;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+    border-radius: 8px;
+    margin-top: 180px;
+}
+
+.menu-container {
+    padding-top: 80px; 
+    margin-top: 80px;
+}
+
+.menu-container .ant-menu {
+    width: 250px;
+    background-color: #1f3a57;
+    color: white;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-details p {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
 }
