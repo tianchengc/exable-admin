@@ -1,41 +1,133 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .page-layout {
-    .page-header {
-        color: white;
-        text-align: center;
-    }
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+  margin: 0;
+}
 
-    .page-content {
-        padding: 4rem 2rem;
-    }
+.page-header {
+  background-color: #235860;
+  color: white;
+  text-align: center;
+  line-height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.page-content {
+  flex: 1;
+  padding: 4rem 2rem;
+  background-color: #e6f7ff;
+  margin-top: 128px;
 }
 
 #login-form {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 40px;
-    border-radius: @apply rounded-[5px]
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 5px;
 }
 
 .primary-button {
-    background-color: var(--button-background);
-    color: var(--button-text-color);
-    border-radius: var(--round-radius);
-    border: none;
-    padding: 0.2em 0.5em;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border-radius: var(--round-radius);
+  border: none;
+  padding: 0.2em 0.5em;
 }
 
 .secondary-button {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    border-radius: var(--round-radius);
-    border: none;
-    padding: 0.2em 0.5em;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: var(--round-radius);
+  border: none;
+  padding: 0.2em 0.5em;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  border-radius: 8px;
+  margin-top: 180px;
+}
+
+.menu-container {
+  padding-top: 80px;
+  margin-top: 80px;
+}
+
+.menu-container .ant-menu {
+  width: 250px;
+  background-color: #1f3a57;
+  color: white;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.user-details p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sidebar-container {
+  background-color: #8abad3;
+}
+
+.sidebar-menu {
+  display: vertical; /* vertical layout */
+  align-items: center; /* vertical center alignment */
+  text-decoration: none; /* Remove underline from hyperlink */
+  background-color: #8abad3;
+  padding: 10px 15px;
+  color: white; /* text color */
+  font-size: 16px;
+  margin-bottom: 120px;
+  /* transition: background-color 0.3s; Hover background color transition effect */
+}
+
+.sidebar-menu-item {
+  background-color: #6c97b4;
+  border-radius: 20px 20px 20px 20px !important;
+  margin-bottom: 15px !important;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.sidebar-menu-item:hover {
+  background-color: #000000 !important;
+  color: #fff;
+}
+
+.sidebar-menu-item.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.sidebar-menu-item:hover:not(.active) {
+  background-color: #000 !important;
+  color: #fff !important;
 }
