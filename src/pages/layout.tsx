@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router';
 import Header from '../components/header/header';
-import { Menus } from '../components/menu';
 import Footer from '../components/footer';
+import { Outlet } from 'react-router';
+import { Menus } from '../components/menu';
 
 export const BaseLayout = () => {
   return (
