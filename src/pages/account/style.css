@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  /* position: relative; */
+  /* left: 48px; */
+  margin-top: 64px;
+  width: 229px;
+  height: 36px;
+  opacity: 1;
+  /** 文本1 */
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 0px;
+  color: rgba(35, 84, 96, 1);
+  text-align: left;
+  vertical-align: top;
+
+}
+
+.account-box {
+  /* position: relative; */
+  /* left: 712px; */
+  /* top: 100px; */
+  width: 688px;
+  height: 505px;
+  opacity: 1;
+  border-radius: 8px;
+  background: rgba(73, 160, 187, 1);
+
+  .sub-title {
+    position: relative;
+    left: 24px;
+    top: 20px;
+    width: 182px;
+    height: 29px;
+    opacity: 1;
+    /** 文本1 */
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+    vertical-align: top;    
+  }
+
+  .form-large{
+    /* left: 0px;
+    top: 0px; */
+    width: 284px;
+    height: 178px;
+    opacity: 1;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 1);
+    padding: 15px;
+    resize: none;
+  }
+
+  .form-small{
+    /* left: 0px;
+    top: 0px; */
+    width: 284px;
+    height: 33px;
+    opacity: 1;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 1);
+  }
+
+}

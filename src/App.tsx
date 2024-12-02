@@ -12,6 +12,7 @@ import { AdminList } from './pages/admin-list';
 import { ResourceManage } from './pages/resource';
 import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
+import { Account } from './pages/account';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
                 <Route path="/resource" element={<ResourceManage />} />
                 <Route path="/knowledge" element={<KnowledgeManage />} />
                 <Route path="/news" element={<NewsManage />} />
+                <Route path="/account" element={<Account />} />
               </Route>
               <Route path="*" element={<NoMatch />} />
             </Routes>
