@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.staff {
+  display: flex;
+  flex-direction: column;
+  top: 500px;
+  color: black;
+  background-color: red;
+}
