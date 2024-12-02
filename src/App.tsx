@@ -12,6 +12,7 @@ import { AdminList } from './pages/admin-list';
 import { ResourceManage } from './pages/resource';
 import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
+import { ParticipantProfilePage } from './pages/participant-profile';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
               <Route path="/" element={<BaseLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
+                <Route path="/participants" element={<ParticipantProfilePage />} />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
