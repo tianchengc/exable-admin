@@ -1,4 +1,5 @@
 import React from 'react';
+import SignIn from './pages/sign-in';
 import BaseLayout from './pages/layout';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter, Link, Route, Routes } from 'react-router';
@@ -20,6 +21,7 @@ export default function App() {
         <Provider>
           <BrowserRouter>
             <Routes>
+              <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />

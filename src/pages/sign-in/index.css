@@ -1,0 +1,214 @@
+/* sign-in.css */
+.sign-in-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 全局样式 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f9fc;
+  color: #333;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 页头 */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5a8ea3;
+}
+
+/* 主内容 */
+.main-content {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.left-section {
+  background-color: #e9f1f7;
+}
+
+.right-section {
+  background-color: #d9eef8;
+  text-align: center;
+}
+
+/* 左侧登录样式 */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #5a8ea3;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.options a {
+  color: #5a8ea3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-signin {
+  background-color: #e85042;
+  color: white;
+  border: none;
+}
+
+.btn-signin:hover {
+  background-color: #d03a2e;
+}
+
+.btn-create {
+  background-color: #c6e0f5;
+  color: #5a8ea3;
+  border: none;
+}
+
+.btn-create:hover {
+  background-color: #b4d6f0;
+}
+
+/* 右侧图像样式 */
+.admin-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.not-admin {
+  color: #5a8ea3;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.not-admin:hover {
+  text-decoration: underline;
+}
+
+/* 页脚 */
+.footer {
+  padding: 20px;
+  background-color: #30535f;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #d0d0d0;
+}
+
+/* 选项容器 */
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* 确保内容在一行，不会换行 */
+}
+
+.options input[type='checkbox'] {
+  margin-right: 5px; /* 在复选框和文本之间添加一些间距 */
+}
