@@ -35,6 +35,15 @@ function Participants() {
       mmrc: 1,
       memberSince: '01-02-2017',
     },
+    {
+      id: 4,
+      name: 'Abaraham Doe',
+      age: 89,
+      chronic_condition: 'chronic diesease',
+      caat: 0.7,
+      mmrc: 1,
+      memberSince: '01-02-2017',
+    },
   ];
 
   const columns = [
@@ -42,6 +51,8 @@ function Participants() {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      defaultSortOrder: 'descend',
+      sorter: (a, b) => a.name.localeCompare(b.name),
       render: (text: string, record: { id: string }) => {
         return (
           <a
