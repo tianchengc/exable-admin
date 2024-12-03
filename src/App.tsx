@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseLayout from './pages/layout';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { BrowserRouter, Link, Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import { Provider } from 'mobx-react';
 import { Login } from './pages/login';
 import { CourseManage } from './pages/course-manage';
@@ -12,6 +12,10 @@ import { AdminList } from './pages/admin-list';
 import { ResourceManage } from './pages/resource';
 import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
+import { Account } from './pages/account';
+import { ParticipantProfilePage } from './pages/participant-profile';
+import NoMatch from './pages/no-match';
+import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
 import Staff_Schedule from './pages/schedule/schedule-by-staff';
 
@@ -25,6 +29,10 @@ export default function App() {
               <Route path="/" element={<BaseLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
+                <Route
+                  path="/participants/:id"
+                  element={<ParticipantProfilePage />}
+                />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
@@ -32,27 +40,16 @@ export default function App() {
                 <Route path="/resource" element={<ResourceManage />} />
                 <Route path="/knowledge" element={<KnowledgeManage />} />
                 <Route path="/news" element={<NewsManage />} />
+                <Route path="/account" element={<Account />} />
+                <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/staff_schedule" element={<Staff_Schedule />} />
+                <Route path="*" element={<NoMatch />} />
               </Route>
-              <Route path="*" element={<NoMatch />} />
             </Routes>
           </BrowserRouter>
-          ;
         </Provider>
       </GoogleOAuthProvider>
     </React.StrictMode>
-  );
-}
-
-// TODO
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
   );
 }

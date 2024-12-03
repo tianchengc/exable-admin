@@ -33,26 +33,21 @@ export const Menus = observer(() => {
 
   const dom = true ? (
     <div className="sidebar-container">
-      <div className="user-info">
+      <div className="w-full flex justify-center items-center flex-col mt-10">
         <img src={userInfo.avatar} alt="User Avatar" className="user-avatar" />
-        <div className="user-details">
-          <p className="username">{userInfo.username}</p>
-          <p className="date">{userInfo.date}</p>
-        </div>
+        <p className="m-0 text-center text-sm text-white">{userInfo.username}</p>
+        <p className="m-0 text-center text-sm text-white">{userInfo.date}</p>
       </div>
 
       <Menu
-        className="sidebar-menu"
-        // onSelect={onMenuItemClicked}
+        className="sidebar-menu text-white"
         selectedKeys={[selectedKey]}
         theme="light"
-        style={{ width: '20em' }}
       >
         {adminItems.map(element => (
           <Menu.Item
             key={element.url}
             icon={element.icon}
-            // className="sidebar-menu-item"
             className={`sidebar-menu-item ${
               selectedKey === element.url ? 'active' : ''
             }`}
@@ -66,18 +61,7 @@ export const Menus = observer(() => {
   ) : null;
 
   return dom;
-
-  //   function onMenuItemClicked(item: IMenuOnSelectArgs) {
-  //     setSelectedKey(item.key);
-  //     navigate(item.key);
-  //   }
 });
-
-// interface IMenuOnSelectArgs {
-//   item: any;
-//   key: string;
-//   selectedKeys: string[];
-// }
 
 function getSelected() {
   const url = location.pathname;
