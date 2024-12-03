@@ -1,5 +1,7 @@
 import { observer } from 'mobx-react';
 import './style.css';
+import Add_a_New_Class from '../add-a-new-class';
+// import TimeSlot from './time-slots';
 
 const staffInfo = {
   avatar: 'https://via.placeholder.com/60x60/000000/ffffff?text=W',
@@ -22,9 +24,11 @@ export const Staff_Card = observer(() => {
             <button className="left-arrow">{'<'}</button>
             {staffInfo.date}
             <button className="right-arrow">{'>'}</button>
+            <Add_a_New_Class />
           </p>
         </div>
       </div>
+      <div className="schedule-info">{/* <TimeSlot /> */}</div>
     </div>
   );
   return dom;

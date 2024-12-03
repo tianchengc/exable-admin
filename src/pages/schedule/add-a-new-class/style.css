@@ -1,4 +1,4 @@
-* {
+/* * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -10,4 +10,12 @@
   top: 500px;
   color: black;
   background-color: red;
+} */
+
+.btn__modal {
+  position: fixed;
+  top: 60px;
+  font-size: 16px;
+  padding: 6px 12px;
+  text-align: center;
 }

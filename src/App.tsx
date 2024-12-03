@@ -15,7 +15,6 @@ import { NewsManage } from './pages/news-manage';
 import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
-import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
 import Staff_Schedule from './pages/schedule/schedule-by-staff';
 
@@ -41,7 +40,7 @@ export default function App() {
                 <Route path="/knowledge" element={<KnowledgeManage />} />
                 <Route path="/news" element={<NewsManage />} />
                 <Route path="/account" element={<Account />} />
-                <Route path="/staff_schedule" element={<StaffSchedule />} />
+                {/* <Route path="/staff_schedule" element={<StaffSchedule />} /> */}
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/staff_schedule" element={<Staff_Schedule />} />
                 <Route path="*" element={<NoMatch />} />
