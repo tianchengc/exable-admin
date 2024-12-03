@@ -1,0 +1,25 @@
+.upcoming-session{
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 280px;
+}
+.past-appt-btn{
+    background-color: var(--primary-color);
+    border-radius: var(--round-radius);
+    color: var(--text-color);
+    /* hover effect to be added */
+}
+.upcoming-date{
+    background-color: white;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3rem;
+    border-radius: 5px;
+    font-size: 1.4rem;
+}
