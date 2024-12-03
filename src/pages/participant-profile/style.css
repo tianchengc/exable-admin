@@ -11,6 +11,7 @@
     background-color: var(--primary-color);
     border-radius: var(--round-radius);
     color: var(--text-color);
+    /* hover effect to be added */
 }
 .upcoming-date{
     background-color: white;

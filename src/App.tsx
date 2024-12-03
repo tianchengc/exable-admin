@@ -24,7 +24,7 @@ export default function App() {
               <Route path="/" element={<BaseLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
-                <Route path="/participants" element={<ParticipantProfilePage />} />
+                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
