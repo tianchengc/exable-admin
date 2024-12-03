@@ -1,0 +1,76 @@
+.staff-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #033522;
+}
+
+.staff-card {
+  position: relative;
+  padding: 250px;
+  background-color: rgb(13, 137, 168);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.staff-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  /* border-bottom: 1px solid #ddd; */
+  margin: 0 auto;
+}
+
+.staff-info::after {
+  content: ''; /* 必须设置内容 */
+  position: absolute; /* 绝对定位 */
+  bottom: 0; /* 位于底部 */
+  border-bottom: 1px solid #ddd; /* 设置边框样式 */
+  left: 5%; /* 左侧留白，缩短边框起点 */
+  width: 90%; /* 控制水平居中边框的长度 */
+}
+
+.staff-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.staff-details {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 10px 10px;
+}
+
+.staff-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 200px;
+  color: #fff;
+}
+
+.staff-schedule-date {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+}
+
+.left-arrow {
+  margin-right: 8px;
+  color: #f01313;
+}
+
+.right-arrow {
+  margin-left: 8px;
+  color: #f01313;
+}
