@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgba(35, 84, 96, 1);
+  --background-color: rgba(255, 255, 255, 1);
+  --placeholder-color: rgba(35, 84, 96, 1);
+  --font-family: Roboto;
+  --button-height: 96px;
+  --button-width: 284px;
+  --icon-size: 24px;
+  --icon-color: #2ec2d8;
+}
+
+.title {
+  /* position: relative; */
+  /* left: 48px; */
+  margin-top: 64px;
+  width: 229px;
+  height: 36px;
+  opacity: 1;
+  /** 文本1 */
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  line-height: 0px;
+  color: rgba(35, 84, 96, 1);
+  text-align: left;
+  vertical-align: top;
+}
+
+.account-box {
+  width: 688px;
+  height: 505px;
+  border-radius: 8px;
+  background: rgba(73, 160, 187, 1);
+}
+
+.account-box .sub-title {
+  position: relative;
+  left: 24px;
+  top: 20px;
+  width: 182px;
+  height: 29px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--background-color);
+  text-align: left;
+}
+
+.account-box .form-large {
+  width: 284px;
+  height: 178px;
+  border-radius: 17px;
+  background: var(--background-color);
+  color: var(--primary-color);
+  padding: 15px;
+  resize: none;
+}
+
+.account-box .form-small {
+  width: 284px;
+  height: 33px;
+  border-radius: 17px;
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+.account-box .form-large::placeholder,
+.account-box .form-small::placeholder {
+  color: var(--placeholder-color);
+  font-family: var(--font-family);
+}
+
+.upload-button {
+  height: var(--button-height);
+  width: var(--button-width);
+  border: dashed;
+  color: default;
+  background: none;
+}
+
+.upload-icon {
+  font-size: var(--icon-size);
+  color: var(--icon-color);
+}
