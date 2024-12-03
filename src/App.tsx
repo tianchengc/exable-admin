@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseLayout from './pages/layout';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { BrowserRouter, Link, Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
 import { Provider } from 'mobx-react';
 import { Login } from './pages/login';
 import { CourseManage } from './pages/course-manage';
@@ -12,6 +12,7 @@ import { AdminList } from './pages/admin-list';
 import { ResourceManage } from './pages/resource';
 import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
+import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
 
@@ -45,14 +46,3 @@ export default function App() {
   );
 }
 
-// TODO
-function NoMatch() {
-  return (
-    <div>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
-    </div>
-  );
-}
