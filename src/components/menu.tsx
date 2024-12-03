@@ -33,19 +33,16 @@ export const Menus = observer(() => {
 
   const dom = true ? (
     <div className="sidebar-container">
-      <div className="user-info">
+      <div className="w-full flex justify-center items-center flex-col mt-10">
         <img src={userInfo.avatar} alt="User Avatar" className="user-avatar" />
-        <div className="user-details">
-          <p className="username">{userInfo.username}</p>
-          <p className="date">{userInfo.date}</p>
-        </div>
+        <p className="m-0 text-center text-sm text-white">{userInfo.username}</p>
+        <p className="m-0 text-center text-sm text-white">{userInfo.date}</p>
       </div>
 
       <Menu
-        className="sidebar-menu"
+        className="sidebar-menu text-white"
         selectedKeys={[selectedKey]}
         theme="light"
-        style={{ width: '20em' }}
       >
         {adminItems.map(element => (
           <Menu.Item
