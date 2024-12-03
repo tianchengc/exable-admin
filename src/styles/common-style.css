@@ -26,9 +26,7 @@
 
 .page-content {
   flex: 1;
-  padding: 4rem 2rem;
   background-color: #e6f7ff;
-  margin-top: 128px;
 }
 
 #login-form {
@@ -41,30 +39,31 @@
 }
 
 .primary-button {
-  background-color: var(--button-background);
-  color: var(--button-text-color);
+  background-color: var(--primary-color);
+  color: var(--text-color);
   border-radius: var(--round-radius);
   border: none;
-  padding: 0.2em 0.5em;
+  padding: 0.2em 1em;
 }
 
 .secondary-button {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--text-color);
   border-radius: var(--round-radius);
   border: none;
   padding: 0.2em 0.5em;
 }
 
+.primary-icon {
+  color: var(--text-color);
+}
+
 .user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
   padding: 10px;
-
   border-radius: 8px;
-  margin-top: 180px;
 }
 
 .menu-container {
@@ -86,26 +85,20 @@
   margin-bottom: 10px;
 }
 
-.user-details p {
-  margin: 0;
-  text-align: center;
-  font-size: 14px;
+.text-white {
+  color: white;
 }
 
 .sidebar-container {
-  background-color: #8abad3;
+  background: linear-gradient(to bottom right, var(--secondary-color), var(--text-color));
 }
 
 .sidebar-menu {
   display: vertical; /* vertical layout */
   align-items: center; /* vertical center alignment */
-  text-decoration: none; /* Remove underline from hyperlink */
-  background-color: #8abad3;
-  padding: 10px 15px;
-  color: white; /* text color */
+  text-decoration: none; 
   font-size: 16px;
-  margin-bottom: 120px;
-  /* transition: background-color 0.3s; Hover background color transition effect */
+  background-color: transparent;
 }
 
 .sidebar-menu-item {

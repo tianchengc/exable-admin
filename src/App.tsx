@@ -39,11 +39,10 @@ export default function App() {
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
+                <Route path="*" element={<NoMatch />} />
               </Route>
-              <Route path="*" element={<NoMatch />} />
             </Routes>
           </BrowserRouter>
-          ;
         </Provider>
       </GoogleOAuthProvider>
     </React.StrictMode>

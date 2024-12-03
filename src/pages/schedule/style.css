@@ -1,8 +1,8 @@
 .schedule-page {
     display: flex;
-    min-height: 100vh;
     background-color: #e6f7ff;
     padding-top: 128px;
+    width: 100%;
 }
 
 .schedule-content {
@@ -14,22 +14,9 @@
     margin-left: auto;
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #1f3a57;
-    color: white;
-    padding: 20px;
-    position: fixed;
-    top: 128px;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-}
-
 .schedule-left {
     flex: 1;
     padding: 20px;
-    margin-left: 250px;
 }
 
 .schedule-right {
