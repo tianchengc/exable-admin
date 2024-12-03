@@ -43,7 +43,6 @@ export const Menus = observer(() => {
 
       <Menu
         className="sidebar-menu"
-        // onSelect={onMenuItemClicked}
         selectedKeys={[selectedKey]}
         theme="light"
         style={{ width: '20em' }}
@@ -52,7 +51,6 @@ export const Menus = observer(() => {
           <Menu.Item
             key={element.url}
             icon={element.icon}
-            // className="sidebar-menu-item"
             className={`sidebar-menu-item ${
               selectedKey === element.url ? 'active' : ''
             }`}
@@ -67,17 +65,8 @@ export const Menus = observer(() => {
 
   return dom;
 
-  //   function onMenuItemClicked(item: IMenuOnSelectArgs) {
-  //     setSelectedKey(item.key);
-  //     navigate(item.key);
-  //   }
 });
 
-// interface IMenuOnSelectArgs {
-//   item: any;
-//   key: string;
-//   selectedKeys: string[];
-// }
 
 function getSelected() {
   const url = location.pathname;
