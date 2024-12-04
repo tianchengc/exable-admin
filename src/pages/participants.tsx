@@ -4,12 +4,13 @@
 import { useRef, useState } from 'react';
 import type { InputRef, TableColumnsType, TableColumnType } from 'antd';
 import type { FilterDropdownProps } from 'antd/es/table/interface';
-import { Button, Input, Space, Table, DatePicker } from 'antd';
+import { Button, Input, Space, Table, DatePicker, Avatar } from 'antd';
 import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
 
 function Participants() {
   interface DataType {
     id: number;
+    img: string;
     name: string;
     age: number;
     chronic_condition: string;
@@ -23,7 +24,8 @@ function Participants() {
   const [mockData, setMockData] = useState<DataType[]>([
     {
       id: 1,
-      name: 'batman',
+      img: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1',
+      name: 'Bruce Waye',
       age: 23,
       chronic_condition: 'chronic diesease',
       caat: 0.7,
@@ -32,7 +34,8 @@ function Participants() {
     },
     {
       id: 2,
-      name: 'Fuzzy Wuzzy Waksuud Muzzy',
+      img: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Jack',
+      name: 'Ichigo Kurosaki',
       age: 39,
       chronic_condition: 'chronic diesease',
       caat: 0.7,
@@ -41,6 +44,7 @@ function Participants() {
     },
     {
       id: 3,
+      img: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Easton',
       name: 'John Doe',
       age: 53,
       chronic_condition: 'chronic diesease',
@@ -50,8 +54,19 @@ function Participants() {
     },
     {
       id: 4,
-      name: 'Abaraham Doe',
+      img: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Emery',
+      name: 'Oliver Khan',
       age: 89,
+      chronic_condition: 'chronic diesease',
+      caat: 0.7,
+      mmrc: 1,
+      memberSince: '01-02-2017',
+    },
+    {
+      id: 5,
+      img: 'https://api.dicebear.com/9.x/notionists/svg?seed=Easton',
+      name: 'John Wick',
+      age: 55,
       chronic_condition: 'chronic diesease',
       caat: 0.7,
       mmrc: 1,
@@ -181,9 +196,23 @@ function Participants() {
 
   const columns: TableColumnsType<DataType> = [
     {
+      title: '',
+      dataIndex: 'img',
+      key: 'img',
+      render: (text: string, record: DataType) => {
+        console.log(`trying to get src ${record.img}`);
+        return (
+          <Avatar size="large" src={record.img}>
+            IMG
+          </Avatar>
+        );
+      },
+    },
+    {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
+      width: '30%',
       defaultSortOrder: 'descend',
       sorter: (a, b) => a.name.localeCompare(b.name),
       render: (text: string, record: DataType) => {
@@ -210,6 +239,7 @@ function Participants() {
       title: 'Chronic Condition',
       dataIndex: 'chronic_condition',
       key: 'chronic_condition',
+      width: '30%',
     },
     {
       title: 'CAAT',
@@ -225,12 +255,13 @@ function Participants() {
       title: 'Member Since',
       dataIndex: 'memberSince',
       key: 'memberSince',
+      width: '10%',
     },
   ];
 
   return (
-    <div className="relative flex min-h-screen flex-col m-auto justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
-      <div className="flex gap-20">
+    <div className="flex flex-col justify-center mt-20">
+      <div className="">
         <h1>Patients</h1>
         <DatePicker.RangePicker />
       </div>
