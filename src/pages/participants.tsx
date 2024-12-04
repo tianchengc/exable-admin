@@ -130,7 +130,9 @@ function Participants() {
             }
             icon={<SearchOutlined />}
             size="small"
-            style={{ width: 90 }}
+            style={{
+              width: 90,
+            }}
           >
             Search
           </Button>
@@ -202,7 +204,7 @@ function Participants() {
       render: (text: string, record: DataType) => {
         console.log(`trying to get src ${record.img}`);
         return (
-          <Avatar size="large" src={record.img}>
+          <Avatar size={64} src={record.img}>
             IMG
           </Avatar>
         );
@@ -260,12 +262,12 @@ function Participants() {
   ];
 
   return (
-    <div className="flex-relative flex-col gap-4 justify-center w-full p-4 bg-cyan-200">
-      <div className="flex justify-between">
-        <h1>Patients</h1>
+    <div className="bg-background-color flex-relative flex-col gap-4 justify-center w-full p-8 overflow-y-scroll">
+      <div className="flex justify-between mb-8">
+        <h1 className="text-2xl font-bold text-primary-color">Participants</h1>
         <DatePicker.RangePicker />
       </div>
-      <Table<DataType> dataSource={mockData} columns={columns} />;
+      <Table<DataType> dataSource={mockData} columns={columns} />
     </div>
   );
 }
