@@ -1,7 +1,9 @@
 .staff-title {
   font-size: 24px;
   font-weight: bold;
+  margin-top: 50px;
   margin-bottom: 20px;
+  margin-left: 40px;
   color: #033522;
 }
 
@@ -9,7 +11,9 @@
   position: relative;
   padding: 250px;
   background-color: rgb(13, 137, 168);
-  width: 100%;
+  margin-left: 40px;
+  margin-right: 50px;
+  width: 90%;
   height: 100%;
   box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
