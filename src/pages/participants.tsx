@@ -239,7 +239,7 @@ function Participants() {
       title: 'Chronic Condition',
       dataIndex: 'chronic_condition',
       key: 'chronic_condition',
-      width: '30%',
+      width: '20%',
     },
     {
       title: 'CAAT',
@@ -255,13 +255,13 @@ function Participants() {
       title: 'Member Since',
       dataIndex: 'memberSince',
       key: 'memberSince',
-      width: '10%',
+      width: '20%',
     },
   ];
 
   return (
-    <div className="flex flex-col justify-center mt-20">
-      <div className="">
+    <div className="flex-relative flex-col gap-4 justify-center w-full p-4">
+      <div className="flex justify-between">
         <h1>Patients</h1>
         <DatePicker.RangePicker />
       </div>
