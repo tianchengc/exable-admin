@@ -1,17 +1,15 @@
 import './index.css';
 import logo from '../../assets/logo.svg';
 import register from '../../assets/login_image_2.svg';
+import Footer from '../../components/footer';
 const SignIn = () => {
   return (
     <div className="sign-in-container">
-      {/* 页头 */}
       <header className="header">
         <img src={logo} alt="Lung Health Foundation Logo" className="logo" />
       </header>
 
-      {/* 主内容 */}
       <main className="main-content">
-        {/* 左侧登录部分 */}
         <div className="left-section">
           <h1>Welcome</h1>
           <form className="login-form">
@@ -37,9 +35,8 @@ const SignIn = () => {
           </form>
         </div>
 
-        {/* 右侧图像和管理员部分 */}
         <div className="right-section">
-          <h2>I am an admin</h2>
+          <h1>I am an admin</h1>
           <img
             src={register}
             alt="Admin Illustration"
@@ -50,18 +47,7 @@ const SignIn = () => {
           </a>
         </div>
       </main>
-
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="footer-content">
-          <span>patientsupport@lunghealth.ca | 514 948 3233</span>
-          <div className="social-icons">
-            <a href="#">f</a>
-            <a href="#">in</a>
-            <a href="#">ig</a>
-          </div>
-        </div>
-      </footer>
+      <Footer className="bottom-0 left-0 w-full flex-0" />
     </div>
   );
 };

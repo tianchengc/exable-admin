@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 
-/* 全局样式 */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -23,7 +22,6 @@ body {
   height: 100%;
 }
 
-/* 页面容器 */
 .container {
   display: flex;
   flex-direction: column;
@@ -32,13 +30,13 @@ body {
   box-sizing: border-box;
 }
 
-/* 页头 */
 .header {
   display: flex;
   align-items: center;
   padding: 20px 40px;
   background-color: white;
   border-bottom: 1px solid #ddd;
+  justify-content: center;
 }
 
 .logo {
@@ -52,12 +50,12 @@ body {
   color: #5a8ea3;
 }
 
-/* 主内容 */
 .main-content {
   display: flex;
   flex: 1;
   width: 100%;
   box-sizing: border-box;
+  background-color: #e9f1f7;
 }
 
 .left-section,
@@ -72,7 +70,7 @@ body {
 }
 
 .left-section {
-  background-color: #e9f1f7;
+  height: 82%;
 }
 
 .right-section {
@@ -80,9 +78,8 @@ body {
   text-align: center;
 }
 
-/* 左侧登录样式 */
 h1 {
-  font-size: 28px;
+  font-size: 36px;
   margin-bottom: 20px;
   color: #5a8ea3;
 }
@@ -151,9 +148,8 @@ input {
   background-color: #b4d6f0;
 }
 
-/* 右侧图像样式 */
 .admin-image {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
   margin-bottom: 20px;
 }
@@ -168,22 +164,6 @@ input {
   text-decoration: underline;
 }
 
-/* 页脚 */
-.footer {
-  padding: 20px;
-  background-color: #30535f;
-  border-top: 1px solid #ddd;
-  box-sizing: border-box;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .social-icons a {
   margin: 0 10px;
   color: white;
@@ -195,7 +175,6 @@ input {
   color: #d0d0d0;
 }
 
-/* 选项容器 */
 .options {
   display: flex;
   align-items: center;
@@ -206,9 +185,9 @@ input {
 .options label {
   display: flex;
   align-items: center;
-  white-space: nowrap; /* 确保内容在一行，不会换行 */
+  white-space: nowrap;
 }
 
 .options input[type='checkbox'] {
-  margin-right: 5px; /* 在复选框和文本之间添加一些间距 */
+  margin-right: 5px;
 }
