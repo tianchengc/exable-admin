@@ -3,9 +3,11 @@
   --secondary-color: rgba(35, 84, 96, 1);
   --background-color: rgba(239, 246, 248, 1);
   --text-color: rgba(73, 160, 187, 1);
+  --block-background: rgba(73, 160, 187, 1) ;
   --button-background: rgba(220, 78, 74, 1);
-  --button-text-color: #FFFFFF;
+  --icon-size: 24px;
   --menu-background: #F5F5F5;
   --menu-text-color: #333333;
   --round-radius: 3em;
+  --text-sm: 0.875rem;
 }

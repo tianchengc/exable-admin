@@ -124,3 +124,14 @@
   background-color: #000 !important;
   color: #fff !important;
 }
+
+.upload-icon {
+  width: var(--icon-size);
+  font-size: var(--icon-size);
+}
+
+.btn{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: var(--round-radius);
+}

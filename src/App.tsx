@@ -17,6 +17,7 @@ import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
+import { ExerciseLibraryPage } from './pages/exercise-library';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />
+                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />

@@ -1,6 +1,6 @@
 .upcoming-session{
     color: white;
-    background-color: var(--secondary-color);
+    background-color: var(--block-background);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
