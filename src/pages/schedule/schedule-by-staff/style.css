@@ -90,7 +90,7 @@
   top: 0;
   left: 0;
   margin: 0;
-  text-align: left; /* 强制文本靠左对齐 */
+  text-align: left;
   /* justify-content: flex-start;  */
   padding-left: 80px;
   padding-top: 80px;
@@ -107,11 +107,11 @@
   text-align: left;
   margin-left: 0;
   margin-top: 30px;
-  box-sizing: border-box; /* 确保 padding 不影响元素尺寸 */
+  box-sizing: border-box;
 }
 
 .time {
   padding-block: 20px;
   margin-bottom: 40px;
-  box-sizing: border-box; /* 确保 padding 不影响元素尺寸 */
+  box-sizing: border-box;
 }

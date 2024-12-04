@@ -8,7 +8,7 @@ const ScheduleInfo = () => {
         style={{
           width: '300%',
           borderRadius: '10px',
-          padding: '10px', // 卡片内边距
+          padding: '10px',
           margin: '40px',
           justifyContent: 'flex-start',
         }}
