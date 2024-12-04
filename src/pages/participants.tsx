@@ -260,7 +260,7 @@ function Participants() {
   ];
 
   return (
-    <div className="flex-relative flex-col gap-4 justify-center w-full p-4">
+    <div className="flex-relative flex-col gap-4 justify-center w-full p-4 bg-cyan-200">
       <div className="flex justify-between">
         <h1>Patients</h1>
         <DatePicker.RangePicker />
