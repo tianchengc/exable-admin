@@ -26,6 +26,7 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<BaseLayout />}>
+                {/* <Route path="/register" element={<Register />} /> */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />
