@@ -24,17 +24,16 @@
   display: flex;
   align-items: center;
   padding: 15px;
-  /* border-bottom: 1px solid #ddd; */
   margin: 0 auto;
 }
 
 .staff-info::after {
-  content: ''; /* 必须设置内容 */
-  position: absolute; /* 绝对定位 */
-  bottom: 0; /* 位于底部 */
-  border-bottom: 1px solid #ddd; /* 设置边框样式 */
-  left: 5%; /* 左侧留白，缩短边框起点 */
-  width: 90%; /* 控制水平居中边框的长度 */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+  left: 5%;
+  width: 90%;
 }
 
 .staff-avatar {
