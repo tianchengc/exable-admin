@@ -14,12 +14,9 @@ import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
 import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
+import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
-<<<<<<< HEAD
-import Participants from './pages/participants';
-=======
-// import SchedulePage from './pages/schedule';
->>>>>>> main
+import SchedulePage from './pages/schedule';
 
 export default function App() {
   return (
@@ -31,7 +28,6 @@ export default function App() {
               <Route path="/" element={<BaseLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
-                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
@@ -41,12 +37,13 @@ export default function App() {
                 <Route path="/news" element={<NewsManage />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
-<<<<<<< HEAD
-                <Route path="participants" element={<Participants />} />
-=======
-                {/* <Route path="/schedule" element={<SchedulePage />} /> */}
+                <Route path="/schedule" element={<SchedulePage />} />
+                <Route
+                  path="/participants/:id"
+                  element={<ParticipantProfilePage />}
+                />
+
                 <Route path="*" element={<NoMatch />} />
->>>>>>> main
               </Route>
             </Routes>
           </BrowserRouter>
@@ -55,4 +52,3 @@ export default function App() {
     </React.StrictMode>
   );
 }
-
