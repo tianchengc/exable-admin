@@ -13,7 +13,6 @@ const adminItems = [
   { name: 'Resource Manage', url: '/resource' },
   { name: 'Knowledge Manage', url: '/knowledge' },
   { name: 'News Manage', url: '/news' },
-  { name: 'Participants', url: '/participants' },
   // { name: '直播设置', url: 'live' },
   // // { name: '公告设置', url: 'post' },
   // { name: '视频管理', url: 'video' },
