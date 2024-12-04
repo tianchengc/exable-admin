@@ -22,6 +22,29 @@ const generateTimeSlot = () => {
   return timeSlot;
 };
 
+const scheduleData = [
+  {
+    title: 'Group Exercise',
+    session: '8/20',
+    capacity: '10/15',
+    isEmpty: false,
+  },
+  {
+    title: 'Group Exercise',
+    session: '8/20',
+    capacity: '10/15',
+    isEmpty: false,
+  },
+  { isEmpty: true },
+  {
+    title: 'Group Exercise',
+    session: '8/20',
+    capacity: '10/15',
+    isEmpty: false,
+  },
+  { isEmpty: true },
+];
+
 const timeSlots = generateTimeSlot();
 
 export const Staff_Card = observer(() => {
