@@ -1,3 +1,8 @@
+.staff-content {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 .staff-title {
   font-size: 24px;
   font-weight: bold;
@@ -9,13 +14,15 @@
 
 .staff-card {
   position: relative;
-  padding: 250px;
+  /* padding-block: 60px;
+  padding-inline: 80px; */
   background-color: rgb(13, 137, 168);
   margin-left: 40px;
-  margin-right: 50px;
+  margin-right: 60px;
+  /* margin-bottom: 20px; */
   width: 90%;
   height: 100%;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   border-radius: 10px 10px 10px 10px;
 }
 
@@ -79,5 +86,32 @@
 }
 
 .schedule-info {
-  margin-left: 10px;
+  width: 90%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  text-align: left; /* 强制文本靠左对齐 */
+  /* justify-content: flex-start;  */
+  padding-left: 80px;
+  padding-top: 80px;
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start !important;
+  gap: 100px;
+}
+
+.time-slot {
+  /* position: absolute; */
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  margin-left: 0;
+  margin-top: 30px;
+  box-sizing: border-box; /* 确保 padding 不影响元素尺寸 */
+}
+
+.time {
+  padding-block: 20px;
+  margin-bottom: 40px;
+  box-sizing: border-box; /* 确保 padding 不影响元素尺寸 */
 }
