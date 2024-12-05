@@ -1,13 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  --placeholder-color: rgba(35, 84, 96, 1);
-  --button-height: 96px;
-  --button-width: 284px;
-  --icon-color: #2ec2d8;
-}
-
 .title {
   /* position: relative; */
   /* left: 48px; */
