@@ -35,7 +35,9 @@ export const Menus = observer(() => {
     <div className="sidebar-container">
       <div className="w-full flex justify-center items-center flex-col mt-10">
         <img src={userInfo.avatar} alt="User Avatar" className="user-avatar" />
-        <p className="m-0 text-center text-sm text-white">{userInfo.username}</p>
+        <p className="m-0 text-center text-sm text-white">
+          {userInfo.username}
+        </p>
         <p className="m-0 text-center text-sm text-white">{userInfo.date}</p>
       </div>
 

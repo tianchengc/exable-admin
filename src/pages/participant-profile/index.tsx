@@ -5,8 +5,25 @@ import PerformanceMeasure from '../../components/performance-measure';
 import ProfileSummary from '../../components/profile-summary';
 import ProgramInformation from '../../components/program-information';
 import QuestionnaireCompletion from '../../components/questionnaire-completion';
+import { PerformanceMeasures } from './components/performance-measures-block';
+
 
 export const ParticipantProfilePage: FunctionComponent = () => {
+  const performanceData = {
+    pre: {
+      sitToStand: 10,
+      armCurl: 13,
+      caat: 30,
+      mmrc: 1,
+    },
+    post: {
+      sitToStand: 15,
+      armCurl: 20,
+      caat: 20,
+      mmrc: 1,
+    },
+  };
+
   return (
     <div className="session-preview">
       <UpcomingSession
@@ -17,7 +34,7 @@ export const ParticipantProfilePage: FunctionComponent = () => {
 
       <Progress />
 
-      <PerformanceMeasure />
+      <PerformanceMeasures data={performanceData} />
 
       <ProfileSummary />
 
