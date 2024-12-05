@@ -29,6 +29,13 @@ const scheduleData = [
     capacity: '10/15',
     isEmpty: false,
   },
+  { isEmpty: true },
+  {
+    title: 'Group Exercise',
+    session: '10/20',
+    capacity: '10/15',
+    isEmpty: false,
+  },
   {
     title: 'Group Exercise',
     session: '8/20',
@@ -36,13 +43,13 @@ const scheduleData = [
     isEmpty: false,
   },
   { isEmpty: true },
+  { isEmpty: true },
   {
     title: 'Group Exercise',
     session: '8/20',
     capacity: '10/15',
     isEmpty: false,
   },
-  { isEmpty: true },
 ];
 
 const timeSlots = generateTimeSlot();
@@ -62,9 +69,10 @@ export const Staff_Card = observer(() => {
             <button className="left-arrow">{'<'}</button>
             {staffInfo.date}
             <button className="right-arrow">{'>'}</button>
-            <Add_a_New_Class />
+            {/* <Add_a_New_Class /> */}
           </p>
         </div>
+        <Add_a_New_Class />
       </div>
       <div className="schedule-info">
         <div className="time-slot">
@@ -75,13 +83,9 @@ export const Staff_Card = observer(() => {
           ))}
         </div>
         <div className="single-schedule">
-          <ScheduleInfo />
-          <ScheduleInfo />
-          <ScheduleInfo />
-          <ScheduleInfo />
-          <ScheduleInfo />
-          <ScheduleInfo />
-          <ScheduleInfo />
+          {scheduleData.map((item, index) => (
+            <ScheduleInfo key={index} data={item} />
+          ))}
         </div>
       </div>
     </div>

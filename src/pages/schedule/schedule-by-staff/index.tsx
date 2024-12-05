@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router'; // Ensure react-router-dom is installed as a dependency
 import '../../../styles/common-style.css';
-import { Page } from '../../../components/page';
 import './style.css';
 import { Staff_Card } from './staff-card';
+import { Page } from '../../../components/page';
 
 const Staff_Schedule: React.FC = () => {
   const navigate = useNavigate();
@@ -18,6 +18,9 @@ const Staff_Schedule: React.FC = () => {
         <div className="staff-content">
           <h1 className="staff-title">Schedule By Staff</h1>
           <Staff_Card />
+        </div>
+        <div className="class-detail">
+          <h1 className="detail-title">Class detail</h1>
         </div>
       </div>
     </Page>

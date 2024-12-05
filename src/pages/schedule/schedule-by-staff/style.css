@@ -1,6 +1,6 @@
 .staff-content {
-  padding: 10px;
-  margin-bottom: 10px;
+  position: relative;
+  overflow: auto;
 }
 
 .staff-title {
@@ -14,16 +14,16 @@
 
 .staff-card {
   position: relative;
-  /* padding-block: 60px;
-  padding-inline: 80px; */
-  background-color: rgb(13, 137, 168);
+  background-color: rgb(64, 160, 184);
   margin-left: 40px;
   margin-right: 60px;
-  /* margin-bottom: 20px; */
-  width: 90%;
+  margin-bottom: 50px;
+  width: 85%;
   height: 100%;
-  /* box-sizing: border-box; */
+  /* min-height: 100px; */
+  box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
+  overflow-y: auto;
 }
 
 .staff-info {
@@ -90,14 +90,14 @@
   top: 0;
   left: 0;
   margin: 0;
-  text-align: left; /* 强制文本靠左对齐 */
+  text-align: left; /* force text to the left */
   /* justify-content: flex-start;  */
   padding-left: 80px;
   padding-top: 80px;
   display: flex !important;
   flex-direction: row;
   align-items: flex-start !important;
-  gap: 100px;
+  gap: 200px;
 }
 
 .time-slot {
@@ -107,11 +107,25 @@
   text-align: left;
   margin-left: 0;
   margin-top: 30px;
-  box-sizing: border-box; /* 确保 padding 不影响元素尺寸 */
+  box-sizing: border-box;
 }
 
 .time {
   padding-block: 20px;
   margin-bottom: 40px;
-  box-sizing: border-box; /* 确保 padding 不影响元素尺寸 */
+  box-sizing: border-box;
+}
+
+.class-detail {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  color: #033522;
 }

@@ -1,63 +1,58 @@
 import { Button, Card } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
-const ScheduleInfo = () => {
-  return (
-    <>
-      <Card
-        style={{
-          width: '300%',
-          borderRadius: '10px',
-          padding: '10px', // 卡片内边距
-          margin: '40px',
-          justifyContent: 'flex-start',
-        }}
-        bodyStyle={{
-          display: 'flex',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          padding: '10px 5px',
-          gap: '5px',
-          textAlign: 'left',
-        }}
-      >
-        <div
-          style={{
-            fontWeight: 'bold',
-            fontSize: '16px',
-            textAlign: 'left',
-            flexGrow: 5,
-          }}
-        >
-          Group Exercise
-        </div>
-        <div style={{ fontSize: '16px', flexGrow: 5 }}>Session 8/20</div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            flexGrow: 5,
-          }}
-        >
-          <UserOutlined style={{ fontSize: '16px', color: '#888' }} />
-          <span style={{ fontSize: '16px' }}>10/15</span>
-        </div>
+const ScheduleInfo = ({ data }) => {
+  const isEmpty = data.isEmpty;
 
-        <Button
-          type="primary"
-          shape="round"
-          size="small"
-          style={{
-            backgroundColor: '#F44336',
-            borderColor: '#F44336',
-            flexGrow: 0,
-          }}
-        >
-          View
-        </Button>
-      </Card>
-    </>
+  return (
+    <Card
+      style={{
+        width: '250%',
+        borderRadius: '10px',
+        padding: '10px',
+        margin: '40px',
+        backgroundColor: isEmpty ? '#a4dbec' : '#fff',
+      }}
+      bodyStyle={{
+        display: 'flex',
+        justifyContent: isEmpty ? 'center' : 'flex-start',
+        alignItems: 'center',
+        padding: '10px 5px',
+        gap: '5px',
+      }}
+    >
+      {isEmpty ? (
+        <span>No Schedule</span>
+      ) : (
+        <>
+          <div style={{ flex: 2, fontWeight: 'bold' }}>{data.title}</div>
+          <div style={{ flex: 1, color: '#11cae2' }}>
+            Session {data.session}
+          </div>
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+            }}
+          >
+            <UserOutlined style={{ color: '#11cae2' }} />
+            <span>{data.capacity}</span>
+          </div>
+          <Button
+            type="primary"
+            size="small"
+            style={{
+              backgroundColor: '#F44336',
+              borderColor: '#F44336',
+            }}
+          >
+            View
+          </Button>
+        </>
+      )}
+    </Card>
   );
 };
 
