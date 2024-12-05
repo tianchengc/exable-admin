@@ -23,12 +23,12 @@ export const QuestionnaireCompletion = () => {
           <Checkbox></Checkbox>
         </div>
       </section>
-      <footer className=" flex justify-between mt-6 mx-2 w-[370px]">
+      <footer className=" flex justify-between mt-6 mx-2 w-[370px] text-white underline">
         <small>
-          <u className="text-white">Download</u>
+          <a href="#">Download</a>
         </small>
         <small>
-          <u className="text-white">View all</u>
+          <a href="#">View all</a>
         </small>
       </footer>
     </div>
