@@ -1,6 +1,12 @@
 import { FunctionComponent } from 'react';
 import { UpcomingSession } from './components/upcoming-block';
+import Progress from '../../components/progress';
+import PerformanceMeasure from '../../components/performance-measure';
+import ProfileSummary from '../../components/profile-summary';
+import ProgramInformation from '../../components/program-information';
+import QuestionnaireCompletion from '../../components/questionnaire-completion';
 import { PerformanceMeasures } from './components/performance-measures-block';
+
 
 export const ParticipantProfilePage: FunctionComponent = () => {
   const performanceData = {
@@ -25,7 +31,16 @@ export const ParticipantProfilePage: FunctionComponent = () => {
         sessionDate="July 6th"
         sessionTime="10:00"
       />
+
+      <Progress />
+
       <PerformanceMeasures data={performanceData} />
+
+      <ProfileSummary />
+
+      <ProgramInformation />
+
+      <QuestionnaireCompletion />
     </div>
   );
 };

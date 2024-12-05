@@ -7,7 +7,7 @@ export const StaffSchedule = () => {
   const format = 'HH:mm';
 
   const { Option } = Select;
-  // State
+  // State or hooks
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Event handlers
