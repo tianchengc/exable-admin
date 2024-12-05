@@ -14,8 +14,8 @@
 
 .btn__modal {
   position: absolute;
-  right: 0;
+  top: -130px;
+  right: 85px;
   font-size: 16px;
-  padding: 6px 12px;
   text-align: center;
 }

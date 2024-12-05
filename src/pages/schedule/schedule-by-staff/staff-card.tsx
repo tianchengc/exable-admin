@@ -57,6 +57,7 @@ const timeSlots = generateTimeSlot();
 export const Staff_Card = observer(() => {
   const dom = (
     <div className="staff-card">
+      <Add_a_New_Class />
       <div className="staff-info">
         <img
           src={staffInfo.avatar}
@@ -72,7 +73,7 @@ export const Staff_Card = observer(() => {
             {/* <Add_a_New_Class /> */}
           </p>
         </div>
-        <Add_a_New_Class />
+        {/* <Add_a_New_Class /> */}
       </div>
       <div className="schedule-info">
         <div className="time-slot">

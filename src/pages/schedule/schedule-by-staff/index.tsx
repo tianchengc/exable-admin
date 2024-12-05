@@ -21,6 +21,7 @@ const Staff_Schedule: React.FC = () => {
         </div>
         <div className="class-detail">
           <h1 className="detail-title">Class detail</h1>
+          <div className="class-card" />
         </div>
       </div>
     </Page>

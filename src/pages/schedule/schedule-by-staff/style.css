@@ -18,16 +18,33 @@
   margin-left: 40px;
   margin-right: 60px;
   margin-bottom: 50px;
-  width: 85%;
+  width: 80%;
   height: 100%;
-  /* min-height: 100px; */
   box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
   overflow-y: auto;
+  overflow-x: auto;
 }
+
+/* .staff-card {
+  position: relative;
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1200px;
+  border-radius: 10px;
+  overflow: hidden;
+} */
+
+/* .staff-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+} */
 
 .staff-info {
   position: absolute;
+  /* position: relative; */
   top: 0;
   left: 0;
   width: 100%;
@@ -90,8 +107,8 @@
   top: 0;
   left: 0;
   margin: 0;
-  text-align: left; /* force text to the left */
-  /* justify-content: flex-start;  */
+  text-align: left;
+  justify-content: flex-start;
   padding-left: 80px;
   padding-top: 80px;
   display: flex !important;
@@ -100,8 +117,12 @@
   gap: 200px;
 }
 
+/* .schedule-info {
+  display: flex;
+  margin-top: 20px;
+} */
+
 .time-slot {
-  /* position: absolute; */
   font-size: 18px;
   color: #fff;
   text-align: left;
@@ -109,6 +130,13 @@
   margin-top: 30px;
   box-sizing: border-box;
 }
+
+/* .time-slot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
 
 .time {
   padding-block: 20px;
