@@ -1,6 +1,12 @@
+.staff-schedule-page {
+  width: 2000px;
+  height: 1000px;
+  overflow: scroll;
+}
+
 .staff-content {
   position: relative;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .staff-title {
@@ -18,12 +24,11 @@
   margin-left: 40px;
   margin-right: 60px;
   margin-bottom: 50px;
-  width: 80%;
-  height: 100%;
+  width: 1600px;
+  height: 900px;
   box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
-  overflow-y: auto;
-  overflow-x: auto;
+  /* overflow: auto; */
 }
 
 /* .staff-card {
@@ -114,7 +119,7 @@
   display: flex !important;
   flex-direction: row;
   align-items: flex-start !important;
-  gap: 200px;
+  gap: 250px;
 }
 
 /* .schedule-info {

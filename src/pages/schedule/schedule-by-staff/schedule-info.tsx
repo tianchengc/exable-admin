@@ -7,7 +7,8 @@ const ScheduleInfo = ({ data }) => {
   return (
     <Card
       style={{
-        width: '250%',
+        // width: '250%',
+        width: '1078px',
         borderRadius: '10px',
         padding: '10px',
         margin: '40px',
@@ -25,7 +26,7 @@ const ScheduleInfo = ({ data }) => {
         <span>No Schedule</span>
       ) : (
         <>
-          <div style={{ flex: 2, fontWeight: 'bold' }}>{data.title}</div>
+          <div style={{ flex: 1, fontWeight: 'bold' }}>{data.title}</div>
           <div style={{ flex: 1, color: '#11cae2' }}>
             Session {data.session}
           </div>
