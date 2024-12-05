@@ -6,12 +6,21 @@ import { Menus } from '../components/menu';
 export const BaseLayout = () => {
   return (
     <div className="flex flex-col h-screen w-screen">
-      <Header className="top-0 left-0 w-full flex-0"/>
-      <div className="flex flex-1 overflow-hidden">
-        <Menus className="max-w-xs w-full" />
-        <Outlet className="flex-1 h-100 overflow-auto" />
+      <div className="top-0 left-0 w-full flex-0">
+      <Header />
+
       </div>
-      <Footer className="bottom-0 left-0 w-full flex-0" />
+      <div className="flex flex-1 overflow-hidden">
+        <Menus />
+        {/* className="max-w-xs w-full"  */}
+        <div className='overflow-x-hidden overflow-y-auto  flex-1 '>
+        <Outlet  />
+
+        </div>
+        {/* className=" overflow-auto" */}
+      </div>
+      <Footer  />
+      {/* className="bottom-0 left-0 w-full flex-0" */}
     </div>
   );
 };
