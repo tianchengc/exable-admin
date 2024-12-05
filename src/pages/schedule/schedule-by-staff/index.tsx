@@ -4,6 +4,7 @@ import '../../../styles/common-style.css';
 import './style.css';
 import { Staff_Card } from './staff-card';
 import { Page } from '../../../components/page';
+import { Class_Card } from './class-card';
 
 const Staff_Schedule: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Staff_Schedule: React.FC = () => {
         </div>
         <div className="class-detail">
           <h1 className="detail-title">Class detail</h1>
-          <div className="class-card" />
+          <Class_Card />
         </div>
       </div>
     </Page>

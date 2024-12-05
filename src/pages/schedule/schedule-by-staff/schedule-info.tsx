@@ -19,7 +19,7 @@ const ScheduleInfo = ({ data }) => {
         justifyContent: isEmpty ? 'center' : 'flex-start',
         alignItems: 'center',
         padding: '10px 5px',
-        gap: '5px',
+        gap: '10px',
       }}
     >
       {isEmpty ? (

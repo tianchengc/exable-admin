@@ -6,7 +6,6 @@
 
 .staff-content {
   position: relative;
-  /* overflow: auto; */
 }
 
 .staff-title {
@@ -28,28 +27,10 @@
   height: 900px;
   box-sizing: border-box;
   border-radius: 10px 10px 10px 10px;
-  /* overflow: auto; */
 }
-
-/* .staff-card {
-  position: relative;
-  margin: 0 auto;
-  width: 85%;
-  max-width: 1200px;
-  border-radius: 10px;
-  overflow: hidden;
-} */
-
-/* .staff-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-} */
 
 .staff-info {
   position: absolute;
-  /* position: relative; */
   top: 0;
   left: 0;
   width: 100%;
@@ -122,11 +103,6 @@
   gap: 250px;
 }
 
-/* .schedule-info {
-  display: flex;
-  margin-top: 20px;
-} */
-
 .time-slot {
   font-size: 18px;
   color: #fff;
@@ -136,23 +112,10 @@
   box-sizing: border-box;
 }
 
-/* .time-slot {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-} */
-
 .time {
   padding-block: 20px;
   margin-bottom: 40px;
   box-sizing: border-box;
-}
-
-.class-detail {
-  position: relative;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .detail-title {
@@ -161,4 +124,44 @@
   margin-bottom: 20px;
   margin-left: 40px;
   color: #033522;
+}
+
+.class-card {
+  position: relative;
+  background-color: rgb(64, 160, 184);
+  margin-left: 40px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  width: 1600px;
+  height: 400px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.class-menu {
+  display: flex;
+}
+
+.class-info-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  margin-left: 60px;
+  color: #fff;
+}
+
+.edit-info-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  margin-left: 60px;
+  color: #fff;
+}
+
+.edit-info {
+  /* margin-left: 50px; */
 }
