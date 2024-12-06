@@ -1,8 +1,9 @@
 import { observer } from 'mobx-react';
-import Class_Info_Card from './class-info-card';
-import Edit_Info_Card from './edit-info-card';
-import Participant_List from './participant-card';
+import Class_Info_Card from './components/class-info-card';
+import Edit_Info_Card from './components/edit-info-card';
+import Participant_List from './components/participant-card';
 import { Button } from 'antd';
+import './style.css';
 
 const participant_data = [
   { name: 'Richard Brown', symptom: 'COPD' },

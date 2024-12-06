@@ -1,0 +1,59 @@
+.class-card {
+  position: relative;
+  background-color: rgb(64, 160, 184);
+  margin-left: 40px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  width: 1600px;
+  height: 400px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.class-menu {
+  display: flex;
+}
+
+.class-info-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  margin-left: 60px;
+  color: #fff;
+}
+
+.edit-info-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  margin-left: 40px;
+  color: #fff;
+}
+
+.edit-info {
+  /* margin-left: 50px; */
+}
+
+.participant-list {
+  /* margin-left: 40px; */
+}
+
+.pariticipant-list-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  margin-left: 40px;
+  color: #fff;
+}
+
+.participant-bar {
+  height: 235px;
+  /* padding-left: '60px'; */
+  overflow-y: scroll;
+}

@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react';
-import '../style.css';
+import './style.css';
 import Add_a_New_Class from '../../add-a-new-class';
 import ScheduleInfo from './schedule-info';
 
@@ -57,7 +57,6 @@ const timeSlots = generateTimeSlot();
 export const Staff_Card = observer(() => {
   const dom = (
     <div className="staff-card">
-      <Add_a_New_Class />
       <div className="staff-info">
         <img
           src={staffInfo.avatar}
@@ -73,7 +72,7 @@ export const Staff_Card = observer(() => {
             {/* <Add_a_New_Class /> */}
           </p>
         </div>
-        {/* <Add_a_New_Class /> */}
+        <Add_a_New_Class />
       </div>
       <div className="schedule-info">
         <div className="time-slot">
