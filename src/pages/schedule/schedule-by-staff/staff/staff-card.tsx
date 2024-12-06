@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react';
-import './style.css';
-import Add_a_New_Class from '../add-a-new-class';
+import '../style.css';
+import Add_a_New_Class from '../../add-a-new-class';
 import ScheduleInfo from './schedule-info';
 
 const staffInfo = {
