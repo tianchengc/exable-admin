@@ -4,7 +4,10 @@ import inject from '@rollup/plugin-inject';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),inject({
-    process: 'process/browser',
-  }),],
-})
+  plugins: [
+    react(),
+    inject({
+      process: 'process/browser',
+    }),
+  ],
+});

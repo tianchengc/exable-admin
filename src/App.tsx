@@ -1,4 +1,5 @@
 import React from 'react';
+import SignIn from './pages/sign-in';
 import BaseLayout from './pages/layout';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter, Route, Routes } from 'react-router';
@@ -12,12 +13,14 @@ import { AdminList } from './pages/admin-list';
 import { ResourceManage } from './pages/resource';
 import { KnowledgeManage } from './pages/knowledge-manage';
 import { NewsManage } from './pages/news-manage';
+import Participants from './pages/participants';
 import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
 import Exercise from './pages/exercise-page/Exercise';
+import { ExerciseLibraryPage } from './pages/exercise-library';
 
 export default function App() {
   return (
@@ -26,10 +29,12 @@ export default function App() {
         <Provider>
           <BrowserRouter>
             <Routes>
+              <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />
+                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
@@ -37,10 +42,15 @@ export default function App() {
                 <Route path="/resource" element={<ResourceManage />} />
                 <Route path="/knowledge" element={<KnowledgeManage />} />
                 <Route path="/news" element={<NewsManage />} />
+                <Route path="/participants" element={<Participants />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/exercise-library" element={<Exercise />} />
+                <Route
+                  path="/participants/:id"
+                  element={<ParticipantProfilePage />}
+                />
 
                 <Route path="*" element={<NoMatch />} />
               </Route>
@@ -51,4 +61,3 @@ export default function App() {
     </React.StrictMode>
   );
 }
-

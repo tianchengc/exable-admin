@@ -7,8 +7,7 @@ export const BaseLayout = () => {
   return (
     <div className="flex flex-col h-screen w-screen">
       <div className="top-0 left-0 w-full flex-0">
-      <Header />
-
+        <Header />
       </div>
       <div className="flex flex-1 overflow-hidden">
         <Menus />
