@@ -158,10 +158,26 @@
   padding: 20px;
   /* margin-top: 20px; */
   margin-bottom: 20px;
-  margin-left: 60px;
+  margin-left: 40px;
   color: #fff;
 }
 
 .edit-info {
   /* margin-left: 50px; */
+}
+
+.pariticipant-list-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+  margin-left: 40px;
+  color: #fff;
+}
+
+.participant-bar {
+  height: 235px;
+  /* padding-left: '60px'; */
+  overflow-y: scroll;
 }

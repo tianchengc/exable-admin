@@ -39,7 +39,7 @@ const ScheduleInfo = ({ data }) => {
             }}
           >
             <UserOutlined style={{ color: '#11cae2' }} />
-            <span>{data.capacity}</span>
+            <span style={{ color: '#11cae2' }}>{data.capacity}</span>
           </div>
           <Button
             type="primary"

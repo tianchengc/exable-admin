@@ -1,6 +1,16 @@
 import { observer } from 'mobx-react';
 import Class_Info_Card from './class-info-card';
 import Edit_Info_Card from './edit-info-card';
+import Participant_List from './participant-card';
+
+const participant_data = [
+  { name: 'Richard Brown', symptom: 'COPD' },
+  { name: 'Tim Johnson', symptom: 'COPD' },
+  { name: 'Trish Lee', symptom: 'COPD, Asthma' },
+  { name: 'Richard Brown', symptom: 'COPD' },
+  { name: 'Richard Brown', symptom: 'COPD' },
+  { name: 'Richard Brown', symptom: 'COPD' },
+];
 
 export const Class_Card = observer(() => {
   const dom = (
@@ -13,6 +23,14 @@ export const Class_Card = observer(() => {
         <div className="edit-info">
           <h2 className="edit-info-title">Edit information</h2>
           <Edit_Info_Card />
+        </div>
+        <div className="pariticipant-list">
+          <h2 className="pariticipant-list-title">Participant List</h2>
+          <div className="participant-bar">
+            {participant_data.map((item, index) => (
+              <Participant_List key={index} data={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

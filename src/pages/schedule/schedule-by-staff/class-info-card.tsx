@@ -7,15 +7,13 @@ const Class_Info_Card = () => {
         width: '350px',
         height: '220px',
         borderRadius: '10px',
-        // padding: '10px',
         marginBottom: '40px',
         marginLeft: '80px',
         backgroundColor: '#a4dbec',
       }}
       bodyStyle={{
         justifyContent: 'flex-start',
-        // padding: '10px 5px',
-        // gap: '10px',
+        paddingTop: '10px',
       }}
     >
       <>
@@ -24,9 +22,18 @@ const Class_Info_Card = () => {
           <div>Group Exercise Class</div>
           <div>Session: 8/12</div>
           <div>Participants: 10/15</div>
-          <Space direction="horizontal" size="small" align="center">
-            <Button type="primary">Reschedule Class</Button>
-            <Button type="primary">Cancel Class</Button>
+          <Space
+            direction="horizontal"
+            size="small"
+            align="center"
+            style={{ paddingTop: '5px' }}
+          >
+            <Button type="primary" style={{ borderRadius: '20px' }}>
+              Reschedule Class
+            </Button>
+            <Button type="primary" style={{ borderRadius: '20px' }}>
+              Cancel Class
+            </Button>
           </Space>
         </Space>
       </>
