@@ -2,6 +2,7 @@ import { observer } from 'mobx-react';
 import Class_Info_Card from './class-info-card';
 import Edit_Info_Card from './edit-info-card';
 import Participant_List from './participant-card';
+import { Button } from 'antd';
 
 const participant_data = [
   { name: 'Richard Brown', symptom: 'COPD' },
@@ -31,6 +32,19 @@ export const Class_Card = observer(() => {
               <Participant_List key={index} data={item} />
             ))}
           </div>
+          <Button
+            type="primary"
+            size="large"
+            style={{
+              backgroundColor: '#F44336',
+              borderColor: '#F44336',
+              borderRadius: '20px',
+              marginLeft: '300px',
+              marginTop: '10px',
+            }}
+          >
+            Edit Participant
+          </Button>
         </div>
       </div>
     </div>
