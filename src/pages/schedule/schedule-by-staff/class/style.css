@@ -55,6 +55,5 @@
 
 .participant-bar {
   height: 235px;
-  /* padding-left: '60px'; */
   overflow-y: scroll;
 }
