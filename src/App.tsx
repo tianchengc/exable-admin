@@ -17,6 +17,7 @@ import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
+import Register from './pages/register/register';
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<BaseLayout />}>
-                {/* <Route path="/register" element={<Register />} /> */}
+                <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />

@@ -1,3 +1,8 @@
+body {
+    background-color: #e6f7ff;
+    margin: 0;
+}
+
 input {
     border-radius: 25px;
     border: 1px solid #ccc;
@@ -12,25 +17,76 @@ input::placeholder {
     padding-left: 8px;
 }
 
-#container {
+#containerParent {
     display: inline-block;
     background-color: rgba(73, 160, 187, 1);
     border-radius: 10px;
     padding: 2rem;
-    width: 50rem;
-    margin: 5rem 0 0 20rem;
+    padding-bottom: 0;
+    position: relative;
+    left: 12.5rem;
+    top: 17rem;
 }
 
+ #saveBtn {
+    position:absolute;
+} 
+
 h3 {
+    width: 50%;
+    display: block;
     font-weight: normal;
     font-size: 2rem;
     color: white;
     margin: 0 0 1.5rem 0;
 }
 
-body {
-    background-color: #e6f7ff;}
+#saveBtn {
+    position: relative;
+    left: 23rem;
+    top: 5rem;
+    border-radius: 25px;
+    border-style: none;
+    background-color: tomato;
+    color: white;
+    padding: 1rem 1.5rem;
+}
 
-#image {
- 
+#imgDivParent {
+    display: block;
+}
+
+#imgDiv {
+    text-align: right;
+}
+
+img {
+    margin-right: 12rem;
+}
+
+/* Responsive Design: Media Queries */
+@media (max-width: 768px) {
+    #containerParent {
+        left: 5%;
+        top: 10vh;
+        padding: 1.5rem;
+    }
+
+    #saveBtn {
+        left: auto; /* Center-align on smaller screens */
+        right: 10%;
+        top: 1rem;
+        position: relative;
+        display: block;
+        margin: 1rem auto;
+    }
+
+    #imgDiv img {
+        margin-right: 0;
+    }
+
+    input {
+        width: 90%; /* Adjust inputs for smaller screens */
+        margin-left: 0;
+    }
 }
