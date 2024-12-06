@@ -16,6 +16,7 @@ import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
+import ClassSchedule from './pages/class_schedule';
 import SchedulePage from './pages/schedule';
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="/news" element={<NewsManage />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
+                <Route path="/class_schedule" element={<ClassSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="*" element={<NoMatch />} />
               </Route>

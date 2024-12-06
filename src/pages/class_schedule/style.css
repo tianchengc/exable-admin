@@ -1,0 +1,249 @@
+.class-schedule-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: rgba(185, 226, 239, 1);
+}
+  
+.schedule-content-1 {
+  display: flex;
+  background-color: rgba(185, 226, 239, 1);
+}
+  
+.schedule-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: rgba(35, 84, 96, 1);
+  text-align: left;
+  vertical-align: top;
+}
+
+.button-and-grid {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background-color: rgba(73, 160, 187, 1);
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%; 
+  max-width: 73%; 
+}
+  
+.add-class-button {
+  width: 260px;
+  height: 50.5px;
+  border-radius: 8px;
+  background-color: #c43932;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+  
+.add-class-button:hover {
+  background-color: #000000;
+}
+  
+.weekly-schedule {
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 1);
+}
+  
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 50px repeat(5, 1fr);
+  overflow-x: auto; 
+}
+  
+.schedule-grid-header {
+  display: contents;
+}
+  
+.time-label, .weekday {
+  background-color: rgba(73, 160, 187, 1);
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+  
+.schedule-grid-body {
+  display: contents;
+}
+  
+.time-slot {
+  padding: 10px;
+  border-bottom: 1px solid rgba(73, 160, 187, 1);
+  background-color: rgba(73, 160, 187, 1);
+  color: white;
+}
+  
+.class-cell {
+  width: 296px;
+  height: 71px;
+  margin: 10px;
+  background-color: rgba(185, 226, 239, 1);
+  border-radius: 8px;
+}
+  
+.class-card {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+  
+.class-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-bottom: 5px;
+}
+  
+.session-info {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(46, 194, 216, 1);
+  margin-bottom: 5px; 
+}
+
+.session-participants-wrapper {
+  display: flex;
+  gap: 20px;
+}
+  
+.participants-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(46, 194, 216, 1);
+}
+  
+.view-button-1 {
+  background: #d9534f;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 17px;
+  margin-left: auto;
+  transform: translateY(-130%);
+}
+ 
+
+/*class detail part*/
+
+.detail-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.class-info {
+  background-color: rgba(185, 226, 239, 1);
+  padding: 20px;
+  border-radius: 17px;
+  flex: 1;
+}
+
+.reschedule-button,
+.cancel-button {
+  margin-top: 10px;
+  display: flex;
+ 
+  background-color: #ffffff;
+  color: rgb(130, 193, 213);
+
+  padding: 10px 10px;
+  border-radius: 17px;
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 400;
+ 
+
+}
+
+.edit-notification {
+  background-color: rgba(185, 226, 239, 1);
+  padding: 20px;
+  border-radius: 10px;
+ 
+}
+
+.edit-notification textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  resize: none;
+}
+
+.send-button {
+  background-color: #ffffff;
+  color: rgb(130, 193, 213);
+  margin-left: 80px;
+  padding: 10px 20px;
+  border-radius: 17px;
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 400;
+
+}
+
+.participant-list {
+  background-color: rgba(73, 160, 187, 1);
+  padding: 0px;
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  max-height: 220px; 
+  overflow-y: auto; 
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.participant-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.participant-info {
+  flex: 1;
+}
+
+.participant-name {
+  font-weight: bold;
+}
+
+.participant-condition {
+  color: #0288d1;
+}
+
+
+.edit-participants-button {
+  background-color: #d9534f;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 10px 25px;
+  border-radius: 17px;
+  margin-top: 20px;
+  margin-Left: 200px;
+}
