@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
 import { UpcomingSession } from './components/upcoming-block';
 import Progress from '../../components/progress';
-import PerformanceMeasure from '../../components/performance-measure';
 import ProfileSummary from '../../components/profile-summary';
 import ProgramInformation from '../../components/program-information';
 import QuestionnaireCompletion from '../../components/questionnaire-completion';
