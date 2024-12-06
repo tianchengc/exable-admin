@@ -17,6 +17,7 @@ import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
+import Participants from './pages/participants';
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
+                <Route path="/participants" element={<Participants />} />
                 <Route
                   path="/participants/:id"
                   element={<ParticipantProfilePage />}
