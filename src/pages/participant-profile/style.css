@@ -1,19 +1,25 @@
-.upcoming-session{
+.upcoming-session {
+    width: 280px;
+}
+
+.performance-container,
+.upcoming-session {
     color: white;
-    background-color: var(--secondary-color);
+    background-color: var(--block-background);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    min-width: 280px;
 }
-.past-appt-btn{
+
+.past-appt-btn {
     background-color: var(--primary-color);
     border-radius: var(--round-radius);
     color: var(--text-color);
     /* hover effect to be added */
 }
-.upcoming-date{
+
+.upcoming-date {
     background-color: white;
     color: var(--text-color);
     display: flex;
@@ -21,5 +27,45 @@
     justify-content: space-between;
     min-height: 3rem;
     border-radius: 5px;
-    font-size: 1.4rem;
+    font-size: 1rem;
+}
+
+
+/* Perfomance Measures Block  */
+.pre-section,
+.post-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric p {
+    font-size: 0.7rem;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: var(--text-color);
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 2.7rem;
+    height: 2.3rem;
 }
