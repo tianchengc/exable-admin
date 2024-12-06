@@ -9,7 +9,7 @@ const Edit_Info_Card = () => {
         height: '220px',
         borderRadius: '20px',
         marginRight: '20px',
-        marginLeft: '60px',
+        // marginLeft: '60px',
         backgroundColor: '#a4dbec',
       }}
       bodyStyle={{

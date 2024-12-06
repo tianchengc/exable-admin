@@ -14,41 +14,42 @@
   display: flex;
 }
 
+.class-info {
+  margin-left: 80px;
+}
+
 .class-info-title {
   font-size: 24px;
   font-weight: bold;
-  padding: 20px;
-  /* margin-top: 20px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
-  margin-left: 60px;
   color: #fff;
+}
+
+.edit-info {
+  margin-left: 60px;
 }
 
 .edit-info-title {
   font-size: 24px;
   font-weight: bold;
-  padding: 20px;
-  /* margin-top: 20px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
-  margin-left: 40px;
   color: #fff;
 }
 
-.edit-info {
-  /* margin-left: 50px; */
-}
-
 .participant-list {
-  /* margin-left: 40px; */
+  margin-left: 60px;
 }
 
-.pariticipant-list-title {
+.participant-list-title {
   font-size: 24px;
   font-weight: bold;
-  padding: 20px;
-  /* margin-top: 20px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
-  margin-left: 40px;
   color: #fff;
 }
 

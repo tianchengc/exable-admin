@@ -8,7 +8,7 @@ const Class_Info_Card = () => {
         height: '220px',
         borderRadius: '10px',
         marginBottom: '40px',
-        marginLeft: '80px',
+        // marginLeft: '80px',
         backgroundColor: '#a4dbec',
       }}
       bodyStyle={{

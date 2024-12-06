@@ -11,7 +11,7 @@ const ScheduleInfo = ({ data }) => {
         width: '1078px',
         borderRadius: '10px',
         padding: '10px',
-        margin: '40px',
+        margin: '40px 0',
         backgroundColor: isEmpty ? '#a4dbec' : '#fff',
       }}
       bodyStyle={{
