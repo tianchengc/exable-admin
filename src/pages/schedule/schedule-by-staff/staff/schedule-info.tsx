@@ -1,8 +1,21 @@
 import { Button, Card } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { useState } from 'react';
 
 const ScheduleInfo = ({ data }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
   const isEmpty = data.isEmpty;
+
+  const backgroundColor = isClicked
+    ? '#000000'
+    : isHovered
+      ? '#000000'
+      : isEmpty
+        ? '#a4dbec'
+        : '#fff';
+  const textColor = isHovered || isClicked ? '#ffffff' : '#000000';
 
   return (
     <Card
@@ -12,7 +25,7 @@ const ScheduleInfo = ({ data }) => {
         borderRadius: '10px',
         padding: '10px',
         margin: '40px 0',
-        backgroundColor: isEmpty ? '#a4dbec' : '#fff',
+        backgroundColor: backgroundColor,
       }}
       bodyStyle={{
         display: 'flex',
@@ -21,12 +34,17 @@ const ScheduleInfo = ({ data }) => {
         padding: '10px 5px',
         gap: '10px',
       }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsClicked(!isClicked)}
     >
       {isEmpty ? (
-        <span>No Schedule</span>
+        <span style={{ color: textColor }}>No Schedule</span>
       ) : (
         <>
-          <div style={{ flex: 1, fontWeight: 'bold' }}>{data.title}</div>
+          <div style={{ flex: 1, fontWeight: 'bold', color: textColor }}>
+            {data.title}
+          </div>
           <div style={{ flex: 1, color: '#11cae2' }}>
             Session {data.session}
           </div>
