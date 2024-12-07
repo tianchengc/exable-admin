@@ -1,17 +1,23 @@
 import { Button, Card } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import { useState } from 'react';
 
-const ScheduleInfo = ({ data }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+const ScheduleInfo = ({
+  data,
+  isHovered,
+  isClicked,
+  onMouseEnter,
+  onMouseLeave,
+  onClick,
+}) => {
+  // const [isHovered, setIsHovered] = useState(false);
+  // const [isClicked, setIsClicked] = useState(false);
 
   const isEmpty = data.isEmpty;
 
   const backgroundColor = isClicked
-    ? '#000000'
+    ? '#033522'
     : isHovered
-      ? '#000000'
+      ? '#033522'
       : isEmpty
         ? '#a4dbec'
         : '#fff';
@@ -34,9 +40,9 @@ const ScheduleInfo = ({ data }) => {
         padding: '10px 5px',
         gap: '10px',
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setIsClicked(!isClicked)}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onClick={onClick}
     >
       {isEmpty ? (
         <span style={{ color: textColor }}>No Schedule</span>

@@ -2,6 +2,7 @@ import { observer } from 'mobx-react';
 import './style.css';
 import Add_a_New_Class from '../../add-a-new-class';
 import ScheduleInfo from './schedule-info';
+import { useState } from 'react';
 
 const staffInfo = {
   avatar: 'https://via.placeholder.com/60x60/000000/ffffff?text=W',
@@ -55,6 +56,8 @@ const scheduleData = [
 const timeSlots = generateTimeSlot();
 
 export const Staff_Card = observer(() => {
+  const [hoveredIndex, setIsHoveredIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const dom = (
     <div className="staff-card">
       <div className="staff-info">
@@ -84,7 +87,15 @@ export const Staff_Card = observer(() => {
         </div>
         <div className="single-schedule">
           {scheduleData.map((item, index) => (
-            <ScheduleInfo key={index} data={item} />
+            <ScheduleInfo
+              key={index}
+              data={item}
+              isHovered={hoveredIndex === index}
+              isClicked={selectedIndex === index}
+              onMouseEnter={() => setIsHoveredIndex(index)}
+              onMouseLeave={() => setIsHoveredIndex(null)}
+              onClick={() => setSelectedIndex(index)}
+            />
           ))}
         </div>
       </div>

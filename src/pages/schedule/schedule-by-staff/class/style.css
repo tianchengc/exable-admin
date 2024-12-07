@@ -56,4 +56,23 @@
 .participant-bar {
   height: 235px;
   overflow-y: scroll;
+  overflow-x: hidden;
+  /* scrollbar-width: none; */
+}
+
+.participant-bar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.participant-bar:hover::-webkit-scrollbar {
+  width: 10px;
+}
+
+.participant-bar:hover::-webkit-scrollbar-thumb {
+  background: #033522;
+  border-radius: 3px;
+}
+
+.participant-bar:hover::-webkit-scrollbar-track {
+  background: #a4dbec;
 }
