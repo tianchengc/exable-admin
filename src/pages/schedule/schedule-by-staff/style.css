@@ -1,7 +1,8 @@
 .staff-schedule-page {
   width: 2000px;
   height: 1000px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .staff-content {
