@@ -20,6 +20,7 @@ import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
 import { ExerciseLibraryPage } from './pages/exercise-library';
+import { Dashboard } from './pages/dashboard';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
             <Routes>
               <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route

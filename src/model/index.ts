@@ -88,3 +88,20 @@ export interface GenURLResp {
     url: string;
     putUrl: string;
 }
+
+export interface LeftSectionMenuItemData {
+    imageSource?: string,
+    title?: string,
+}
+
+export interface NumberTitleData {
+    count?: number,
+    title?: string,
+}
+
+export interface ClassCycle {
+    title: string,
+    options: Array<string>,
+    selected: string,
+    numberTitleData: Array<NumberTitleData>,
+}
