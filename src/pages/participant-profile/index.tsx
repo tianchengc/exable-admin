@@ -23,7 +23,7 @@ export const ParticipantProfilePage: FunctionComponent = () => {
   };
 
   return (
-    <div className=" w-full flex justify-between p-8 bg-background-color">
+    <div className=" w-full h-full flex justify-between p-8 bg-background-color">
       <div>
         <UpcomingSession
           sessionTitle="Session 3"
@@ -45,39 +45,3 @@ export const ParticipantProfilePage: FunctionComponent = () => {
     </div>
   );
 };
-
-// ------------
-// import PerformanceMeasure from '../../components/performance-measure';
-// import ProfileSummary from '../../components/profile-summary';
-// import ProgramInformation from '../../components/program-information';
-// import Progress from '../../components/progress';
-// import QuestionnaireCompletion from '../../components/questionnaire-completion';
-// import Upcoming from '../../components/upcoming';
-
-// const Participants = () => {
-//   return (
-//     <div className=" w-full flex justify-between p-8">
-//       <div>
-//         <Upcoming />
-//         <UpcomingSession
-//           sessionTitle="Session 3"
-//           sessionDate="July 6th"
-//           sessionTime="10:00"
-//         />
-
-//         <Progress />
-
-//         <ProfileSummary />
-
-//         <ProgramInformation />
-//       </div>
-
-//       <div className="">
-//         <PerformanceMeasure />
-//         <QuestionnaireCompletion />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Participants;
