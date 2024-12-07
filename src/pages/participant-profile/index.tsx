@@ -25,13 +25,15 @@ export const ParticipantProfilePage: FunctionComponent = () => {
   return (
     <div className=" w-full h-full flex justify-between p-8 bg-background-color">
       <div>
-        <UpcomingSession
-          sessionTitle="Session 3"
-          sessionDate="July 6th"
-          sessionTime="10:00"
-        />
+        <div className="flex gap-x-5">
+          <UpcomingSession
+            sessionTitle="Session 3"
+            sessionDate="July 6th"
+            sessionTime="10:00"
+          />
 
-        <Progress />
+          <Progress />
+        </div>
 
         <ProfileSummary />
 
