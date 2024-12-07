@@ -19,7 +19,6 @@ import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
-import Exercise from './pages/exercise-page/Exercise';
 import { ExerciseLibraryPage } from './pages/exercise-library';
 import { Dashboard } from './pages/dashboard';
 
@@ -35,8 +34,14 @@ export default function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
-                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
-                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
+                <Route
+                  path="/participants/:id"
+                  element={<ParticipantProfilePage />}
+                />
+                <Route
+                  path="/exercise_library"
+                  element={<ExerciseLibraryPage />}
+                />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
@@ -48,7 +53,7 @@ export default function App() {
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
-                <Route path="/exercise-library" element={<Exercise />} />
+
                 <Route
                   path="/participants/:id"
                   element={<ParticipantProfilePage />}
