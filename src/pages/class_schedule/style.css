@@ -50,7 +50,7 @@
   
 .schedule-grid {
   display: grid;
-  grid-template-columns: 50px repeat(5, 1fr);
+  grid-template-columns: 80px repeat(5, 1fr);
   overflow-x: auto; 
 }
   
@@ -64,7 +64,10 @@
   font-weight: bold;
   color: white;
   text-align: center;
+  
 }
+
+
   
 .schedule-grid-body {
   display: contents;
@@ -75,10 +78,14 @@
   border-bottom: 1px solid rgba(73, 160, 187, 1);
   background-color: rgba(73, 160, 187, 1);
   color: white;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  
 }
   
 .class-cell {
-  width: 296px;
+  width: 280px;
   height: 71px;
   margin: 10px;
   background-color: rgba(185, 226, 239, 1);
