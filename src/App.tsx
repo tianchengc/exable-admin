@@ -18,6 +18,7 @@ import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
+import ClassSchedule from './pages/class_schedule';
 import SchedulePage from './pages/schedule';
 import Exercise from './pages/exercise-page/Exercise';
 import { ExerciseLibraryPage } from './pages/exercise-library';
@@ -47,6 +48,7 @@ export default function App() {
                 <Route path="/participants" element={<Participants />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
+                <Route path="/class_schedule" element={<ClassSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/exercise-library" element={<Exercise />} />
                 <Route
