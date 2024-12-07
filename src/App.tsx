@@ -53,7 +53,7 @@ export default function App() {
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
-                {/* <Route path="/participants" element={<Participants />} /> */}
+
                 <Route
                   path="/participants/:id"
                   element={<ParticipantProfilePage />}
