@@ -1,71 +1,70 @@
 .upcoming-session {
-    width: 280px;
+  width: 280px;
 }
 
 .performance-container,
 .upcoming-session {
-    color: white;
-    background-color: var(--block-background);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  color: white;
+  background-color: var(--block-background);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .past-appt-btn {
-    background-color: var(--primary-color);
-    border-radius: var(--round-radius);
-    color: var(--text-color);
-    /* hover effect to be added */
+  background-color: var(--primary-color);
+  border-radius: var(--round-radius);
+  color: var(--text-color);
+  /* hover effect to be added */
 }
 
 .upcoming-date {
-    background-color: white;
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 3rem;
-    border-radius: 5px;
-    font-size: 1rem;
+  background-color: white;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem;
+  border-radius: 5px;
+  font-size: 1rem;
 }
-
 
 /* Perfomance Measures Block  */
 .pre-section,
 .post-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
 }
 
 .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  text-align: center;
 }
 
 .metric {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .metric p {
-    font-size: 0.7rem;
+  font-size: 0.7rem;
 }
 
 .value {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: var(--text-color);
-    font-size: 1rem;
-    border-radius: 5px;
-    margin-top: 5px;
-    width: 2.7rem;
-    height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 5px;
+  width: 2.7rem;
+  height: 2.3rem;
 }

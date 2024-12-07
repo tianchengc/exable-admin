@@ -2,7 +2,7 @@ import { Checkbox } from 'antd';
 
 export const QuestionnaireCompletion = () => {
   return (
-    <div className="rounded-md w-[420px] p-3  bg-[#49A0BB] ">
+    <div className="rounded-md w-full p-3  bg-[#49A0BB] ">
       <p className="text-white text-md">Questionnaire Completion</p>
       <section className="flex justify-between bg-[white] shadow-md rounded-lg p-1 m-2 h-48">
         <div className="flex flex-col">

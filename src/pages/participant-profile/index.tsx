@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import { UpcomingSession } from './components/upcoming-block';
-import PerformanceMeasure from '../../components/performance-measure';
 import ProfileSummary from '../../components/profile-summary';
 import ProgramInformation from '../../components/program-information';
 import Progress from '../../components/progress';
 import QuestionnaireCompletion from '../../components/questionnaire-completion';
+import { PerformanceMeasure } from '../../components/performance-measure';
 
 export const ParticipantProfilePage: FunctionComponent = () => {
   const performanceData = {
@@ -23,7 +23,7 @@ export const ParticipantProfilePage: FunctionComponent = () => {
   };
 
   return (
-    <div className=" w-full flex justify-between p-8">
+    <div className=" w-full flex justify-between p-8 bg-background-color">
       <div>
         <UpcomingSession
           sessionTitle="Session 3"
@@ -39,7 +39,7 @@ export const ParticipantProfilePage: FunctionComponent = () => {
       </div>
 
       <div className="flex flex-col justify-between">
-        <PerformanceMeasure />
+        <PerformanceMeasure data={performanceData} />
         <QuestionnaireCompletion />
       </div>
     </div>
