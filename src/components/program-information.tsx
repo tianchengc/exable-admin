@@ -19,12 +19,6 @@ const ProgramInformation = () => {
           View all
         </a>
       </div>
-      {/* <Button className="w-min rounded-full mb-6 ml-6 ">
-        "Post-Cycle Questionnaire" data
-      </Button> */}
-      {/* <a href="#" className="text-sm text-white underline">
-        View all
-      </a> */}
     </div>
   );
 };
