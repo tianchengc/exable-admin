@@ -47,6 +47,7 @@ const ScheduleInfo = ({ data }) => {
             style={{
               backgroundColor: '#F44336',
               borderColor: '#F44336',
+              borderRadius: '20px',
             }}
           >
             View

@@ -26,7 +26,7 @@ const Edit_Info_Card = () => {
             style={{
               height: '120px',
               borderRadius: '20px',
-              padding: '10px',
+              // padding: '10px',
             }}
           />
           <Space
@@ -36,7 +36,15 @@ const Edit_Info_Card = () => {
               justifyContent: 'center',
             }}
           >
-            <Button type="primary" style={{ borderRadius: '20px' }}>
+            <Button
+              type="primary"
+              style={{
+                borderRadius: '20px',
+                backgroundColor: '#fff',
+                borderColor: '#fff',
+                color: '#11cae2',
+              }}
+            >
               Send
             </Button>
           </Space>

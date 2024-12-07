@@ -28,10 +28,26 @@ const Class_Info_Card = () => {
             align="center"
             style={{ paddingTop: '5px' }}
           >
-            <Button type="primary" style={{ borderRadius: '20px' }}>
+            <Button
+              type="primary"
+              style={{
+                borderRadius: '20px',
+                backgroundColor: '#fff',
+                borderColor: '#fff',
+                color: '#11cae2',
+              }}
+            >
               Reschedule Class
             </Button>
-            <Button type="primary" style={{ borderRadius: '20px' }}>
+            <Button
+              type="primary"
+              style={{
+                borderRadius: '20px',
+                backgroundColor: '#fff',
+                borderColor: '#fff',
+                color: '#11cae2',
+              }}
+            >
               Cancel Class
             </Button>
           </Space>
