@@ -1,6 +1,22 @@
 import { Card, Button, Space } from 'antd';
+import { useState } from 'react';
 
 const Class_Info_Card = () => {
+  const [hoveredButton, setHoveredButton] = useState(null);
+  const [clickedButton, setClickedButton] = useState(null);
+
+  const getButtonStyles = buttonName => {
+    const isHovered = hoveredButton === buttonName;
+    const isClicked = clickedButton === buttonName;
+
+    return {
+      backgroundColor: isHovered || isClicked ? '#11cae2' : '#fff',
+      borderColor: isHovered || isClicked ? '#11cae2' : '#fff',
+      color: isHovered || isClicked ? '#fff' : '#11cae2',
+      borderRadius: '20px',
+    };
+  };
+
   return (
     <Card
       style={{
@@ -30,23 +46,31 @@ const Class_Info_Card = () => {
           >
             <Button
               type="primary"
-              style={{
-                borderRadius: '20px',
-                backgroundColor: '#fff',
-                borderColor: '#fff',
-                color: '#11cae2',
-              }}
+              style={getButtonStyles('Reschedule')}
+              onMouseEnter={() => setHoveredButton('Reschedule')}
+              onMouseLeave={() => setHoveredButton(null)}
+              onClick={() => setClickedButton('Reschedule')}
+              // style={{
+              //   borderRadius: '20px',
+              //   backgroundColor: '#fff',
+              //   borderColor: '#fff',
+              //   color: '#11cae2',
+              // }}
             >
               Reschedule Class
             </Button>
             <Button
               type="primary"
-              style={{
-                borderRadius: '20px',
-                backgroundColor: '#fff',
-                borderColor: '#fff',
-                color: '#11cae2',
-              }}
+              style={getButtonStyles('Cancel')}
+              onMouseEnter={() => setHoveredButton('Cancel')}
+              onMouseLeave={() => setHoveredButton(null)}
+              onClick={() => setClickedButton('Cancel')}
+              // style={{
+              //   borderRadius: '20px',
+              //   backgroundColor: '#fff',
+              //   borderColor: '#fff',
+              //   color: '#11cae2',
+              // }}
             >
               Cancel Class
             </Button>
