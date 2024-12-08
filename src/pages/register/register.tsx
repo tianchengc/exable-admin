@@ -43,45 +43,24 @@ function Register(): JSX.Element {
     const [selectedProvince, setSelectedProvince] = useState<string>("");
     const [role, setRole] = useState<string>("");
 
+    const inputFields = [
+        { type: "text", placeholder: "*First name", id: "firstName", value: firstName, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value), required: true },
+        { type: "text", placeholder: "*Last name", id: "lastName", value: lastName, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setLastName(e.target.value), required: true },
+        { type: "text", placeholder: "City", id: "city", value: city, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setCity(e.target.value) },
+        { type: "text", placeholder: "*Province", id: "province", value: selectedProvince, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setSelectedProvince(e.target.value), required: true, list: "province" },
+        { type: "number", placeholder: "Phone", id: "phoneNumber", value: phoneNumber, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setPhoneNumber(e.target.value), pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}" },
+        { type: "text", placeholder: "*Role in organisation", id: "role", value: role, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setRole(e.target.value), required: true, list: "role" },
+    ];
+
     return (
         <>
             <div id="containerParent">
                 <div id="formContainer">
                     <h3>Create my profile</h3>
                     <form action="">
-                        <InputField
-                            type="text"
-                            placeholder="*First name"
-                            id="firstName"
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
-                            required
-                        />
-                        <InputField
-                            type="text"
-                            placeholder="*Last name"
-                            id="lastName"
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
-                            required
-                        />
-                        <br />
-                        <InputField
-                            type="text"
-                            placeholder="City"
-                            id="city"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                        />
-                        <InputField
-                            type="text"
-                            placeholder="*Province"
-                            id="province"
-                            value={selectedProvince}
-                            onChange={(e) => setSelectedProvince(e.target.value)}
-                            required
-                            list="province"
-                        />
+                        {inputFields.map((field, index) => (
+                            <InputField key={index} {...field} />
+                        ))}
                         <datalist id="province">
                             <option value="Ontario" />
                             <option value="Quebec" />
@@ -97,24 +76,6 @@ function Register(): JSX.Element {
                             <option value="Yukon" />
                             <option value="Nunavut" />
                         </datalist>
-                        <br />
-                        <InputField
-                            type="number"
-                            placeholder="Phone"
-                            id="phoneNumber"
-                            value={phoneNumber}
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                        />
-                        <InputField
-                            type="text"
-                            placeholder="*Role in organisation"
-                            id="role"
-                            value={role}
-                            onChange={(e) => setRole(e.target.value)}
-                            required
-                            list="role"
-                        />
                         <datalist id="role">
                             <option value="Abilities Centre" />
                             <option value="Brock Functional Inclusive Training Centre (BFIT)" />
