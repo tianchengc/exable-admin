@@ -1,22 +1,17 @@
-// import { Link } from 'react-router-doc
-// TO DO: search filter on name
-// TO DO: Styling
 import { useRef, useState } from 'react';
 import type { InputRef, TableColumnsType, TableColumnType } from 'antd';
 import type { FilterDropdownProps } from 'antd/es/table/interface';
-import { Button, Input, Space, Table, DatePicker, Avatar } from 'antd';
-import { SearchOutlined, CloseOutlined } from '@ant-design/icons';
+import { Button, Input, Space, Table, Avatar } from 'antd';
+import { SearchOutlined, CloseOutlined, MailOutlined } from '@ant-design/icons';
 
-function Participants() {
+function StaffList() {
   interface DataType {
     id: number;
     img: string;
     name: string;
-    age: number;
-    chronic_condition: string;
-    caat: number;
-    mmrc: number;
-    memberSince: string;
+    profession: string;
+    phone: number;
+    email: string;
   }
 
   type DataIndex = keyof DataType;
@@ -26,57 +21,50 @@ function Participants() {
       id: 1,
       img: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1',
       name: 'Bruce Waye',
-      age: 23,
-      chronic_condition: 'chronic diesease',
-      caat: 0.7,
-      mmrc: 1,
-      memberSince: '01-02-2017',
+      profession: 'CRE',
+      phone: 647888999,
+      email: 'bruce.wayne@exable.com',
     },
     {
       id: 2,
       img: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Jack',
       name: 'Ichigo Kurosaki',
-      age: 39,
-      chronic_condition: 'chronic diesease',
-      caat: 0.7,
-      mmrc: 1,
-      memberSince: '01-02-2017',
+      profession: 'physiotherapist',
+      phone: 647888999,
+      email: 'ichigo.kurosaki@exable.com',
     },
     {
       id: 3,
       img: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Easton',
       name: 'John Doe',
-      age: 53,
-      chronic_condition: 'chronic diesease',
-      caat: 0.7,
-      mmrc: 1,
-      memberSince: '01-02-2017',
+      profession: 'cinesiologist',
+      phone: 647888999,
+      email: 'john.doe@exable.com',
     },
     {
       id: 4,
       img: 'https://api.dicebear.com/9.x/adventurer/svg?seed=Emery',
       name: 'Oliver Khan',
-      age: 89,
-      chronic_condition: 'chronic diesease',
-      caat: 0.7,
-      mmrc: 1,
-      memberSince: '01-02-2017',
+      profession: 'pulmonologist',
+      phone: 647888999,
+      email: 'oliver.khan@exable.com',
     },
     {
       id: 5,
       img: 'https://api.dicebear.com/9.x/notionists/svg?seed=Easton',
       name: 'John Wick',
-      age: 55,
-      chronic_condition: 'chronic diesease',
-      caat: 0.7,
-      mmrc: 1,
-      memberSince: '01-02-2017',
+      profession: 'cardiologist',
+      phone: 647888999,
+      email: 'john.wick@exable.com',
     },
   ]);
 
   const [searchText, setSearchText] = useState('');
   const [searchedColumn, setSearchedColumn] = useState('');
   const searchInput = useRef<InputRef>(null);
+
+  const staffCount = mockData.length;
+  console.log(staffCount);
 
   const handleSearch = (
     selectedKeys: string[],
@@ -232,48 +220,62 @@ function Participants() {
       ...getColumnSearchProps('name'),
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      defaultSortOrder: 'descend',
-      sorter: (a, b) => a.age - b.age,
+      title: 'Profession',
+      dataIndex: 'profession',
+      key: 'profession',
+      width: '20%',
+      filters: [
+        { text: 'CRE', value: 'CRE' },
+        { text: 'Ontologist', value: 'Ontologist' },
+        { text: 'Cinesiologist', value: 'cinesiologist' },
+        { text: 'Pulmonologist', value: 'pulmonologist' },
+        { text: 'Cardiologist', value: 'cardiologist' },
+      ],
+      onFilter: (value, record) => {
+        return record.profession === value;
+      },
     },
     {
-      title: 'Chronic Condition',
-      dataIndex: 'chronic_condition',
-      key: 'chronic_condition',
+      title: 'Phone',
+      dataIndex: 'phone',
+      key: 'phone',
       width: '20%',
     },
     {
-      title: 'CAAT',
-      dataIndex: 'caat',
-      key: 'caat',
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
     },
     {
-      title: 'mMRC',
-      dataIndex: 'mmrc',
-      key: 'mmrc',
-    },
-    {
-      title: 'Member Since',
-      dataIndex: 'memberSince',
-      key: 'memberSince',
-      width: '20%',
+      title: '',
+      dataIndex: 'email',
+      key: 'email',
+      render: (text: string, record: DataType) => {
+        return (
+          <a
+            onClick={() => {
+              console.log(`email to participant`);
+            }}
+          >
+            <MailOutlined className="text-secondary-color text-2xl" />
+          </a>
+        );
+      },
     },
   ];
 
   return (
     <div className="bg-background-color flex-relative flex-col gap-4 justify-center w-full p-8 overflow-y-scroll">
-      <div className="flex justify-between mb-8">
-        <h1 className="text-2xl font-bold text-primary-color">Participants</h1>
-        <DatePicker.RangePicker />
+      <div className="flex justify-between">
+        <h1 className="text-2xl font-bold text-primary-color">Staff</h1>
+        <p>Total Staff: {staffCount}</p>
       </div>
       <Table<DataType> dataSource={mockData} columns={columns} />
     </div>
   );
 }
 
-export default Participants;
+export default StaffList;
 
 /* Use this with API
   useEffect(()=>{

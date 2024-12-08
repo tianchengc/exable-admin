@@ -22,6 +22,7 @@ import SchedulePage from './pages/schedule';
 import Exercise from './pages/exercise-page/Exercise';
 import { ExerciseLibraryPage } from './pages/exercise-library';
 import { Dashboard } from './pages/dashboard';
+import StaffList from './pages/staff/staffList';
 
 export default function App() {
   return (
@@ -35,8 +36,14 @@ export default function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
-                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
-                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
+                <Route
+                  path="/participants/:id"
+                  element={<ParticipantProfilePage />}
+                />
+                <Route
+                  path="/exercise_library"
+                  element={<ExerciseLibraryPage />}
+                />
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
@@ -46,6 +53,7 @@ export default function App() {
                 <Route path="/news" element={<NewsManage />} />
                 <Route path="/participants" element={<Participants />} />
                 <Route path="/account" element={<Account />} />
+                <Route path="/staff" element={<StaffList />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/exercise-library" element={<Exercise />} />
