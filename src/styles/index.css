@@ -29,3 +29,11 @@ code {
   flex-grow: 1;
   height: 100vh;
 }
+
+.dropdown {
+  background-image: url('../assets/drop_down.svg');
+  background-repeat: no-repeat;
+  appearance: none;
+  background-position-x: 95%;
+  background-position-y: center;
+}
