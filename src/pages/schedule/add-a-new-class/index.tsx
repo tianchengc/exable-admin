@@ -2,8 +2,9 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Modal, Select, TimePicker } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { useState } from 'react';
+import './style.css';
 
-export const StaffSchedule = () => {
+export const Add_a_New_Class = () => {
   const format = 'HH:mm';
 
   const { Option } = Select;
@@ -106,4 +107,4 @@ export const StaffSchedule = () => {
   );
 };
 
-export default StaffSchedule;
+export default Add_a_New_Class;
