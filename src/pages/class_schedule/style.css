@@ -1,15 +1,15 @@
-.class-schedule-page {
+.class-schedule-page_c {
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: rgba(185, 226, 239, 1);
 }
   
-.schedule-content-1 {
+.schedule-content-1_c {
   display: flex;
   background-color: rgba(185, 226, 239, 1);
 }
   
-.schedule-title {
+.schedule-title_c {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -18,7 +18,7 @@
   vertical-align: top;
 }
 
-.button-and-grid {
+.button-and-grid_c {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -29,7 +29,7 @@
   max-width: 73%; 
 }
   
-.add-class-button {
+.add-class-button_c {
   width: 260px;
   height: 50.5px;
   border-radius: 8px;
@@ -39,26 +39,26 @@
   margin-bottom: 20px;
 }
   
-.add-class-button:hover {
+.add-class-button_c:hover {
   background-color: #000000;
 }
   
-.weekly-schedule {
+.weekly-schedule_c {
     border-radius: 5px;
     color: rgba(255, 255, 255, 1);
 }
   
-.schedule-grid {
+.schedule-grid_c {
   display: grid;
   grid-template-columns: 80px repeat(5, 1fr);
   overflow-x: auto; 
 }
   
-.schedule-grid-header {
+.schedule-grid-header_c {
   display: contents;
 }
   
-.time-label, .weekday {
+.time-label_c, .weekday_c {
   background-color: rgba(73, 160, 187, 1);
   padding: 10px;
   font-weight: bold;
@@ -69,11 +69,11 @@
 
 
   
-.schedule-grid-body {
+.schedule-grid-body_c {
   display: contents;
 }
   
-.time-slot {
+.time-slot_c {
   padding: 10px;
   border-bottom: 1px solid rgba(73, 160, 187, 1);
   background-color: rgba(73, 160, 187, 1);
@@ -84,7 +84,7 @@
   
 }
   
-.class-cell {
+.class-cell_c {
   width: 280px;
   height: 71px;
   margin: 10px;
@@ -92,7 +92,7 @@
   border-radius: 8px;
 }
   
-.class-card {
+.class-card_c {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
@@ -102,32 +102,32 @@
   flex-direction: column;
 }
   
-.class-name {
+.class-name_c {
   font-size: 16px;
   font-weight: 400;
   color: rgba(0, 0, 0, 1);
   margin-bottom: 5px;
 }
   
-.session-info {
+.session-info_c {
   font-size: 14px;
   font-weight: 400;
   color: rgba(46, 194, 216, 1);
   margin-bottom: 5px; 
 }
 
-.session-participants-wrapper {
+.session-participants-wrapper_c {
   display: flex;
   gap: 20px;
 }
   
-.participants-text {
+.participants-text_c {
   font-size: 14px;
   font-weight: 400;
   color: rgba(46, 194, 216, 1);
 }
   
-.view-button-1 {
+.view-button-1_c {
   background: #d9534f;
   color: #ffffff;
   font-size: 14px;
@@ -141,22 +141,22 @@
 
 /*class detail part*/
 
-.detail-title {
+.detail-title_c {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 
-.class-info {
+.class-info_c {
   background-color: rgba(185, 226, 239, 1);
   padding: 20px;
   border-radius: 17px;
   flex: 1;
 }
 
-.reschedule-button,
-.cancel-button {
+.reschedule-button_c,
+.cancel-button_c {
   margin-top: 10px;
   display: flex;
  
@@ -173,14 +173,14 @@
 
 }
 
-.edit-notification {
+.edit-notification_c {
   background-color: rgba(185, 226, 239, 1);
   padding: 20px;
   border-radius: 10px;
  
 }
 
-.edit-notification textarea {
+.edit-notification_c textarea {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
@@ -189,7 +189,7 @@
   resize: none;
 }
 
-.send-button {
+.send-button_c {
   background-color: #ffffff;
   color: rgb(130, 193, 213);
   margin-left: 80px;
@@ -202,7 +202,7 @@
 
 }
 
-.participant-list {
+.participant-list_c {
   background-color: rgba(73, 160, 187, 1);
   padding: 0px;
   border-radius: 10px;
@@ -215,7 +215,7 @@
   overflow-y: auto; 
 }
 
-.participant-item {
+.participant-item_c {
   display: flex;
   align-items: center;
   background-color: #e0f7fa;
@@ -223,7 +223,7 @@
   border-radius: 5px;
 }
 
-.participant-avatar {
+.participant-avatar_c {
   width: 40px;
   height: 40px;
   background-color: #ccc;
@@ -231,20 +231,20 @@
   margin-right: 10px;
 }
 
-.participant-info {
+.participant-info_c {
   flex: 1;
 }
 
-.participant-name {
+.participant-name_c {
   font-weight: bold;
 }
 
-.participant-condition {
+.participant-condition_c {
   color: #0288d1;
 }
 
 
-.edit-participants-button {
+.edit-participants-button_c {
   background-color: #d9534f;
   color: #ffffff;
   font-size: 18px;
