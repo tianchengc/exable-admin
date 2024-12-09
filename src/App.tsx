@@ -21,6 +21,7 @@ import SchedulePage from './pages/schedule';
 import Staff_Schedule from './pages/schedule/schedule-by-staff';
 import Exercise from './pages/exercise-page/Exercise';
 import { ExerciseLibraryPage } from './pages/exercise-library';
+import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
 import StaffList from './pages/staff/staffList';
 
@@ -56,6 +57,7 @@ export default function App() {
                 <Route path="/staff" element={<StaffList />} />
                 <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
+                <Route path="/reports" element={<ReportsPage />} />
                 <Route path="/staff_schedule" element={<Staff_Schedule />} />
                 <Route path="/exercise-library" element={<Exercise />} />
                 <Route
