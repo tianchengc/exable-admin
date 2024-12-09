@@ -55,7 +55,6 @@ export default function App() {
                 <Route path="/participants" element={<Participants />} />
                 <Route path="/account" element={<Account />} />
                 <Route path="/staff" element={<StaffList />} />
-                <Route path="/staff_schedule" element={<StaffSchedule />} />
                 <Route path="/class_schedule" element={<ClassSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/staff_schedule" element={<Staff_Schedule />} />
