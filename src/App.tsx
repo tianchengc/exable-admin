@@ -19,8 +19,9 @@ import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
 import { StaffSchedule } from './pages/staff-schedule';
 import SchedulePage from './pages/schedule';
-import Register from './pages/register/register';
 import { ExerciseLibraryPage } from './pages/exercise-library';
+import Register from './pages/register/register';
+
 
 export default function App() {
   return (
@@ -36,6 +37,26 @@ export default function App() {
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />
                 <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
+ * - /course: The course management page.
+ * - /participants/:id: The participant profile page.
+ * - /exercise_library: The exercise library page.
+ * - /course/:id: The course edit page.
+ * - /audit: The kin audition page.
+ * - /kin: The kin list page.
+ * - /admin: The admin list page.
+ * - /resource: The resource management page.
+ * - /knowledge: The knowledge management page.
+ * - /news: The news management page.
+ * - /participants: The participants page.
+ * - /account: The account page.
+ * - /staff_schedule: The staff schedule page.
+ * - /schedule: The schedule page.
+ * - /: The main page, which renders the correct page based on the current URL.
+ * - /participants/:id: The participant profile page.
+ *
+ * All other URLs will render the 404 page.
+ */
+
                 <Route path="/course/:id" element={<CourseEdit />} />
                 <Route path="/audit" element={<KinAudition />} />
                 <Route path="/kin" element={<KinList />} />
