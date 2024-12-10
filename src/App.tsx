@@ -25,6 +25,7 @@ import Register from './pages/register/register';
 import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
 import StaffList from './pages/staff/staffList';
+import TestPage from './pages/class-details/TestPage';
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/register" element={<Register />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
+                <Route path="/test" element={<TestPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />
