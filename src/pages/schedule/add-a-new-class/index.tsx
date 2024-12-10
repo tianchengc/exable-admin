@@ -7,7 +7,7 @@ import './style.css';
 export const Add_a_New_Class = () => {
   const format = 'HH:mm';
 
-  // State or hooks
+  // State / hooks
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Event handlers

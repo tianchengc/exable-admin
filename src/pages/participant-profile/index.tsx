@@ -23,25 +23,26 @@ export const ParticipantProfilePage: FunctionComponent = () => {
   };
 
   return (
-    <div className=" w-full h-full flex justify-between p-8 bg-background-color">
-      <div>
-        <div className="flex gap-x-5">
-          <UpcomingSession
-            sessionTitle="Session 3"
-            sessionDate="July 6th"
-            sessionTime="10:00"
-          />
+    <div className="flex flex-col p-5 w-screen gap-y-8 bg-background-color  overflow-scroll ">
+      <div className="flex gap-x-5 ">
+        <UpcomingSession
+          sessionTitle="Session 3"
+          sessionDate="July 6th"
+          sessionTime="10:00"
+        />
 
-          <Progress />
-        </div>
+        <Progress />
 
-        <ProfileSummary />
-
-        <ProgramInformation />
+        <PerformanceMeasure data={performanceData} />
       </div>
 
-      <div className="flex flex-col justify-between">
-        <PerformanceMeasure data={performanceData} />
+      <div className="flex gap-x-5 ">
+        <div className="flex flex-col gap-4 w-[582px]">
+          <ProfileSummary />
+
+          <ProgramInformation />
+        </div>
+
         <QuestionnaireCompletion />
       </div>
     </div>
