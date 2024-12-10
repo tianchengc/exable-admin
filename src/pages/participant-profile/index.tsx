@@ -4,8 +4,7 @@ import Progress from '../../components/progress';
 import ProfileSummary from '../../components/profile-summary';
 import ProgramInformation from '../../components/program-information';
 import QuestionnaireCompletion from '../../components/questionnaire-completion';
-import { PerformanceMeasures } from './components/performance-measures-block';
-
+import { PerformanceMeasure } from '../../components/performance-measure';
 
 export const ParticipantProfilePage: FunctionComponent = () => {
   const performanceData = {
@@ -24,22 +23,27 @@ export const ParticipantProfilePage: FunctionComponent = () => {
   };
 
   return (
-    <div className="session-preview">
-      <UpcomingSession
-        sessionTitle="Session 3"
-        sessionDate="July 6th"
-        sessionTime="10:00"
-      />
+    <div className=" w-full h-full flex justify-between p-8 bg-background-color">
+      <div>
+        <div className="flex gap-x-5">
+          <UpcomingSession
+            sessionTitle="Session 3"
+            sessionDate="July 6th"
+            sessionTime="10:00"
+          />
 
-      <Progress />
+          <Progress />
+        </div>
 
-      <PerformanceMeasures data={performanceData} />
+        <ProfileSummary />
 
-      <ProfileSummary />
+        <ProgramInformation />
+      </div>
 
-      <ProgramInformation />
-
-      <QuestionnaireCompletion />
+      <div className="flex flex-col justify-between">
+        <PerformanceMeasure data={performanceData} />
+        <QuestionnaireCompletion />
+      </div>
     </div>
   );
 };
