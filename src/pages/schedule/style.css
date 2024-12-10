@@ -54,7 +54,7 @@
   font-weight: 500;
 }
 
-.view-button {
+.view-button_lance {
   background-color: #e74c3c;
   color: white;
   border: none;
@@ -64,7 +64,7 @@
   transition: background-color 0.3s ease;
 }
 
-.view-button:hover {
+.view-button_lance:hover {
   background-color: #c0392b;
 }
 

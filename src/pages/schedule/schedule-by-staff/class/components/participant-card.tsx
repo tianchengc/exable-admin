@@ -1,5 +1,5 @@
 import { MailOutlined } from '@ant-design/icons';
-import { Avatar, Card } from 'antd';
+import { Avatar, Button, Card } from 'antd';
 
 const Participant_List = ({ data }) => {
   return (
@@ -33,12 +33,16 @@ const Participant_List = ({ data }) => {
             <div style={{ color: '#11cae2' }}>{data.symptom}</div>
           </div>
         </div>
-        <MailOutlined
+        <Button
+          type="primary"
+          shape="circle"
           style={{
-            color: '#11cae2',
+            backgroundColor: '#11cae2',
+            borderColor: '#11cae2',
             fontSize: '30px',
           }}
-        />
+          icon={<MailOutlined />}
+        ></Button>
       </>
     </Card>
   );
