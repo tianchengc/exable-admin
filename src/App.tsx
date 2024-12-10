@@ -17,10 +17,13 @@ import Participants from './pages/participants';
 import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
-import { StaffSchedule } from './pages/staff-schedule';
+import ClassSchedule from './pages/class_schedule';
 import SchedulePage from './pages/schedule';
+import Staff_Schedule from './pages/schedule/schedule-by-staff';
 import { ExerciseLibraryPage } from './pages/exercise-library';
+import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
+import StaffList from './pages/staff/staffList';
 
 export default function App() {
   return (
@@ -51,14 +54,16 @@ export default function App() {
                 <Route path="/news" element={<NewsManage />} />
                 <Route path="/participants" element={<Participants />} />
                 <Route path="/account" element={<Account />} />
-                <Route path="/staff_schedule" element={<StaffSchedule />} />
+                <Route path="/staff" element={<StaffList />} />
+                <Route path="/class_schedule" element={<ClassSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
-
+                <Route path="/reports" element={<ReportsPage />} />
+                <Route path="/staff_schedule" element={<Staff_Schedule />} />
+                <Route path="/exercise-library" element={<Exercise />} />
                 <Route
                   path="/participants/:id"
                   element={<ParticipantProfilePage />}
                 />
-
                 <Route path="*" element={<NoMatch />} />
               </Route>
             </Routes>

@@ -93,7 +93,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-input {
+.form-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
