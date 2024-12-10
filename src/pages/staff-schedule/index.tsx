@@ -6,7 +6,7 @@ import { useState } from 'react';
 export const StaffSchedule = () => {
   const format = 'HH:mm';
 
-  // State or hooks
+  // State / hooks
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Event handlers
