@@ -30,9 +30,9 @@ export default function App() {
         <Provider>
           <BrowserRouter>
             <Routes>
+            <Route path="/register" element={<Register />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
-                <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
                 <Route path="/participants/:id" element={<ParticipantProfilePage />} />
