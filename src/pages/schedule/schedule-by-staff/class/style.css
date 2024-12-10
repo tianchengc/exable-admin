@@ -1,0 +1,78 @@
+.class-card {
+  position: relative;
+  background-color: rgb(64, 160, 184);
+  margin-left: 40px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  width: 1600px;
+  height: 400px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.class-menu {
+  display: flex;
+}
+
+.class-info {
+  margin-left: 80px;
+}
+
+.class-info-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.edit-info {
+  margin-left: 60px;
+}
+
+.edit-info-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.participant-list {
+  margin-left: 60px;
+}
+
+.participant-list-title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.participant-bar {
+  height: 235px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* scrollbar-width: none; */
+}
+
+.participant-bar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.participant-bar:hover::-webkit-scrollbar {
+  width: 10px;
+}
+
+.participant-bar:hover::-webkit-scrollbar-thumb {
+  background: #033522;
+  border-radius: 3px;
+}
+
+.participant-bar:hover::-webkit-scrollbar-track {
+  background: #a4dbec;
+}

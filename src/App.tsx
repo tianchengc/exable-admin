@@ -17,10 +17,15 @@ import Participants from './pages/participants';
 import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match';
-import { StaffSchedule } from './pages/staff-schedule';
+import ClassSchedule from './pages/class_schedule';
 import SchedulePage from './pages/schedule';
+import Staff_Schedule from './pages/schedule/schedule-by-staff';
 import { ExerciseLibraryPage } from './pages/exercise-library';
+import Register from './pages/register/register';
+import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
+import StaffList from './pages/staff/staffList';
+import TestPage from './pages/class-details/TestPage';
 
 export default function App() {
   return (
@@ -29,8 +34,33 @@ export default function App() {
         <Provider>
           <BrowserRouter>
             <Routes>
+            <Route path="/register" element={<Register />} />
               <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
+                <Route path="/test" element={<TestPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/course" element={<CourseManage />} />
+                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
+                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
+ * - /course: The course management page.
+ * - /participants/:id: The participant profile page.
+ * - /exercise_library: The exercise library page.
+ * - /course/:id: The course edit page.
+ * - /audit: The kin audition page.
+ * - /kin: The kin list page.
+ * - /admin: The admin list page.
+ * - /resource: The resource management page.
+ * - /knowledge: The knowledge management page.
+ * - /news: The news management page.
+ * - /participants: The participants page.
+ * - /account: The account page.
+ * - /staff_schedule: The staff schedule page.
+ * - /schedule: The schedule page.
+ * - /: The main page, which renders the correct page based on the current URL.
+ * - /participants/:id: The participant profile page.
+ *
+ * All other URLs will render the 404 page.
+ */
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
@@ -51,14 +81,15 @@ export default function App() {
                 <Route path="/news" element={<NewsManage />} />
                 <Route path="/participants" element={<Participants />} />
                 <Route path="/account" element={<Account />} />
-                <Route path="/staff_schedule" element={<StaffSchedule />} />
+                <Route path="/staff" element={<StaffList />} />
+                <Route path="/class_schedule" element={<ClassSchedule />} />
                 <Route path="/schedule" element={<SchedulePage />} />
-
+                <Route path="/reports" element={<ReportsPage />} />
+                <Route path="/staff_schedule" element={<Staff_Schedule />} />
                 <Route
                   path="/participants/:id"
                   element={<ParticipantProfilePage />}
                 />
-
                 <Route path="*" element={<NoMatch />} />
               </Route>
             </Routes>
