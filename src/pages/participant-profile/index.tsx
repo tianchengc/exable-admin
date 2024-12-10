@@ -23,8 +23,8 @@ export const ParticipantProfilePage: FunctionComponent = () => {
   };
 
   return (
-    <div className=" w-full h-screen flex flex-col p-6 gap-y-8 bg-background-color ">
-      <div className="flex gap-x-5">
+    <div className="flex flex-col p-5 w-screen gap-y-8 bg-background-color  overflow-scroll ">
+      <div className="flex gap-x-5 ">
         <UpcomingSession
           sessionTitle="Session 3"
           sessionDate="July 6th"
@@ -36,8 +36,8 @@ export const ParticipantProfilePage: FunctionComponent = () => {
         <PerformanceMeasure data={performanceData} />
       </div>
 
-      <div className="flex w-full">
-        <div className="flex flex-col gap-4 pr-20 w-[600px]">
+      <div className="flex gap-x-5 ">
+        <div className="flex flex-col gap-4 w-[582px]">
           <ProfileSummary />
 
           <ProgramInformation />

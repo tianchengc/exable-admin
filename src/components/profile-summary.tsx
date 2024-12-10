@@ -1,6 +1,6 @@
 const ProfileSummary = () => {
   return (
-    <div className="rounded-md w-[520px] px-4 bg-[#49A0BB] flex flex-col ">
+    <div className="rounded-md px-4 pb-2 bg-secondary-color ">
       <p className="text-white text-lg mt-2 font-bold">Profile Summary</p>
       <ProfileTextItem label={'Phone number:'} />
       <ProfileTextItem label={'Address:'} />
