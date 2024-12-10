@@ -21,6 +21,7 @@ import ClassSchedule from './pages/class_schedule';
 import SchedulePage from './pages/schedule';
 import Staff_Schedule from './pages/schedule/schedule-by-staff';
 import { ExerciseLibraryPage } from './pages/exercise-library';
+import Register from './pages/register/register';
 import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
 import StaffList from './pages/staff/staffList';
@@ -34,6 +35,30 @@ export default function App() {
             <Routes>
               <Route path="/signin" element={<SignIn />} />
               <Route path="/" element={<BaseLayout />}>
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/course" element={<CourseManage />} />
+                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
+                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
+ * - /course: The course management page.
+ * - /participants/:id: The participant profile page.
+ * - /exercise_library: The exercise library page.
+ * - /course/:id: The course edit page.
+ * - /audit: The kin audition page.
+ * - /kin: The kin list page.
+ * - /admin: The admin list page.
+ * - /resource: The resource management page.
+ * - /knowledge: The knowledge management page.
+ * - /news: The news management page.
+ * - /participants: The participants page.
+ * - /account: The account page.
+ * - /staff_schedule: The staff schedule page.
+ * - /schedule: The schedule page.
+ * - /: The main page, which renders the correct page based on the current URL.
+ * - /participants/:id: The participant profile page.
+ *
+ * All other URLs will render the 404 page.
+ */
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/course" element={<CourseManage />} />
