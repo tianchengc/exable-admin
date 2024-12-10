@@ -59,7 +59,6 @@ export default function App() {
                 <Route path="/schedule" element={<SchedulePage />} />
                 <Route path="/reports" element={<ReportsPage />} />
                 <Route path="/staff_schedule" element={<Staff_Schedule />} />
-                <Route path="/exercise-library" element={<Exercise />} />
                 <Route
                   path="/participants/:id"
                   element={<ParticipantProfilePage />}
