@@ -1,0 +1,236 @@
+/* Main container */
+.class-detail-container {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  height: 50vh;
+}
+
+/* View button */
+.view-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.view-button:hover {
+  background-color: #0056b3;
+}
+
+/* Detail panel */
+.detail-panel {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background-color: #609eb8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.detail-panel button {
+  height: 40px;
+}
+
+/* Class info */
+.big-class-info {
+  flex: 0 0 28%;
+  color: black;
+  position: relative;
+  text-align: right;
+}
+.class-info {
+  flex: 1;
+  padding: 10px;
+  background-color: #c1e0ed;
+  border-radius: 10px;
+  color: black;
+  text-align: left;
+  top: 20%;
+  margin-left: 3px !important;
+  position: absolute;
+  width: 100%;
+  height: 60%;
+}
+
+.big-class-info h1 {
+  margin-bottom: 10px;
+  color: white;
+  text-align: left;
+}
+
+.big-class-info .class-buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-left: 3px !important;
+}
+
+.big-class-info .class-buttons button {
+  flex: 1;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #d1e9f3;
+  color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  width: 10%;
+  height: 40px;
+}
+
+.big-class-info .class-buttons button:hover {
+  background-color: #a9d7e7;
+}
+
+/* Edit notification */
+.big-edit-notification {
+  flex: 0 0 28%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  width: 30%;
+}
+.edit-notification {
+  flex: 1;
+  padding: 10px;
+  background-color: #c1e0ed;
+  border-radius: 10px;
+  text-align: left;
+  position: absolute;
+  top: 20%;
+}
+
+.big-edit-notification h1 {
+  margin-bottom: 10px;
+  color: white;
+  text-align: left;
+}
+
+.big-edit-notification .edit-notification {
+  height: 60%;
+  width: 100%;
+}
+
+.big-edit-notification .edit-notification textarea {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.big-edit-notification button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #d1e9f3;
+  color: #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100px;
+  display: block;
+  text-align: center;
+}
+
+.big-edit-notification button:hover {
+  background-color: #a9d7e7;
+}
+
+/* Participant list */
+.big-participant-list {
+  flex: 0 0 44%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  width: 40%;
+}
+
+participant-list {
+  top: 20%;
+  position: absolute;
+  margin-left: 3px !important;
+}
+
+.participant-list {
+  margin-left: 0 !important;
+  overflow-y: auto;
+  height: 72%;
+}
+
+.big-participant-list h1 {
+  margin-bottom: 10px;
+  color: white;
+  text-align: left;
+}
+
+.big-participant-list .participant-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /*overflow-y: auto;*/
+}
+
+.big-participant-list .participant-list li {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.big-participant-list .participant-list .conditions {
+  display: block;
+  color: #007bff;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.big-participant-list .participant-list .email-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.big-participant-list .edit-participants {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #cb5850;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1%;
+  width: 100px;
+  display: block;
+  position: absolute;
+}
+
+.big-participant-list .edit-participants:hover {
+  background-color: #e3463b;
+}
