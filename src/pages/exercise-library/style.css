@@ -19,7 +19,7 @@
     background-color: #dc4e4a; 
     color: white;
     padding: 0.2rem 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: var(--round-radius);
     transition: background-color 0.3s;

@@ -2,11 +2,11 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Modal, Select, TimePicker } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { useState } from 'react';
+import './style.css';
 
-export const StaffSchedule = () => {
+export const Add_a_New_Class = () => {
   const format = 'HH:mm';
 
-  const { Option } = Select;
   // State or hooks
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -50,29 +50,16 @@ export const StaffSchedule = () => {
                 mode="multiple"
                 style={{ width: '45%' }}
                 placeholder="Class days"
-              >
-                <Option value="Monday" label="Monday">
-                  Monday
-                </Option>
-                <Option value="Tuesday" label="Tuesday">
-                  Tuesday
-                </Option>
-                <Option value="Wednesday" label="Wednesday">
-                  Wednesday
-                </Option>
-                <Option value="Thursday" label="Thursday">
-                  Thursday
-                </Option>
-                <Option value="Friday" label="Friday">
-                  Friday
-                </Option>
-                <Option value="Saturday" label="Saturday">
-                  Saturday
-                </Option>
-                <Option value="Sunday" label="Sunday">
-                  Sunday
-                </Option>
-              </Select>
+                options={[
+                  { label: 'Monday', value: 'monday' },
+                  { label: 'Tuesday', value: 'tuesday' },
+                  { label: 'Wednesday', value: 'wednesday' },
+                  { label: 'Thursday', value: 'thursday' },
+                  { label: 'Friday', value: 'friday' },
+                  { label: 'Saturday', value: 'saturday' },
+                  { label: 'Sunday', value: 'sunday' },
+                ]}
+              />
             </div>
 
             <div className="flex gap-x-48">
@@ -89,7 +76,7 @@ export const StaffSchedule = () => {
             </div>
 
             <div>
-              <TextArea placeholder="Class description" />
+              <TextArea placeholder="Class description" rows={6} />
             </div>
 
             <Button
@@ -106,4 +93,4 @@ export const StaffSchedule = () => {
   );
 };
 
-export default StaffSchedule;
+export default Add_a_New_Class;
