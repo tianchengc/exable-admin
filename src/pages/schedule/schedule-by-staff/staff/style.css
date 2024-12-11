@@ -1,4 +1,4 @@
-.staff-card {
+.staff-card_s {
   position: relative;
   background-color: rgb(64, 160, 184);
   margin-left: 40px;
@@ -10,7 +10,7 @@
   border-radius: 10px 10px 10px 10px;
 }
 
-.staff-info {
+.staff-info_s {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   margin: 0 auto;
 }
 
-.staff-info::after {
+.staff-info_s::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -31,7 +31,7 @@
   width: 90%;
 }
 
-.staff-avatar {
+.staff-avatar_s {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -39,37 +39,37 @@
   margin-left: 10px;
 }
 
-.staff-details {
+.staff-details_s {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   padding: 10px 10px;
 }
 
-.staff-name {
+.staff-name_s {
   font-size: 16px;
   font-weight: bold;
   margin-right: 200px;
   color: #fff;
 }
 
-.staff-schedule-date {
+.staff-schedule-date_s {
   font-size: 18px;
   margin: 0;
   color: #fff;
 }
 
-.left-arrow {
+.left-arrow_s {
   margin-right: 8px;
   color: #f01313;
 }
 
-.right-arrow {
+.right-arrow_s {
   margin-left: 8px;
   color: #f01313;
 }
 
-.schedule-info {
+.schedule-info_s {
   width: 90%;
   top: 0;
   left: 0;
@@ -83,7 +83,7 @@
   gap: 250px;
 }
 
-.time-slot {
+.time-slot_s {
   font-size: 18px;
   color: #fff;
   text-align: left;
@@ -92,12 +92,12 @@
   box-sizing: border-box;
 }
 
-.time {
+.time_s {
   padding-block: 20px;
   margin-bottom: 40px;
   box-sizing: border-box;
 }
 
-.single-schedule {
+.single-schedule_s {
   margin-left: 40px;
 }

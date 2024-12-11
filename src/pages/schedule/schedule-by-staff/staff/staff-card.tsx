@@ -59,33 +59,33 @@ export const Staff_Card = observer(() => {
   const [hoveredIndex, setIsHoveredIndex] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const dom = (
-    <div className="staff-card">
-      <div className="staff-info">
+    <div className="staff-card_s">
+      <div className="staff-info_s">
         <img
           src={staffInfo.avatar}
           alt="Staff Avatar"
-          className="staff-avatar"
+          className="staff-avatar_s"
         />
-        <div className="staff-details">
-          <p className="staff-name">{staffInfo.staffname}</p>
-          <p className="staff-schedule-date">
-            <button className="left-arrow">{'<'}</button>
+        <div className="staff-details_s">
+          <p className="staff-name_s">{staffInfo.staffname}</p>
+          <p className="staff-schedule-date_s">
+            <button className="left-arrow_s">{'<'}</button>
             {staffInfo.date}
-            <button className="right-arrow">{'>'}</button>
+            <button className="right-arrow_s">{'>'}</button>
             {/* <Add_a_New_Class /> */}
           </p>
         </div>
         <Add_a_New_Class />
       </div>
-      <div className="schedule-info">
-        <div className="time-slot">
+      <div className="schedule-info_s">
+        <div className="time-slot_s">
           {timeSlots.map((time, index) => (
-            <div className="time" key={index}>
+            <div className="time_s" key={index}>
               {time}
             </div>
           ))}
         </div>
-        <div className="single-schedule">
+        <div className="single-schedule_s">
           {scheduleData.map((item, index) => (
             <ScheduleInfo
               key={index}

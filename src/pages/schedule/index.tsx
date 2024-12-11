@@ -20,16 +20,30 @@ const SchedulePage: React.FC = () => {
           <div className="schedule-cards">
             <div className="schedule-card">
               <p className="card-title">Schedule by Staff</p>
-              <button className="view-button" onClick={() => handleNavigation('/staff_schedule')}>View</button>
+              <button
+                className="view-button_lance"
+                onClick={() => handleNavigation('/staff_schedule')}
+              >
+                View
+              </button>
             </div>
             <div className="schedule-card">
               <p className="card-title">Schedule of All Classes</p>
-              <button className="view-button" onClick={() => handleNavigation('/class_schedule')}>View</button>
+              <button
+                className="view-button_lance"
+                onClick={() => handleNavigation('/class_schedule')}
+              >
+                View
+              </button>
             </div>
           </div>
         </div>
         <div className="schedule-right">
-          <img src={scheduleImage} alt="Schedule Illustration" className="schedule-image" />
+          <img
+            src={scheduleImage}
+            alt="Schedule Illustration"
+            className="schedule-image"
+          />
         </div>
       </main>
     </div>
