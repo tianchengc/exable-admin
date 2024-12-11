@@ -77,12 +77,20 @@
   color: white;
 }
 
-.user-avatar {
+.user-avatar-image {
   width: 60px;
   height: 60px;
   background-color: #ccc;
   border-radius: 50%;
   margin-bottom: 10px;
+}
+
+.user-avatar_c {
+  /* width: 60px;
+  height: 60px; */
+  /* background-color: #ccc; */
+  border-radius: 50%;
+  /* margin-bottom: 10px; */
 }
 
 .text-white {
