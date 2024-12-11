@@ -50,12 +50,6 @@ const Class_Info_Card = () => {
               onMouseEnter={() => setHoveredButton('Reschedule')}
               onMouseLeave={() => setHoveredButton(null)}
               onClick={() => setClickedButton('Reschedule')}
-              // style={{
-              //   borderRadius: '20px',
-              //   backgroundColor: '#fff',
-              //   borderColor: '#fff',
-              //   color: '#11cae2',
-              // }}
             >
               Reschedule Class
             </Button>

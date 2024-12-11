@@ -1,4 +1,4 @@
-.class-card {
+.class-card_s {
   position: relative;
   background-color: rgb(64, 160, 184);
   margin-left: 40px;
@@ -10,15 +10,15 @@
   border-radius: 10px 10px 10px 10px;
 }
 
-.class-menu {
+.class-menu_s {
   display: flex;
 }
 
-.class-info {
+.class-info_s {
   margin-left: 80px;
 }
 
-.class-info-title {
+.class-info-title_s {
   font-size: 24px;
   font-weight: bold;
   padding-top: 20px;
@@ -27,11 +27,11 @@
   color: #fff;
 }
 
-.edit-info {
+.edit-info_s {
   margin-left: 60px;
 }
 
-.edit-info-title {
+.edit-info-title_s {
   font-size: 24px;
   font-weight: bold;
   padding-top: 20px;
@@ -40,11 +40,11 @@
   color: #fff;
 }
 
-.participant-list {
+.participant-list_s {
   margin-left: 60px;
 }
 
-.participant-list-title {
+.participant-list-title_s {
   font-size: 24px;
   font-weight: bold;
   padding-top: 20px;
@@ -53,26 +53,26 @@
   color: #fff;
 }
 
-.participant-bar {
+.participant-bar_s {
   height: 235px;
   overflow-y: scroll;
   overflow-x: hidden;
   /* scrollbar-width: none; */
 }
 
-.participant-bar::-webkit-scrollbar {
+.participant-bar_s::-webkit-scrollbar {
   width: 5px;
 }
 
-.participant-bar:hover::-webkit-scrollbar {
+.participant-bar_s:hover::-webkit-scrollbar {
   width: 10px;
 }
 
-.participant-bar:hover::-webkit-scrollbar-thumb {
+.participant-bar_s:hover::-webkit-scrollbar-thumb {
   background: #033522;
   border-radius: 3px;
 }
 
-.participant-bar:hover::-webkit-scrollbar-track {
+.participant-bar_s:hover::-webkit-scrollbar-track {
   background: #a4dbec;
 }

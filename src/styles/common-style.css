@@ -77,7 +77,7 @@
   color: white;
 }
 
-.user-avatar {
+.user-avatar-image {
   width: 60px;
   height: 60px;
   background-color: #ccc;
@@ -85,18 +85,30 @@
   margin-bottom: 10px;
 }
 
+.user-avatar_c {
+  /* width: 60px;
+  height: 60px; */
+  /* background-color: #ccc; */
+  border-radius: 50%;
+  /* margin-bottom: 10px; */
+}
+
 .text-white {
   color: white;
 }
 
 .sidebar-container {
-  background: linear-gradient(to bottom right, var(--secondary-color), var(--text-color));
+  background: linear-gradient(
+    to bottom right,
+    var(--secondary-color),
+    var(--text-color)
+  );
 }
 
 .sidebar-menu {
   display: vertical; /* vertical layout */
   align-items: center; /* vertical center alignment */
-  text-decoration: none; 
+  text-decoration: none;
   font-size: 16px;
   background-color: transparent;
 }
@@ -130,7 +142,7 @@
   font-size: var(--icon-size);
 }
 
-.btn{
+.btn {
   background-color: var(--primary-color);
   color: var(--text-color);
   border-radius: var(--round-radius);
