@@ -5,6 +5,7 @@ import ProgramInformation from '../../components/program-information';
 import Progress from '../../components/progress';
 import QuestionnaireCompletion from '../../components/questionnaire-completion';
 import { PerformanceMeasure } from '../../components/performance-measure';
+import Header from './components/header';
 
 export const ParticipantProfilePage: FunctionComponent = () => {
   const performanceData = {
@@ -24,6 +25,8 @@ export const ParticipantProfilePage: FunctionComponent = () => {
 
   return (
     <div className="flex flex-col p-5 w-screen gap-y-8 bg-background-color  overflow-scroll ">
+      <Header />
+
       <div className="flex gap-x-5 ">
         <UpcomingSession
           sessionTitle="Session 3"
