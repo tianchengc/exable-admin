@@ -10,15 +10,18 @@ const Header = () => {
           <ArrowLeftOutlined className="mr-1" /> Back to participant list
         </Link>
       </p>
-      <section className="flex justify-between border border-[silver] bg-header rounded-md p-6 px-10">
+      <section className="flex justify-between items-center border border-[silver] bg-header rounded-md p-6 px-10">
+        <div className="w-12 h-12 rounded-full bg-secondary-color -mr-8" />
         <p className="font-bold">Patricia Bucket</p>
-        <p className="text-sm">Age</p>
-        <p className="text-sm">Gender</p>
-        <p className="text-sm">Chronic condition</p>
-        <p className="text-sm">[CAAT]</p>
-        <p className="text-sm">[mMRC]</p>
-        <p className="text-sm">Participant since</p>
-        <Button className="bg-background-color">Message</Button>
+        <p className="text-xs">Age</p>
+        <p className="text-xs">Gender</p>
+        <p className="text-xs">Chronic condition</p>
+        <p className="text-xs">[CAAT]</p>
+        <p className="text-xs">[mMRC]</p>
+        <p className="text-xs text-secondary-color">Participant since</p>
+        <Button className="bg-background-color rounded-full text-secondary-color border-none">
+          Message
+        </Button>
       </section>
     </header>
   );
