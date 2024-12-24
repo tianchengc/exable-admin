@@ -1,0 +1,27 @@
+const participants = [
+    { name: 'Richard Brown', conditions: ['COPD'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar' },
+    { name: 'Richard Brown', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar' },
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Richard Brown', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar' },
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Richard Brown', conditions: ['COPD'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Richard Brown', conditions: ['COPD'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Richard Brown', conditions: ['COPD'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Richard Brown', conditions: ['COPD'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Richard Brown', conditions: ['COPD'] ,avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Tim Johnson', conditions: ['COPD'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar'},
+    { name: 'Trish Lee', conditions: ['COPD', 'Asthma'],avatar: 'https://via.placeholder.com/50/000000/FFFFFF/?text=Avatar' },
+  ];
+  
+  export default participants;
