@@ -1,9 +1,9 @@
-body {
+#containerParent body {
     background-color: #e6f7ff;
     margin: 0;
 }
 
-input {
+#containerParent input {
     border-radius: 25px;
     border: 1px solid #ccc;
     padding: 10px;
@@ -12,7 +12,7 @@ input {
     margin-left: 25px;
 } 
 
-input::placeholder {
+#containerParent input::placeholder {
     color: rgba(73, 160, 187, 1);
     padding-left: 8px;
 }
@@ -28,11 +28,11 @@ input::placeholder {
     top: 17rem;
 }
 
- #saveBtn {
+#containerParent #saveBtn {
     position:absolute;
 } 
 
-h3 {
+#containerParenth3 {
     width: 50%;
     display: block;
     font-weight: normal;
@@ -60,10 +60,6 @@ h3 {
     text-align: right;
 }
 
-img {
-    margin-right: 12rem;
-}
-
 /* Responsive Design: Media Queries */
 @media (max-width: 768px) {
     #containerParent {
@@ -85,7 +81,7 @@ img {
         margin-right: 0;
     }
 
-    input {
+    #containerParentinput {
         width: 90%; /* Adjust inputs for smaller screens */
         margin-left: 0;
     }

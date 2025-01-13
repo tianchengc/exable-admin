@@ -90,7 +90,7 @@ function Register(): JSX.Element {
 
             <div id="imgDivParent">
                 <div id="imgDiv">
-                    <img src={image} alt="Illustration" />
+                    <img style={{ marginRight: '12rem' }} src={image} alt="Illustration" />
                 </div>
             </div>
         </>

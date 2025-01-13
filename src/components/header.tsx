@@ -17,10 +17,12 @@ const Header = observer(() => {
     const navigate = useNavigate();
 
     return (
-        <div className="w-full flex justify-center items-center bg-white shadow-md z-50" style={{ height: '128px' }}>
+        <div className="w-full flex justify-center items-center bg-white shadow-md z-50" style={{ height: '128px', backgroundColor: 'rgba(255, 255, 255, 1)' }}>
             {userStore.loggedIn ? (
                 <div className="flex justify-between items-center w-full px-5">
-                    <img src={logo} alt="Logo" className="flex-none" />
+                    <div onClick={() => navigate('/')} className="cursor-pointer">
+                        <img src={logo} alt="Logo" className="flex-none" />
+                    </div>
                     <Menu 
                       mode="horizontal" 
                       items={menuItems} 
@@ -37,7 +39,9 @@ const Header = observer(() => {
                 </div>
             ) : (
                 <div className="text-center">
-                    <img src={logo} alt="Logo" />
+                    <div onClick={() => navigate('/')} className="cursor-pointer">
+                        <img src={logo} alt="Logo" />
+                    </div>
                 </div>
             )}
         </div>

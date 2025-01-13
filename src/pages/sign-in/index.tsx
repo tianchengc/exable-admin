@@ -2,7 +2,11 @@ import './index.css';
 import logo from '../../assets/logo.svg';
 import register from '../../assets/login_image_2.svg';
 import Footer from '../../components/footer';
+import { useNavigate } from 'react-router-dom';
+
 const SignIn = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="sign-in-container">
       <header className="header">
@@ -29,7 +33,7 @@ const SignIn = () => {
             <button type="submit" className="btn btn-signin">
               Sign in
             </button>
-            <button type="button" className="btn btn-create">
+            <button type="button" className="btn btn-create" onClick={() => navigate('/register')}>
               Create account
             </button>
           </form>
