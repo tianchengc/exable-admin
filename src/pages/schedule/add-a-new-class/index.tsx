@@ -24,7 +24,11 @@ export const Add_a_New_Class = () => {
 
   return (
     <>
-      <Button className="btn__modal" type="primary" onClick={showModal}>
+      <Button
+        className="btn__modal absolute -top-[130px] right-[80px] text-base text-center"
+        type="primary"
+        onClick={showModal}
+      >
         <PlusOutlined />
         Add a new class
       </Button>
