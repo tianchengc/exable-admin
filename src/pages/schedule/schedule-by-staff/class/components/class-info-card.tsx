@@ -46,6 +46,7 @@ const Class_Info_Card = () => {
           >
             <Button
               type="primary"
+              // Reschedule
               style={getButtonStyles('Reschedule')}
               onMouseEnter={() => setHoveredButton('Reschedule')}
               onMouseLeave={() => setHoveredButton(null)}
@@ -55,6 +56,7 @@ const Class_Info_Card = () => {
             </Button>
             <Button
               type="primary"
+              // Cancel
               style={getButtonStyles('Cancel')}
               onMouseEnter={() => setHoveredButton('Cancel')}
               onMouseLeave={() => setHoveredButton(null)}

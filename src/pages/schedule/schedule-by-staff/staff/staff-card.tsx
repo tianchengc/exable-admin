@@ -58,6 +58,7 @@ const timeSlots = generateTimeSlot();
 export const Staff_Card = observer(() => {
   const [hoveredIndex, setIsHoveredIndex] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
+
   const dom = (
     <div className="staff-card_s">
       <div className="staff-info_s">

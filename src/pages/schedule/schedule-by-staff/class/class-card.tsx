@@ -16,19 +16,25 @@ const participant_data = [
 
 export const Class_Card = observer(() => {
   const dom = (
-    <div className="class-card_s">
-      <div className="class-menu_s">
-        <div className="class-info_s">
-          <h2 className="class-info-title_s">Class info</h2>
+    <div className="class-card_s relative bg-[#40a0b8] ml-10 mr-15 mb-12 w-[1600px] h-[400px] box-border rounded-lg">
+      <div className="class-menu_s flex">
+        <div className="class-info_s ml-20">
+          <h2 className="class-info-title_s text-2xl font-bold pt-5 pb-5 mb-5 text-white">
+            Class info
+          </h2>
           <Class_Info_Card />
         </div>
         <div className="edit-info_s">
-          <h2 className="edit-info-title_s">Edit information</h2>
+          <h2 className="edit-info-title_s text-2xl font-bold pt-5 pb-5 mb-5 text-white">
+            Edit information
+          </h2>
           <Edit_Info_Card />
         </div>
         <div className="participant-list_s">
-          <h2 className="participant-list-title_s">Participant List</h2>
-          <div className="participant-bar_s">
+          <h2 className="participant-list-title_s text-2xl font-bold pt-5 pb-5 mb-5 text-white">
+            Participant List
+          </h2>
+          <div className="participant-bar_s h-[235px] overflow-y-scroll overflow-x-hidden">
             {participant_data.map((item, index) => (
               <Participant_List key={index} data={item} />
             ))}

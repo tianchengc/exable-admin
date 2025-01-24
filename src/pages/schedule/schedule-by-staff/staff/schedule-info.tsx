@@ -11,7 +11,6 @@ const ScheduleInfo = ({
 }) => {
   // const [isHovered, setIsHovered] = useState(false);
   // const [isClicked, setIsClicked] = useState(false);
-
   const isEmpty = data.isEmpty;
 
   const backgroundColor = isClicked
@@ -21,6 +20,7 @@ const ScheduleInfo = ({
       : isEmpty
         ? '#a4dbec'
         : '#fff';
+
   const textColor = isHovered || isClicked ? '#ffffff' : '#000000';
 
   return (
