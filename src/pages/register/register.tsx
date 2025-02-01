@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import './register.css';
 import image from '../../assets/register_image.svg';
+import logo from '../../assets/logo.svg';
+import Footer from '../../components/footer';
+import styles from './register.module.css';
 
 interface InputFieldProps {
   type: string;
@@ -11,7 +13,6 @@ interface InputFieldProps {
   required?: boolean;
   list?: string;
   pattern?: string;
-  className?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -23,7 +24,6 @@ const InputField: React.FC<InputFieldProps> = ({
   required = false,
   list,
   pattern,
-  className,
 }) => (
   <input
     type={type}
@@ -34,7 +34,7 @@ const InputField: React.FC<InputFieldProps> = ({
     required={required}
     list={list}
     pattern={pattern}
-    className={className}
+    className={styles.formField}
   />
 );
 
@@ -105,50 +105,27 @@ function Register(): JSX.Element {
   ];
 
   return (
-    <>
-      <div
-        id="containerParent"
-        className="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto"
-      >
-        <div id="formContainer" className="w-full md:w-1/2">
-          <form action="" className="register-form">
-            <h3 className="text-2xl mb-6">Create my profile</h3>
+    <div className={styles.pageContainer}>
+      <header className={styles.header}>
+        <img src={logo} alt="Lung Health Foundation Logo" className={styles.logo} />
+      </header>
 
-            <div className="form-row">
-              <InputField
-                key="firstName"
-                {...inputFields[0]}
-                className="form-field"
-              />
-              <InputField
-                key="lastName"
-                {...inputFields[1]}
-                className="form-field"
-              />
+      <main className={styles.mainContent}>
+        <div className={styles.formWrapper}>
+          <form className={styles.form}>
+            <h3 className={styles.title}>Create my profile</h3>
+
+            <div className={styles.formRow}>
+              <InputField key="firstName" {...inputFields[0]} />
+              <InputField key="lastName" {...inputFields[1]} />
             </div>
-            <div className="form-row">
-              <InputField
-                key="city"
-                {...inputFields[2]}
-                className="form-field"
-              />
-              <InputField
-                key="province"
-                {...inputFields[3]}
-                className="form-field"
-              />
+            <div className={styles.formRow}>
+              <InputField key="city" {...inputFields[2]} />
+              <InputField key="province" {...inputFields[3]} />
             </div>
-            <div className="form-row">
-              <InputField
-                key="phoneNumber"
-                {...inputFields[4]}
-                className="form-field"
-              />
-              <InputField
-                key="role"
-                {...inputFields[5]}
-                className="form-field"
-              />
+            <div className={styles.formRow}>
+              <InputField key="phoneNumber" {...inputFields[4]} />
+              <InputField key="role" {...inputFields[5]} />
             </div>
 
             <datalist id="province">
@@ -171,22 +148,22 @@ function Register(): JSX.Element {
               <option value="Brock Functional Inclusive Training Centre (BFIT)" />
             </datalist>
           </form>
-          <button type="submit" id="saveBtn" className="save-button">
+          <button type="submit" className={styles.saveButton}>
             Save
           </button>
         </div>
 
-        <div id="imgDivParent">
-          <div id="imgDiv">
-            <img
-              style={{ marginRight: '12rem' }}
-              src={image}
-              alt="Illustration"
-            />
-          </div>
+        <div className={styles.imageWrapper}>
+          <img
+            src={image}
+            alt="Illustration"
+            className={styles.image}
+          />
         </div>
-      </div>
-    </>
+      </main>
+      
+      <Footer className={styles.footer} />
+    </div>
   );
 }
 

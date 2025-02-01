@@ -11,15 +11,11 @@ export const BaseLayout = () => {
       </div>
       <div className="flex flex-1 overflow-hidden">
         <Menus />
-        {/* className="max-w-xs w-full"  */}
         <div className='overflow-x-hidden overflow-y-auto  flex-1 '>
         <Outlet  />
-
         </div>
-        {/* className=" overflow-auto" */}
       </div>
       <Footer  />
-      {/* className="bottom-0 left-0 w-full flex-0" */}
     </div>
   );
 };

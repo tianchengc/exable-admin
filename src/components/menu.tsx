@@ -17,7 +17,7 @@ const adminItems = [
   { name: 'Reports', url: '/reports', icon: <CalendarOutlined /> },
   {
     name: 'Exercise Library',
-    url: '/exercise-library',
+    url: '/exercises',
     icon: <CalendarOutlined />,
   },
 ];

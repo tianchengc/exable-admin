@@ -1,10 +1,9 @@
 import React from 'react';
-import SignIn from './pages/sign-in';
+import SignIn from './pages/sign-in/signin';
 import BaseLayout from './pages/layout';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { Provider } from 'mobx-react';
-import { Login } from './pages/login';
 import { CourseManage } from './pages/course-manage';
 import { CourseEdit } from './pages/course-edit';
 import { KinAudition } from './pages/kin-audition';
@@ -34,43 +33,43 @@ export default function App() {
         <Provider>
           <BrowserRouter>
             <Routes>
-              <Route path="/signin" element={<SignIn />} />
+              <Route path="login" element={<SignIn />} />
+              <Route path="register" element={<Register />} />
+              
               <Route path="/" element={<BaseLayout />}>
-                <Route path="/register" element={<Register />} />
-                <Route path="/test" element={<TestPage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/course" element={<CourseManage />} />
-                <Route path="/participants/:id" element={<ParticipantProfilePage />} />
-                <Route path="/exercise_library" element={<ExerciseLibraryPage />} />
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/course" element={<CourseManage />} />
-                <Route
-                  path="/participants/:id"
-                  element={<ParticipantProfilePage />}
-                />
-                <Route
-                  path="/exercise_library"
-                  element={<ExerciseLibraryPage />}
-                />
-                <Route path="/course/:id" element={<CourseEdit />} />
-                <Route path="/audit" element={<KinAudition />} />
-                <Route path="/kin" element={<KinList />} />
-                <Route path="/admin" element={<AdminList />} />
-                <Route path="/resource" element={<ResourceManage />} />
-                <Route path="/knowledge" element={<KnowledgeManage />} />
-                <Route path="/news" element={<NewsManage />} />
-                <Route path="/participants" element={<Participants />} />
-                <Route path="/account" element={<Account />} />
-                <Route path="/staff" element={<StaffList />} />
-                <Route path="/class_schedule" element={<ClassSchedule />} />
-                <Route path="/schedule" element={<SchedulePage />} />
-                <Route path="/reports" element={<ReportsPage />} />
-                <Route path="/staff_schedule" element={<Staff_Schedule />} />
-                <Route
-                  path="/participants/:id"
-                  element={<ParticipantProfilePage />}
-                />
+                <Route index element={<Dashboard />} />
+                
+                {/* Course management */}
+                <Route path="courses">
+                  <Route index element={<CourseManage />} />
+                  <Route path=":id" element={<CourseEdit />} />
+                </Route>
+                
+                {/* Participant routes */}
+                <Route path="participants">
+                  <Route index element={<Participants />} />
+                  <Route path=":id" element={<ParticipantProfilePage />} />
+                </Route>
+                
+                {/* Schedule related */}
+                <Route path="schedule" element={<SchedulePage />} />
+                <Route path="class_schedule" element={<ClassSchedule />} />
+                <Route path="staff_schedule" element={<Staff_Schedule />} />
+                
+                {/* Other main routes */}
+                <Route path="exercises" element={<ExerciseLibraryPage />} />
+                <Route path="audit" element={<KinAudition />} />
+                <Route path="kin" element={<KinList />} />
+                <Route path="admin" element={<AdminList />} />
+                <Route path="resource" element={<ResourceManage />} />
+                <Route path="knowledge" element={<KnowledgeManage />} />
+                <Route path="news" element={<NewsManage />} />
+                <Route path="account" element={<Account />} />
+                <Route path="staff" element={<StaffList />} />
+                <Route path="reports" element={<ReportsPage />} />
+                <Route path="test" element={<TestPage />} />
+                
+                {/* 404 catch-all route */}
                 <Route path="*" element={<NoMatch />} />
               </Route>
             </Routes>
