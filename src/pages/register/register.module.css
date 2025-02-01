@@ -1,0 +1,152 @@
+.pageContainer {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.mainContent {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.footer {
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.formWrapper {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.form {
+  z-index: 10;
+  background-color: #49a0bb;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-left: 1rem;
+}
+
+.formField {
+  width: 100%;
+  height: 33px;
+  border-radius: 17px;
+  background-color: white;
+  border: none;
+  padding: 0 1rem;
+}
+
+.formField::placeholder {
+  color: #49a0bb;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.saveButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+.imageWrapper {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .formRow {
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 0;
+  }
+
+  .formWrapper {
+    padding: 1.5rem;
+  }
+
+  .form {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .imageContainer {
+    position: static;
+    margin: 2rem auto;
+    width: 90%;
+    height: fit-content;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .formWrapper {
+    width: 90%;
+    min-width: auto;
+  }
+}
