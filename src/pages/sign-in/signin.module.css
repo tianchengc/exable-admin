@@ -1,33 +1,10 @@
-/* sign-in.css */
-.sign-in-container {
+.pageContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #f5f9fc;
-  color: #333;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .header {
@@ -44,13 +21,7 @@ body {
   margin-right: 20px;
 }
 
-.header-title {
-  font-size: 18px;
-  font-weight: bold;
-  color: #5a8ea3;
-}
-
-.main-content {
+.mainContent {
   display: flex;
   flex: 1;
   width: 100%;
@@ -58,8 +29,7 @@ body {
   background-color: #e9f1f7;
 }
 
-.left-section,
-.right-section {
+.leftSection {
   flex: 1;
   padding: 40px;
   display: flex;
@@ -67,33 +37,37 @@ body {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-}
-
-.left-section {
   height: 82%;
 }
 
-.right-section {
+.rightSection {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   background-color: #d9eef8;
   text-align: center;
 }
 
-h1 {
+.title {
   font-size: 36px;
   margin-bottom: 20px;
   color: #5a8ea3;
 }
 
-.login-form {
+.loginForm {
   width: 100%;
   max-width: 400px;
 }
 
-.form-group {
+.formGroup {
   margin-bottom: 15px;
 }
 
-.form-group input {
+.formInput {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -105,20 +79,30 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
 }
 
-.options a {
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.checkbox {
+  margin-right: 5px;
+}
+
+.forgotPassword {
   color: #5a8ea3;
   text-decoration: none;
   font-size: 14px;
 }
 
-.options a:hover {
+.forgotPassword:hover {
   text-decoration: underline;
 }
 
-.btn {
+.button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -126,68 +110,41 @@ h1 {
   cursor: pointer;
   margin-bottom: 10px;
   text-align: center;
-}
-
-.btn-signin {
-  background-color: #e85042;
-  color: white;
   border: none;
 }
 
-.btn-signin:hover {
+.signInButton {
+  composes: button;
+  background-color: #e85042;
+  color: white;
+}
+
+.signInButton:hover {
   background-color: #d03a2e;
 }
 
-.btn-create {
+.createButton {
+  composes: button;
   background-color: #c6e0f5;
   color: #5a8ea3;
-  border: none;
 }
 
-.btn-create:hover {
+.createButton:hover {
   background-color: #b4d6f0;
 }
 
-.admin-image {
+.adminImage {
   max-width: 80%;
   height: auto;
   margin-bottom: 20px;
 }
 
-.not-admin {
+.notAdmin {
   color: #5a8ea3;
   text-decoration: none;
   font-size: 16px;
 }
 
-.not-admin:hover {
+.notAdmin:hover {
   text-decoration: underline;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.social-icons a:hover {
-  color: #d0d0d0;
-}
-
-.options {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.options label {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.options input[type='checkbox'] {
-  margin-right: 5px;
-}
+} 
