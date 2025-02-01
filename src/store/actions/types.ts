@@ -1,0 +1,30 @@
+// User Action Types
+export const SET_USER = 'SET_USER';
+export const LOGOUT = 'LOGOUT';
+export const SET_USER_LOADING = 'SET_USER_LOADING';
+export const SET_USER_ERROR = 'SET_USER_ERROR';
+
+// Participant Action Types
+export const SET_PARTICIPANTS = 'SET_PARTICIPANTS';
+export const ADD_PARTICIPANT = 'ADD_PARTICIPANT';
+export const UPDATE_PARTICIPANT = 'UPDATE_PARTICIPANT';
+export const REMOVE_PARTICIPANT = 'REMOVE_PARTICIPANT';
+export const SET_PARTICIPANTS_LOADING = 'SET_PARTICIPANTS_LOADING';
+export const SET_PARTICIPANTS_ERROR = 'SET_PARTICIPANTS_ERROR';
+
+// Staff Action Types
+export const SET_STAFF = 'SET_STAFF';
+export const ADD_STAFF = 'ADD_STAFF';
+export const UPDATE_STAFF = 'UPDATE_STAFF';
+export const REMOVE_STAFF = 'REMOVE_STAFF';
+export const SET_STAFF_LOADING = 'SET_STAFF_LOADING';
+export const SET_STAFF_ERROR = 'SET_STAFF_ERROR';
+
+// Schedule Action Types
+export const SET_SCHEDULES = 'SET_SCHEDULES';
+export const ADD_SCHEDULE = 'ADD_SCHEDULE';
+export const UPDATE_SCHEDULE = 'UPDATE_SCHEDULE';
+export const REMOVE_SCHEDULE = 'REMOVE_SCHEDULE';
+export const UPDATE_SCHEDULE_STATUS = 'UPDATE_SCHEDULE_STATUS';
+export const SET_SCHEDULES_LOADING = 'SET_SCHEDULES_LOADING';
+export const SET_SCHEDULES_ERROR = 'SET_SCHEDULES_ERROR'; 
