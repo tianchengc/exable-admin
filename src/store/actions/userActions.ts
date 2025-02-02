@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { User } from '../types';
 import * as types from './types';
 
@@ -20,19 +21,25 @@ export const setError = (error: string | null) => ({
   payload: error,
 });
 
-export const loginUser = (credentials: { email: string; password: string }) => {
+export const loginUser = (credentials: { email: string; password: string; type: string }) => {
   return async (dispatch: any) => {
     try {
       dispatch(setLoading(true));
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(credentials),
-      });
-      const data = await response.json();
-      dispatch(setUser(data));
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/user/login`,
+        credentials
+      );
+      
+      const { token, user } = response.data;
+      localStorage.setItem('token', token);
+      dispatch(setUser(user));
+      return { success: true };
     } catch (error) {
-      dispatch(setError(error instanceof Error ? error.message : 'An error occurred'));
+      const errorMessage = axios.isAxiosError(error) 
+        ? error.response?.data?.message || 'Login failed'
+        : 'An error occurred';
+      dispatch(setError(errorMessage));
+      return { success: false, error: errorMessage };
     } finally {
       dispatch(setLoading(false));
     }
