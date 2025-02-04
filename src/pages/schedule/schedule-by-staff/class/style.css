@@ -27,9 +27,9 @@
   color: #fff;
 } */
 
-.edit-info_s {
+/* .edit-info_s {
   margin-left: 60px;
-}
+} */
 
 /* .edit-info-title_s {
   font-size: 24px;
@@ -40,9 +40,9 @@
   color: #fff;
 } */
 
-.participant-list_s {
+/* .participant-list_s {
   margin-left: 60px;
-}
+} */
 
 /* .participant-list-title_s {
   font-size: 24px;
@@ -59,7 +59,7 @@
   overflow-x: hidden;
 } */
 
-.participant-bar_s::-webkit-scrollbar {
+/* .participant-bar_s::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -74,4 +74,4 @@
 
 .participant-bar_s:hover::-webkit-scrollbar-track {
   background: #a4dbec;
-}
+} */

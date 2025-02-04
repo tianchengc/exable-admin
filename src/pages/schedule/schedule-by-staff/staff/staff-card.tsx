@@ -61,7 +61,8 @@ export const Staff_Card = observer(() => {
 
   const dom = (
     <div className="staff-card_s relative bg-[#40a0b8] ml-10 mr-15 mb-12 w-[1600px] h-[900px] box-border rounded-lg">
-      <div className="staff-info_s absolute top-0 left-0 w-full text-white flex items-center p-4 mx-auto">
+      {/* <div className="staff-info_s absolute top-0 left-0 w-full text-white flex items-center p-4 mx-auto"> */}
+      <div className="absolute top-0 left-0 w-full text-white flex items-center px-4 py-[15px] mx-auto after:content-[''] after:absolute after:bottom-0 after:border-b after:border-gray-300 after:left-[5%] after:w-[90%]">
         <img
           src={staffInfo.avatar}
           alt="Staff Avatar"

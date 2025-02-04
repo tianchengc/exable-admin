@@ -22,14 +22,14 @@
   margin: 0 auto;
 } */
 
-.staff-info_s::after {
+/* .staff-info_s::after {
   content: '';
   position: absolute;
   bottom: 0;
   border-bottom: 1px solid #ddd;
   left: 5%;
   width: 90%;
-}
+} */
 
 /* .staff-avatar_s {
   width: 30px;
