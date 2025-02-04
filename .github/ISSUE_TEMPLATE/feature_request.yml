@@ -1,21 +1,15 @@
 name: Feature Request / Bug Report
-description: Use this template for reporting a bug or requesting a new feature.
+description: Use this template to request a feature or report an issue.
 title: "[Feature/Bug]: "
 labels: ["feature", "bug", "needs-triage"]
 assignees: []
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ## 🛠️ Feature Request / Bug Report Template
-        Please fill in the details below to help us understand and prioritize this issue.
-
   - type: textarea
-    id: summary
+    id: description
     attributes:
-      label: "🔹 Summary"
-      description: "Provide a clear and concise description of the issue or feature request."
-      placeholder: "Describe the issue or feature in simple terms..."
+      label: "🔹 Description"
+      description: "Provide a clear and concise description of the feature request or issue."
+      placeholder: "Describe what needs to be done or what issue you encountered..."
     validations:
       required: true
 
@@ -23,21 +17,21 @@ body:
     id: design-url
     attributes:
       label: "🎨 Design URL"
-      description: "Link to Figma, Sketch, or any relevant design files."
+      description: "Link to Figma, Sketch, or any relevant design files (if applicable)."
       placeholder: "https://figma.com/design..."
   
   - type: textarea
     id: requirements
     attributes:
       label: "📌 Requirements"
-      description: "List down the requirements, expected behavior, or technical details."
-      placeholder: "- User should be able to ...\n- The component should support ..."
+      description: "List the requirements or expected behavior of this feature."
+      placeholder: "- Should allow users to...\n- Must integrate with..."
   
   - type: textarea
     id: api-details
     attributes:
       label: "🔗 API Example (If Applicable)"
-      description: "Provide example API requests and responses if this feature requires backend integration."
+      description: "Provide an example of how the API should be used."
       placeholder: |
         **Example Request:**
         ```json
@@ -48,33 +42,3 @@ body:
         ```json
         { "id": 1, "name": "John Doe" }
         ```
-  
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: "🐛 Steps to Reproduce (For Bugs)"
-      description: "Provide steps to reproduce the issue."
-      placeholder: |
-        1. Go to...
-        2. Click on...
-        3. Observe error...
-    validations:
-      required: false
-  
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: "✅ Expected Behavior"
-      description: "Describe what you expected to happen."
-  
-  - type: textarea
-    id: actual-behavior
-    attributes:
-      label: "❌ Actual Behavior"
-      description: "Describe what actually happened."
-  
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: "📎 Additional Context"
-      description: "Any additional information, screenshots, logs, or references?"
