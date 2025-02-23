@@ -9,8 +9,6 @@ const ScheduleInfo = ({
   onMouseLeave,
   onClick,
 }) => {
-  // const [isHovered, setIsHovered] = useState(false);
-  // const [isClicked, setIsClicked] = useState(false);
   const isEmpty = data.isEmpty;
 
   const backgroundColor = isClicked
@@ -26,7 +24,6 @@ const ScheduleInfo = ({
   return (
     <Card
       style={{
-        // width: '250%',
         width: '1078px',
         borderRadius: '10px',
         padding: '10px',

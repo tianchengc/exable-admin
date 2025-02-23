@@ -3,7 +3,6 @@ import Class_Info_Card from './components/class-info-card';
 import Edit_Info_Card from './components/edit-info-card';
 import Participant_List from './components/participant-card';
 import { Button, Space } from 'antd';
-import './style.css';
 
 const participant_data = [
   { name: 'Richard Brown', symptom: 'COPD' },
@@ -34,7 +33,6 @@ export const Class_Card = observer(() => {
           <h2 className="participant-list-title_s text-2xl font-bold pt-5 pb-5 mb-5 text-white">
             Participant List
           </h2>
-          {/* <div className="participant-bar_s h-[235px] overflow-y-scroll overflow-x-hidden"> */}
           <div className="h-[235px] overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#033522] scrollbar-track-[#a4dbec] hover:scrollbar-thumb-rounded">
             {participant_data.map((item, index) => (
               <Participant_List key={index} data={item} />

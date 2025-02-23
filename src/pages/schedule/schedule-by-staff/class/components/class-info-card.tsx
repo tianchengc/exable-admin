@@ -24,7 +24,6 @@ const Class_Info_Card = () => {
         height: '220px',
         borderRadius: '10px',
         marginBottom: '40px',
-        // marginLeft: '80px',
         backgroundColor: '#a4dbec',
       }}
       bodyStyle={{
@@ -61,12 +60,6 @@ const Class_Info_Card = () => {
               onMouseEnter={() => setHoveredButton('Cancel')}
               onMouseLeave={() => setHoveredButton(null)}
               onClick={() => setClickedButton('Cancel')}
-              // style={{
-              //   borderRadius: '20px',
-              //   backgroundColor: '#fff',
-              //   borderColor: '#fff',
-              //   color: '#11cae2',
-              // }}
             >
               Cancel Class
             </Button>

@@ -39,7 +39,6 @@ const Edit_Info_Card = () => {
         height: '220px',
         borderRadius: '20px',
         marginRight: '20px',
-        // marginLeft: '60px',
         backgroundColor: '#a4dbec',
       }}
       bodyStyle={{
@@ -56,7 +55,6 @@ const Edit_Info_Card = () => {
             style={{
               height: '120px',
               borderRadius: '20px',
-              // padding: '10px',
             }}
           />
           <Space
@@ -72,12 +70,6 @@ const Edit_Info_Card = () => {
               onMouseEnter={() => setHoveredButton('Send')}
               onMouseLeave={() => setHoveredButton(null)}
               onClick={() => setClickedButton('Send')}
-              // style={{
-              //   borderRadius: '20px',
-              //   backgroundColor: '#fff',
-              //   borderColor: '#fff',
-              //   color: '#11cae2',
-              // }}
             >
               Send
             </Button>

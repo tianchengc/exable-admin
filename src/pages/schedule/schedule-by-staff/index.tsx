@@ -1,18 +1,10 @@
 import React from 'react';
 import '../../../styles/common-style.css';
-import './style.css';
 import { Staff_Card } from './staff/staff-card';
 import { Class_Card } from './class/class-card';
 
 const Staff_Schedule: React.FC = () => {
-  // const navigate = useNavigate();
-
-  // const handleNavigation = (path: string) => {
-  //   navigate(path);
-  // };
-
   return (
-    // <Page title="staff-schedule_s">
     <div className="staff-schedule-page_s w-full overflow-x-auto">
       <div className="staff-content_s relative">
         <h1 className="staff-title_s text-2xl font-bold mt-12 mb-5 ml-10 text-[#033522]">
@@ -27,7 +19,6 @@ const Staff_Schedule: React.FC = () => {
         <Class_Card />
       </div>
     </div>
-    // </Page>
   );
 };
 

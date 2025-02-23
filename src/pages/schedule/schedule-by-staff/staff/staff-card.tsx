@@ -1,5 +1,4 @@
 import { observer } from 'mobx-react';
-import './style.css';
 import Add_a_New_Class from '../../add-a-new-class';
 import ScheduleInfo from './schedule-info';
 import { useState } from 'react';
@@ -61,7 +60,6 @@ export const Staff_Card = observer(() => {
 
   const dom = (
     <div className="staff-card_s relative bg-[#40a0b8] ml-10 mr-15 mb-12 w-[1600px] h-[900px] box-border rounded-lg">
-      {/* <div className="staff-info_s absolute top-0 left-0 w-full text-white flex items-center p-4 mx-auto"> */}
       <div className="absolute top-0 left-0 w-full text-white flex items-center px-4 py-[15px] mx-auto after:content-[''] after:absolute after:bottom-0 after:border-b after:border-gray-300 after:left-[5%] after:w-[90%]">
         <img
           src={staffInfo.avatar}
@@ -76,7 +74,6 @@ export const Staff_Card = observer(() => {
             <button className="left-arrow_s mr-2 text-[#f01313]">{'<'}</button>
             {staffInfo.date}
             <button className="right-arrow_s ml-2 text-[#f01313]">{'>'}</button>
-            {/* <Add_a_New_Class /> */}
           </p>
         </div>
         <Add_a_New_Class />
