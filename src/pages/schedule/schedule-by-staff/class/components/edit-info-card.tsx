@@ -1,3 +1,9 @@
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from '@mui/material';
 import { Card, Button, Space } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { useEffect, useState } from 'react';
@@ -5,6 +11,7 @@ import { useEffect, useState } from 'react';
 const Edit_Info_Card = () => {
   const [hoveredButton, setHoveredButton] = useState(null);
   const [clickedButton, setClickedButton] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
 
   const getButtonStyles = buttonName => {
     const isHovered = hoveredButton === buttonName;
@@ -69,12 +76,22 @@ const Edit_Info_Card = () => {
               style={getButtonStyles('Send')}
               onMouseEnter={() => setHoveredButton('Send')}
               onMouseLeave={() => setHoveredButton(null)}
-              onClick={() => setClickedButton('Send')}
+              // onClick={() => setClickedButton('Send')}
+              onClick={() => setOpenDialog(true)}
             >
               Send
             </Button>
           </Space>
         </Space>
+        <Dialog open={openDialog} onClose={() => setOpenDialog(false)}>
+          <DialogTitle>Information has been sent!</DialogTitle>
+          <DialogContent>Your update has been sent!</DialogContent>
+          <DialogActions>
+            <Button onClick={() => setOpenDialog(false)} color="primary">
+              close
+            </Button>
+          </DialogActions>
+        </Dialog>
       </>
     </Card>
   );
