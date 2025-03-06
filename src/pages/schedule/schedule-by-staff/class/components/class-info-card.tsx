@@ -1,21 +1,49 @@
 import { Card, Button, Space } from 'antd';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  setClickedButton,
+  setHoveredButton,
+} from '../../../../../redux/action';
+import { useEffect } from 'react';
 
 const Class_Info_Card = () => {
-  const [hoveredButton, setHoveredButton] = useState(null);
-  const [clickedButton, setClickedButton] = useState(null);
+  const dispatch = useDispatch();
+  const clickedButton = useSelector(state => state.clickedButton);
+  const hoveredButton = useSelector(state => state.hoveredButton);
 
   const getButtonStyles = buttonName => {
     const isHovered = hoveredButton === buttonName;
-    const isClicked = clickedButton === buttonName;
+    // const isClicked = clickedButton === buttonName;
 
     return {
-      backgroundColor: isHovered || isClicked ? '#11cae2' : '#fff',
-      borderColor: isHovered || isClicked ? '#11cae2' : '#fff',
-      color: isHovered || isClicked ? '#fff' : '#11cae2',
+      backgroundColor: isHovered ? '#11cae2' : '#fff',
+      borderColor: isHovered ? '#11cae2' : '#fff',
+      color: isHovered ? '#fff' : '#11cae2',
       borderRadius: '20px',
+      transition: 'background-color 0.2s, color 0.2s, border-color 0.2s',
     };
   };
+  const handleClick = buttonName => {
+    dispatch(setClickedButton(buttonName));
+
+    setTimeout(() => {
+      dispatch(setClickedButton(null));
+    }, 200);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = event => {
+      if (!event.target.closest('.class-info-card')) {
+        dispatch(setClickedButton(null));
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [dispatch]);
 
   return (
     <Card
@@ -47,9 +75,9 @@ const Class_Info_Card = () => {
               type="primary"
               // Reschedule
               style={getButtonStyles('Reschedule')}
-              onMouseEnter={() => setHoveredButton('Reschedule')}
-              onMouseLeave={() => setHoveredButton(null)}
-              onClick={() => setClickedButton('Reschedule')}
+              onMouseEnter={() => dispatch(setHoveredButton('Reschedule'))}
+              onMouseLeave={() => dispatch(setHoveredButton(null))}
+              onClick={() => handleClick('Reschedule')}
             >
               Reschedule Class
             </Button>
@@ -57,9 +85,9 @@ const Class_Info_Card = () => {
               type="primary"
               // Cancel
               style={getButtonStyles('Cancel')}
-              onMouseEnter={() => setHoveredButton('Cancel')}
-              onMouseLeave={() => setHoveredButton(null)}
-              onClick={() => setClickedButton('Cancel')}
+              onMouseEnter={() => dispatch(setHoveredButton('Cancel'))}
+              onMouseLeave={() => dispatch(setHoveredButton(null))}
+              onClick={() => handleClick('Cancel')}
             >
               Cancel Class
             </Button>
