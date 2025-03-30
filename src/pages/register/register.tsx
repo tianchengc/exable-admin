@@ -1,108 +1,52 @@
-import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../store/hooks';
+import { registerUser } from '../../store/actions/userActions';
+import { RegistrationPayload } from '../../store/types';
 import image from '../../assets/register_image.svg';
 import logo from '../../assets/logo.svg';
-import Footer from '../../components/footer';
+import Footer from '@components/Footer';
 import styles from './register.module.css';
+import { Checkbox, Form, Modal } from 'antd';
+import Button from '@components/Button';
+import TermsAndConditionsModal from '@components/TermsAndConditionsModal/index';
+import InputField from '@components/InputField';
+import React from 'react';
 
-interface InputFieldProps {
-  type: string;
-  placeholder: string;
-  id: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
-  list?: string;
-  pattern?: string;
-}
+export const Register: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const [form] = Form.useForm();
+  const [isModalOpened, setIsModalOpened] = React.useState(false);
 
-const InputField: React.FC<InputFieldProps> = ({
-  type,
-  placeholder,
-  id,
-  value,
-  onChange,
-  required = false,
-  list,
-  pattern,
-}) => (
-  <input
-    type={type}
-    placeholder={placeholder}
-    id={id}
-    value={value}
-    onChange={onChange}
-    required={required}
-    list={list}
-    pattern={pattern}
-    className={styles.formField}
-  />
-);
+  const handleSubmit = async (formData: RegistrationPayload) => {
+    const { firstName, lastName, email, phoneNumber, password } = formData;
+    const result = await dispatch(registerUser({
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      password,
+      type: 'ADMIN',
+    }));
+    
+    if (result.success) {
+      navigate('/login');
+    }
+  };
 
-function Register(): JSX.Element {
-  const [firstName, setFirstName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
-  const [city, setCity] = useState<string>('');
-  const [phoneNumber, setPhoneNumber] = useState<string>('');
-  const [selectedProvince, setSelectedProvince] = useState<string>('');
-  const [role, setRole] = useState<string>('');
+  const onSubmit = async () => {
+    try {
+      const values = await form.validateFields();
+      console.log('Received values:', values);
+      handleSubmit(values);
+    } catch (errorInfo) {
+      console.log('Failed:', errorInfo);
+    }
+  };
 
-  const inputFields = [
-    {
-      type: 'text',
-      placeholder: '*First name',
-      id: 'firstName',
-      value: firstName,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setFirstName(e.target.value),
-      required: true,
-    },
-    {
-      type: 'text',
-      placeholder: '*Last name',
-      id: 'lastName',
-      value: lastName,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setLastName(e.target.value),
-      required: true,
-    },
-    {
-      type: 'text',
-      placeholder: 'City',
-      id: 'city',
-      value: city,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setCity(e.target.value),
-    },
-    {
-      type: 'text',
-      placeholder: '*Province',
-      id: 'province',
-      value: selectedProvince,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setSelectedProvince(e.target.value),
-      required: true,
-      list: 'province',
-    },
-    {
-      type: 'number',
-      placeholder: 'Phone',
-      id: 'phoneNumber',
-      value: phoneNumber,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setPhoneNumber(e.target.value),
-      pattern: '[0-9]{3}-[0-9]{3}-[0-9]{4}',
-    },
-    {
-      type: 'text',
-      placeholder: '*Role in organisation',
-      id: 'role',
-      value: role,
-      onChange: (e: React.ChangeEvent<HTMLInputElement>) =>
-        setRole(e.target.value),
-      required: true,
-      list: 'role',
-    },
-  ];
+  const onCheckboxChange = (_e: { target: { checked: boolean } }) => {
+    console.log(_e);
+  };
 
   return (
     <div className={styles.pageContainer}>
@@ -112,59 +56,170 @@ function Register(): JSX.Element {
 
       <main className={styles.mainContent}>
         <div className={styles.formWrapper}>
-          <form className={styles.form}>
-            <h3 className={styles.title}>Create my profile</h3>
+          <Modal
+            title="Terms and Conditions"
+            open={isModalOpened}
+            onCancel={() => setIsModalOpened(false)}
+            footer={[
+              <Button
+                key="ok"
+                type="primary"
+                width="small"
+                onClick={() => setIsModalOpened(false)}
+              >
+                Ok
+              </Button>,
+            ]}
+          >
+            <TermsAndConditionsModal />
+          </Modal>
 
-            <div className={styles.formRow}>
-              <InputField key="firstName" {...inputFields[0]} />
-              <InputField key="lastName" {...inputFields[1]} />
-            </div>
-            <div className={styles.formRow}>
-              <InputField key="city" {...inputFields[2]} />
-              <InputField key="province" {...inputFields[3]} />
-            </div>
-            <div className={styles.formRow}>
-              <InputField key="phoneNumber" {...inputFields[4]} />
-              <InputField key="role" {...inputFields[5]} />
-            </div>
-
-            <datalist id="province">
-              <option value="Ontario" />
-              <option value="Quebec" />
-              <option value="Alberta" />
-              <option value="British Columbia" />
-              <option value="Saskatchewan" />
-              <option value="Manitoba" />
-              <option value="New Brunswick" />
-              <option value="Nova Scotia" />
-              <option value="Prince Edward Island" />
-              <option value="Newfoundland and Labrador" />
-              <option value="Northwest Territories" />
-              <option value="Yukon" />
-              <option value="Nunavut" />
-            </datalist>
-            <datalist id="role">
-              <option value="Abilities Centre" />
-              <option value="Brock Functional Inclusive Training Centre (BFIT)" />
-            </datalist>
-          </form>
-          <button type="submit" className={styles.saveButton}>
-            Save
-          </button>
+          <div>
+            <div className={styles.title}>Create my profile</div>
+            <Form className="register-form" form={form} name="register">
+              <Form.Item
+                name="firstName"
+                rules={[
+                  { required: true, message: 'Please input your first name' },
+                ]}
+              >
+                <InputField placeholder="*First name" />
+              </Form.Item>
+              <Form.Item
+                name="lastName"
+                rules={[
+                  { required: true, message: 'Please input your last name' },
+                ]}
+              >
+                <InputField placeholder="*Last name" />
+              </Form.Item>
+              <Form.Item
+                name="email"
+                rules={[
+                  { required: true, message: 'Please input your email' },
+                  { type: 'email', message: 'Please input correct email' },
+                ]}
+              >
+                <InputField placeholder="*Email" />
+              </Form.Item>
+              <Form.Item
+                name="phone"
+                rules={[
+                  { required: true, message: 'Please input your phone number' },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (
+                        /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/g.test(
+                          value
+                        )
+                      ) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject(
+                        new Error('Please input current phone number!')
+                      );
+                    },
+                  }),
+                ]}
+              >
+                <InputField placeholder="*Phone number" />
+              </Form.Item>
+              <Form.Item
+                name="password"
+                rules={[
+                  { required: true, message: 'Please input your password' },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value) {
+                        return Promise.resolve();
+                      }
+                      const email = getFieldValue('email');
+                      return Promise.resolve();
+                    },
+                  }),
+                ]}
+              >
+                <InputField type="password" className="reset" placeholder="*Password" />
+              </Form.Item>
+              <Form.Item
+                name="cpassword"
+                rules={[
+                  { required: true, message: 'Please confirm your password' },
+                  ({ getFieldValue }) => ({
+                    validator(_, value) {
+                      if (!value || getFieldValue('password') === value) {
+                        return Promise.resolve();
+                      }
+                      return Promise.reject(
+                        new Error('The two passwords that you entered do not match!')
+                      );
+                    },
+                  }),
+                ]}
+              >
+                <InputField type="password" className="reset" placeholder="*Confirm password" />
+              </Form.Item>
+              <Form.Item
+                className={styles.checkboxRow}
+                name="protocol"
+                valuePropName="checked"
+                rules={[
+                  {
+                    validator: (_, value) =>
+                      value
+                        ? Promise.resolve()
+                        : Promise.reject(
+                            new Error('You need to accept the agreement to continue.')
+                          ),
+                  },
+                ]}
+              >
+                <Checkbox onChange={onCheckboxChange}>
+                  <span>* I accept the </span>
+                  <span
+                    className="term-link"
+                    onClick={() => setIsModalOpened(true)}
+                    onKeyUp={() => setIsModalOpened(true)}
+                  >
+                    terms and conditions
+                  </span>
+                </Checkbox>
+              </Form.Item>
+              <Form.Item
+                valuePropName="checked"
+                className={styles.checkboxRow}
+                name="remeber"
+              >
+                <Checkbox name="remember" onChange={onCheckboxChange}>
+                  Remember me
+                </Checkbox>
+              </Form.Item>
+              <Form.Item
+                valuePropName="checked"
+                className={styles.checkboxRow}
+                name="news"
+              >
+                <Checkbox onChange={onCheckboxChange}>
+                  I want to stay up to date with the latest news
+                </Checkbox>
+              </Form.Item>
+              <Form.Item className={`${styles.checkboxRow} ${styles.buttonContainer}`}>
+                <Button className="kin-btn" type="primary" onClick={onSubmit}>
+                  Save
+                </Button>
+              </Form.Item>
+            </Form>
+          </div>
         </div>
 
         <div className={styles.imageWrapper}>
-          <img
-            src={image}
-            alt="Illustration"
-            className={styles.image}
-          />
+          <img src={image} alt="Illustration" className={styles.image} />
         </div>
       </main>
-      
+
       <Footer className={styles.footer} />
     </div>
   );
-}
+};
 
 export default Register;

@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary-color);
 }
 
 .header {
@@ -28,7 +29,7 @@
   flex: 1;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 2rem;
 }
@@ -58,7 +59,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-right: 2rem;
+  padding: 2em 6em;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
 }
 
 .form {
@@ -99,14 +102,8 @@
   margin-bottom: 2rem;
 }
 
-.saveButton {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 0.75rem 2rem;
-  margin-top: 2rem;
-  cursor: pointer;
+.buttonContainer {
+  justify-self: center;
 }
 
 .imageWrapper {
@@ -149,4 +146,8 @@
     width: 90%;
     min-width: auto;
   }
+}
+
+.checkboxRow {
+  margin-bottom: 0px;
 }

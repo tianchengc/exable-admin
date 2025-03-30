@@ -1,13 +1,17 @@
 :root {
   --primary-color: rgba(185, 226, 239, 1);
-  --secondary-color: rgba(35, 84, 96, 1);
+  --secondary-color: rgb(73 160 187);
+  --tertiary-color: rgba(35, 84, 96, 1);
   --background-color: rgba(239, 246, 248, 1);
+  --page-background: rgb(185, 226, 239);
+  --card-background: rgb(73, 160, 187);
+  --title-color: rgb(35, 84, 96);
   --text-color: rgba(73, 160, 187, 1);
   --block-background: rgba(73, 160, 187, 1) ;
   --button-background: rgba(220, 78, 74, 1);
   --icon-size: 24px;
+  --card-radius: 8px;
   --menu-background: #F5F5F5;
   --menu-text-color: #333333;
-  --round-radius: 3em;
   --text-sm: 0.875rem;
 }

@@ -1,17 +1,12 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { UserState, RegisteredUser } from '../types';
 
 interface User {
   id: string;
   email: string;
   name: string;
   role: string;
-}
-
-interface UserState {
-  currentUser: User | null;
-  loading: boolean;
-  error: string | null;
 }
 
 const initialState: UserState = {
@@ -52,6 +47,16 @@ const userSlice = createSlice({
     clearError: (state) => {
       state.error = null;
     },
+    setRegisteredUser: (state, action: PayloadAction<RegisteredUser>) => {
+      state.currentUser = {
+        id: action.payload.id.toString(),
+        email: action.payload.email,
+        name: `${action.payload.firstName} ${action.payload.lastName}`,
+        role: action.payload.type,
+      };
+      state.loading = false;
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -71,5 +76,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { logout, clearError } = userSlice.actions;
+export const { logout, clearError, setRegisteredUser } = userSlice.actions;
 export default userSlice.reducer; 

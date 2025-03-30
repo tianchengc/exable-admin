@@ -6,6 +6,34 @@ export interface User {
   role: string;
 }
 
+export interface RegistrationPayload {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  type: 'ADMIN';
+}
+
+export interface RegisteredUser {
+  id: number;
+  email: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  type: 'ADMIN';
+  acceptEmail: boolean;
+  subscriptionLevel: number;
+  mfaEnabled: boolean;
+}
+
+export interface ApiResponse<T> {
+  code: number;
+  message: string;
+  traceId: string;
+  data: T;
+}
+
 export interface UserState {
   currentUser: User | null;
   loading: boolean;

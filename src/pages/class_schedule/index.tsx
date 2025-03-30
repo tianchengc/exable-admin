@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import '../../styles/common-style.css';
 import './style.css';
 
 const ClassSchedule: React.FC = () => {

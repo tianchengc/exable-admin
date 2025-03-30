@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -20,16 +25,6 @@ code {
   width: 100%;
 }
 
-.menu-container {
-  width: 200px;
-  height: 100vh;
-}
-
-.content-container {
-  flex-grow: 1;
-  height: 100vh;
-}
-
 .dropdown {
   background-image: url('../assets/drop_down.svg');
   background-repeat: no-repeat;
@@ -37,3 +32,23 @@ code {
   background-position-x: 95%;
   background-position-y: center;
 }
+
+.page-content {
+  flex: 1;
+  background-color: #e6f7ff;
+}
+
+.primary-icon {
+  color: var(--text-color);
+}
+
+.text-white {
+  color: white;
+}
+
+.upload-icon {
+  width: var(--icon-size);
+  font-size: var(--icon-size);
+}
+
+

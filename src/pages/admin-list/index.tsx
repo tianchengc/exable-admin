@@ -1,7 +1,7 @@
 import { Button, Form, Input, message, Popconfirm, Tag } from 'antd';
 import Table, { ColumnsType } from 'antd/lib/table';
 import { FunctionComponent } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { IAdmin } from '../../model';
 import { useGetAdminList } from './hooks/use-get-admin-list';
 import { addAdmin, deleteAdmin as apiDeleteAdmin } from '../../network/api';

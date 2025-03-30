@@ -1,0 +1,103 @@
+.staffCard {
+  position: relative;
+  background-color: rgb(64, 160, 184);
+  margin-left: 40px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  width: 1600px;
+  height: 900px;
+  box-sizing: border-box;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.staffInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.staffInfo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-bottom: 1px solid #ddd;
+  left: 5%;
+  width: 90%;
+}
+
+.staffAvater {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+
+.staffDetails {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: 10px 10px;
+}
+
+.staffName {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 200px;
+  color: #fff;
+}
+
+.staffScheduleDate {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+}
+
+.leftArrow {
+  margin-right: 8px;
+  color: #f01313;
+}
+
+.rightArrow {
+  margin-left: 8px;
+  color: #f01313;
+}
+
+.scheduleInfo {
+  width: 90%;
+  top: 0;
+  left: 0;
+  margin-left: 80px;
+  text-align: left;
+  justify-content: flex-start;
+  padding-top: 80px;
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start !important;
+  gap: 250px;
+}
+
+.timeSlot {
+  font-size: 18px;
+  color: #fff;
+  text-align: left;
+  margin-left: 0;
+  margin-top: 30px;
+  box-sizing: border-box;
+}
+
+.time {
+  padding-block: 20px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.singleSchedule {
+  margin-left: 40px;
+}

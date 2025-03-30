@@ -1,6 +1,3 @@
-/**
- * 错误捕获
- */
 import { Component } from 'react'
 import { Card } from 'antd'
 
