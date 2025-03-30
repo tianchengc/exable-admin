@@ -1,0 +1,25 @@
+.staffSchedulePage {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.staffContent {
+  position: relative;
+}
+
+.staffTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  color: #033522;
+}
+
+.detailTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  color: #033522;
+}

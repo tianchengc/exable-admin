@@ -1,0 +1,82 @@
+.schedulePage {
+  display: flex;
+  background-color: var(--page-background);
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+}
+
+.scheduleLeft {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 2em;
+}
+
+.scheduleRight {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scheduleTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--title-color);
+}
+
+.scheduleCards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--card-background);
+  border-radius: var(--card-radius);
+  padding: 2em;
+}
+
+.scheduleCard {
+  background-color: var(--page-background);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.scheduleImage {
+  max-width: 90%;
+  height: auto;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.userAvatar {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.userDetails p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}

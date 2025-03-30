@@ -7,7 +7,7 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <footer className={`bottom-0 w-full flex justify-between items-center p-2 z-50 ${className}`} style={{ backgroundColor: 'var(--secondary-color)' }}>
+    <footer className={`bottom-0 w-full flex justify-between items-center p-2 z-50 ${className}`} style={{ backgroundColor: 'var(--tertiary-color)' }}>
       <div className="flex items-center w-full justify-between">
         <img src={logo} alt="Logo" className="h-10 px-8" />
         <span className="flex-grow text-center" style={{ color: 'white' }}>patientsupport@lunghealth.ca | 514 548 3233</span>

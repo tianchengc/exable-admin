@@ -1,0 +1,30 @@
+.button {
+  border: none;
+  padding: 0.2em 0.5em;
+}
+
+.buttonPrimary {
+  background-color: var(--button-background);
+  color: white;
+}
+
+.buttonSecondary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.buttonLink {
+  color: var(--text-color);
+}
+
+.buttonFull {
+  width: 100%;
+}
+
+.buttonRegular {
+  width: 180px;
+}
+
+.buttonSmall {
+  width: 80px;
+}

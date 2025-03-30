@@ -1,0 +1,12 @@
+.inputField {
+  width: 100%;
+  height: 33px;
+  border-radius: 17px;
+  background-color: white;
+  border: none;
+  padding: 0 1rem;
+}
+
+.inputField::placeholder {
+  color: #49a0bb;
+}

@@ -1,0 +1,77 @@
+.classCard {
+  position: relative;
+  background-color: rgb(64, 160, 184);
+  margin-left: 40px;
+  margin-right: 60px;
+  margin-bottom: 50px;
+  width: 1600px;
+  height: 400px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.classMenu {
+  display: flex;
+}
+
+.classInfo {
+  margin-left: 80px;
+}
+
+.classInfoTitle {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.editInfo {
+  margin-left: 60px;
+}
+
+.editInfoTitle {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.participantList {
+  margin-left: 60px;
+}
+
+.participantListTitle {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.participantBar {
+  height: 235px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.participantBar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.participantBar:hover::-webkit-scrollbar {
+  width: 10px;
+}
+
+.participantBar:hover::-webkit-scrollbar-thumb {
+  background: #033522;
+  border-radius: 3px;
+}
+
+.participantBar:hover::-webkit-scrollbar-track {
+  background: #a4dbec;
+}

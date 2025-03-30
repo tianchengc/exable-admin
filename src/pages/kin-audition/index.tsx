@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { IUser } from '../../model';
 import { useGetKinList } from './hooks/use-get-kin-list';
 import './style.css';

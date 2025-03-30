@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { IResource } from '../../model';
 import { useGetResourceList } from './hooks/use-get-resource-list';
 import './style.css';

@@ -1,0 +1,43 @@
+.menuContainer {
+  background: linear-gradient(180deg, rgba(73, 160, 187, 1) 0%, rgba(185, 226, 239, 1) 100%);
+  width: 260px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: none;
+}
+
+.menuItem {
+  width: 80%;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 20px 0px 0px 20px;
+  margin-bottom: 15px;
+  padding: 0.5em 2em;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: var(--tertiary-color);
+  color: #fff;
+}
+
+.menuItem.active {
+  background-color: var(--tertiary-color);
+  color: #fff;
+}
+
+.avatarImage {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}

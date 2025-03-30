@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { INews } from '../../model';
 import { useGetNewsList } from './hooks/use-get-news-list';
 import './style.css';

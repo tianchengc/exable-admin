@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { IKnowledge, IResource } from '../../model';
 import { useGetKnowledgeList } from './hooks/use-get-knowledge-list';
 import './style.css';

@@ -1,11 +1,8 @@
-import SignIn from './pages/sign-in/signin';
-import BaseLayout from './pages/layout';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import SignIn from './pages/SignIn/SignIn';
+import BaseLayout from './pages/BaseLayout';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { Provider as ReduxProvider } from 'react-redux';
-import { Provider as MobxProvider } from 'mobx-react';
 import { store } from './store';
-import userStore from './stores/UserStore';
 import { CourseManage } from './pages/course-manage';
 import { CourseEdit } from './pages/course-edit';
 import { KinAudition } from './pages/kin-audition';
@@ -19,10 +16,10 @@ import { Account } from './pages/account';
 import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match/no-match';
 import ClassSchedule from './pages/class_schedule';
-import SchedulePage from './pages/schedule';
-import Staff_Schedule from './pages/schedule/schedule-by-staff';
-import { ExerciseLibraryPage } from './pages/exercise-library';
-import Register from './pages/register/register';
+import SchedulePage from './pages/Schedule/SchedulePage';
+import Staff_Schedule from './pages/Schedule/ScheduleByStuff/ScheduleByStaff';
+import { ExerciseLibraryPage } from './pages/ExerciseLibrary/ExerciseLibraryPage';
+import Register from './pages/Register/Register';
 import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
 import StaffList from './pages/staff/staffList';
@@ -31,52 +28,48 @@ import TestPage from './pages/class-details/TestPage';
 export default function App() {
   return (
     <ReduxProvider store={store}>
-      <MobxProvider userStore={userStore}>
-        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="login" element={<SignIn />} />
-              <Route path="register" element={<Register />} />
-              {/* 404 catch-all route */}
-              <Route path="*" element={<NoMatch />} />
-              
-              <Route path="/" element={<BaseLayout />}>
-                <Route index element={<Dashboard />} />
-                
-                {/* Course management */}
-                <Route path="courses">
-                  <Route index element={<CourseManage />} />
-                  <Route path=":id" element={<CourseEdit />} />
-                </Route>
-                
-                {/* Participant routes */}
-                <Route path="participants">
-                  <Route index element={<Participants />} />
-                  <Route path=":id" element={<ParticipantProfilePage />} />
-                </Route>
-                
-                {/* Schedule related */}
-                <Route path="schedule" element={<SchedulePage />} />
-                <Route path="class_schedule" element={<ClassSchedule />} />
-                <Route path="staff_schedule" element={<Staff_Schedule />} />
-                
-                {/* Other main routes */}
-                <Route path="exercises" element={<ExerciseLibraryPage />} />
-                <Route path="audit" element={<KinAudition />} />
-                <Route path="kin" element={<KinList />} />
-                <Route path="admin" element={<AdminList />} />
-                <Route path="resource" element={<ResourceManage />} />
-                <Route path="knowledge" element={<KnowledgeManage />} />
-                <Route path="news" element={<NewsManage />} />
-                <Route path="account" element={<Account />} />
-                <Route path="staff" element={<StaffList />} />
-                <Route path="reports" element={<ReportsPage />} />
-                <Route path="test" element={<TestPage />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </GoogleOAuthProvider>
-      </MobxProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="login" element={<SignIn />} />
+          <Route path="register" element={<Register />} />
+          {/* 404 catch-all route */}
+          <Route path="*" element={<NoMatch />} />
+          
+          <Route path="/" element={<BaseLayout />}>
+            <Route index element={<Dashboard />} />
+            
+            {/* Course management */}
+            <Route path="courses">
+              <Route index element={<CourseManage />} />
+              <Route path=":id" element={<CourseEdit />} />
+            </Route>
+            
+            {/* Participant routes */}
+            <Route path="participants">
+              <Route index element={<Participants />} />
+              <Route path=":id" element={<ParticipantProfilePage />} />
+            </Route>
+            
+            {/* Schedule related */}
+            <Route path="schedule" element={<SchedulePage />} />
+            <Route path="class_schedule" element={<ClassSchedule />} />
+            <Route path="staff_schedule" element={<Staff_Schedule />} />
+            
+            {/* Other main routes */}
+            <Route path="exercises" element={<ExerciseLibraryPage />} />
+            <Route path="audit" element={<KinAudition />} />
+            <Route path="kin" element={<KinList />} />
+            <Route path="admin" element={<AdminList />} />
+            <Route path="resource" element={<ResourceManage />} />
+            <Route path="knowledge" element={<KnowledgeManage />} />
+            <Route path="news" element={<NewsManage />} />
+            <Route path="account" element={<Account />} />
+            <Route path="staff" element={<StaffList />} />
+            <Route path="reports" element={<ReportsPage />} />
+            <Route path="test" element={<TestPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </ReduxProvider>
   );
 }

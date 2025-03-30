@@ -1,5 +1,4 @@
 import { Layout, Skeleton } from 'antd';
-import '../styles/common-style.css';
 import { ErrorBoundary } from './error-boundary';
 
 interface PageProps {

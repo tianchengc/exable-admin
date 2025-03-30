@@ -1,0 +1,157 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f9fc;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #e9f1f7;
+}
+
+.leftSection {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 82%;
+}
+
+.rightSection {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #d9eef8;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #5a8ea3;
+}
+
+.loginForm {
+  width: 100%;
+  max-width: 400px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.checkbox {
+  margin-right: 5px;
+}
+
+.forgotPassword {
+  color: #5a8ea3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.signInButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  width: 45%;
+  cursor: pointer;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.createButton {
+  background-color: #49a0bb;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  width: 45%;
+  cursor: pointer;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminImage {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.notAdmin {
+  color: #5a8ea3;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.notAdmin:hover {
+  text-decoration: underline;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  background-color: #fde8e7;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+} 

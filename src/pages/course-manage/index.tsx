@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { Page } from '../../components/page'
+import { Page } from '../../components/Page'
 import { useGetCourseList } from '../../hooks/use-get-course-list'
 
 import './style.css'

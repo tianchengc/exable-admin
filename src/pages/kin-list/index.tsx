@@ -11,7 +11,7 @@ import {
 } from 'antd';
 import { ColumnsType } from 'antd/lib/table';
 import { FunctionComponent, useEffect, useState } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { IAdmin } from '../../model';
 import { useGetKinPartList } from './hooks/use-get-admin-list';
 import {

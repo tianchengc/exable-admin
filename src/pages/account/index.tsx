@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import { Page } from '../../components/page';
+import { Page } from '../../components/Page';
 import { ProfessionalInfo } from './components/professional-info';
 import './style.css';
 
