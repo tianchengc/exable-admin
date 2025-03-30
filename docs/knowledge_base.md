@@ -17,8 +17,10 @@
 ## Best Practices for Naming Conventions and File Organization
 - Use **PascalCase** for Components, Pages, and Contexts (e.g., `Button.tsx`, `Dashboard.tsx`).
 - Use **camelCase** for Hooks, Services, and Utility Functions (e.g., `useAuth.ts`, `fetchData.ts`).
-- Use **kebab-case** for CSS/SASS files and asset names (e.g., `button.module.scss`, `logo-dark.svg`).
+- Use **kebab-case** for asset names (e.g., `button.module.scss`, `logo-dark.svg`).
 - Keep related files together (e.g., `Button.tsx` and `Button.module.scss`).
+- Use **camelCase** for css class names in css module files.
 - Centralize API calls in a `services/` folder (e.g., `authService.ts`, `userApi.ts`).
 - Use TypeScript interfaces with **PascalCase** (e.g., `UserTypes.ts`, `AuthTypes.ts`).
+- API info is stored in api.json file.
 
