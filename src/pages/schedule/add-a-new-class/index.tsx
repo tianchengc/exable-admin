@@ -2,7 +2,6 @@ import { PlusOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Modal, Select, TimePicker } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import { useState } from 'react';
-import './style.css';
 
 export const Add_a_New_Class = () => {
   const format = 'HH:mm';
@@ -24,7 +23,11 @@ export const Add_a_New_Class = () => {
 
   return (
     <>
-      <Button className="btn__modal" type="primary" onClick={showModal}>
+      <Button
+        className="btn__modal absolute -top-[130px] right-[80px] text-base text-center"
+        type="primary"
+        onClick={showModal}
+      >
         <PlusOutlined />
         Add a new class
       </Button>

@@ -1,27 +1,70 @@
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from '@mui/material';
 import { Card, Button, Space } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import {
+  setClickedButton,
+  setHoveredButton,
+  setOpenDialog,
+  setErrorMessage,
+  setInputValues,
+} from '../../../../../redux/action';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Edit_Info_Card = () => {
-  const [hoveredButton, setHoveredButton] = useState(null);
-  const [clickedButton, setClickedButton] = useState(null);
+  // const [hoveredButton, setHoveredButton] = useState(null);
+  // const [clickedButton, setClickedButton] = useState(null);
+  // const [openDialog, setOpenDialog] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState('');
+  // const [inputValue, setInputValue] = useState('');
+
+  const dispatch = useDispatch();
+  const clickedButton = useSelector(state => state.clickedButton);
+  const hoveredButton = useSelector(state => state.hoveredButton);
+  const openDialog = useSelector(state => state.openDialog);
+  const errorMessage = useSelector(state => state.errorMessage);
+  const inputValue = useSelector(state => state.inputValue);
 
   const getButtonStyles = buttonName => {
     const isHovered = hoveredButton === buttonName;
-    const isClicked = clickedButton === buttonName;
+    // const isClicked = clickedButton === buttonName;
 
     return {
-      backgroundColor: isHovered || isClicked ? '#11cae2' : '#fff',
-      borderColor: isHovered || isClicked ? '#11cae2' : '#fff',
-      color: isHovered || isClicked ? '#fff' : '#11cae2',
+      backgroundColor: isHovered ? '#11cae2' : '#fff',
+      borderColor: isHovered ? '#11cae2' : '#fff',
+      color: isHovered ? '#fff' : '#11cae2',
       borderRadius: '20px',
+      transition: 'background-color 0.2s, color 0.2s, border-color 0.2s',
     };
+  };
+
+  // const handleClick = buttonName => {
+  //   dispatch(setClickedButton(buttonName));
+
+  //   setTimeout(() => {
+  //     dispatch(setClickedButton(null));
+  //   }, 200);
+  // };
+
+  const validateInput = () => {
+    if (!inputValue.trim()) {
+      dispatch(setErrorMessage('Please enter a valid number or character'));
+      dispatch(setOpenDialog(true));
+    } else {
+      dispatch(setErrorMessage(''));
+      dispatch(setOpenDialog(true));
+    }
   };
 
   useEffect(() => {
     const handleClickOutside = event => {
       if (!event.target.closest('.edit-info-card')) {
-        setClickedButton(null);
+        dispatch(setClickedButton(null));
       }
     };
 
@@ -30,7 +73,7 @@ const Edit_Info_Card = () => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <Card
@@ -39,7 +82,6 @@ const Edit_Info_Card = () => {
         height: '220px',
         borderRadius: '20px',
         marginRight: '20px',
-        // marginLeft: '60px',
         backgroundColor: '#a4dbec',
       }}
       bodyStyle={{
@@ -53,10 +95,11 @@ const Edit_Info_Card = () => {
           </div>
           <TextArea
             placeholder="Type here"
+            value={inputValue}
+            onChange={e => dispatch(setInputValues(e.target.value))}
             style={{
               height: '120px',
               borderRadius: '20px',
-              // padding: '10px',
             }}
           />
           <Space
@@ -69,20 +112,31 @@ const Edit_Info_Card = () => {
             <Button
               type="primary"
               style={getButtonStyles('Send')}
-              onMouseEnter={() => setHoveredButton('Send')}
-              onMouseLeave={() => setHoveredButton(null)}
-              onClick={() => setClickedButton('Send')}
-              // style={{
-              //   borderRadius: '20px',
-              //   backgroundColor: '#fff',
-              //   borderColor: '#fff',
-              //   color: '#11cae2',
-              // }}
+              onMouseEnter={() => dispatch(setHoveredButton('Send'))}
+              onMouseLeave={() => dispatch(setHoveredButton(null))}
+              onClick={validateInput}
             >
               Send
             </Button>
           </Space>
         </Space>
+        <Dialog
+          open={openDialog}
+          onClose={() => dispatch(setOpenDialog(false))}
+        >
+          <DialogTitle>{errorMessage ? 'Error' : 'Success'}</DialogTitle>
+          <DialogContent>
+            {errorMessage || 'Your update has been sent!'}
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={() => dispatch(setOpenDialog(false))}
+              color="primary"
+            >
+              close
+            </Button>
+          </DialogActions>
+        </Dialog>
       </>
     </Card>
   );

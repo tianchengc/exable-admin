@@ -1,5 +1,4 @@
 import { observer } from 'mobx-react';
-import './style.css';
 import Add_a_New_Class from '../../add-a-new-class';
 import ScheduleInfo from './schedule-info';
 import { useState } from 'react';
@@ -58,34 +57,40 @@ const timeSlots = generateTimeSlot();
 export const Staff_Card = observer(() => {
   const [hoveredIndex, setIsHoveredIndex] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
+
+  // const dispatch = useDispatch();
+  // const hoveredIndex = useSelector(state => state.hoveredIndex);
+  // const selectedIndex = useSelector(state => state.selectedIndex);
+
   const dom = (
-    <div className="staff-card_s">
-      <div className="staff-info_s">
+    <div className="staff-card_s relative bg-[#40a0b8] ml-10 mr-15 mb-12 w-[1600px] h-[900px] box-border rounded-lg">
+      <div className="absolute top-0 left-0 w-full text-white flex items-center px-4 py-[15px] mx-auto after:content-[''] after:absolute after:bottom-0 after:border-b after:border-gray-300 after:left-[5%] after:w-[90%]">
         <img
           src={staffInfo.avatar}
           alt="Staff Avatar"
-          className="staff-avatar_s"
+          className="staff-avatar_s w-[30px] h-[30px] rounded-full mr-1.5 ml-2.5"
         />
-        <div className="staff-details_s">
-          <p className="staff-name_s">{staffInfo.staffname}</p>
-          <p className="staff-schedule-date_s">
-            <button className="left-arrow_s">{'<'}</button>
+        <div className="staff-details_s flex flex-row flex-grow p-2.5">
+          <p className="staff-name_s font-base font-bold mr-[200px] text-white">
+            {staffInfo.staffname}
+          </p>
+          <p className="staff-schedule-date_s font-lg m-[0] text-white">
+            <button className="left-arrow_s mr-2 text-[#f01313]">{'<'}</button>
             {staffInfo.date}
-            <button className="right-arrow_s">{'>'}</button>
-            {/* <Add_a_New_Class /> */}
+            <button className="right-arrow_s ml-2 text-[#f01313]">{'>'}</button>
           </p>
         </div>
         <Add_a_New_Class />
       </div>
-      <div className="schedule-info_s">
-        <div className="time-slot_s">
+      <div className="schedule-info_s w-[90%] top-0 left-0 ml-[80px] text-left justify-start pt-[80px] flex flex-row items-start gap-[250px]">
+        <div className="time-slot_s text-lg text-white text-left mt-[30px] ml-0 box-border">
           {timeSlots.map((time, index) => (
-            <div className="time_s" key={index}>
+            <div className="time_s py-5 mb-10 box-border" key={index}>
               {time}
             </div>
           ))}
         </div>
-        <div className="single-schedule_s">
+        <div className="single-schedule_s ml-10">
           {scheduleData.map((item, index) => (
             <ScheduleInfo
               key={index}

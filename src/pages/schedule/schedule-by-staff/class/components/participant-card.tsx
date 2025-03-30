@@ -5,7 +5,6 @@ const Participant_List = ({ data }) => {
   return (
     <Card
       style={{
-        // width: '250%',
         width: '630px',
         height: '70px',
         borderRadius: '10px',
@@ -18,7 +17,6 @@ const Participant_List = ({ data }) => {
         justifyContent: 'flex-start',
         alignItems: 'center',
         padding: '3px 10px',
-        // gap: '10px',
       }}
     >
       <>
