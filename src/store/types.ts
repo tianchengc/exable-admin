@@ -12,9 +12,7 @@ export interface RegistrationPayload {
   firstName: string;
   lastName: string;
   phoneNumber: string;
-  acceptEmail: boolean;
-  type: 'PARTICIPANT' | 'ADMIN' | 'STAFF';
-  mfaEnabled: boolean;
+  type: 'ADMIN';
 }
 
 export interface RegisteredUser {
@@ -23,7 +21,7 @@ export interface RegisteredUser {
   firstName: string;
   lastName: string;
   phoneNumber: string;
-  type: 'PARTICIPANT' | 'ADMIN' | 'STAFF';
+  type: 'ADMIN';
   acceptEmail: boolean;
   subscriptionLevel: number;
   mfaEnabled: boolean;

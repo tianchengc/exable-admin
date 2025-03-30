@@ -46,6 +46,7 @@ const Header = () => {
                         <Button 
                           category="secondary"
                           width="small"
+                          onClick={handleLogout}
                         >Logout</Button>
                     </div>
                 </div>
