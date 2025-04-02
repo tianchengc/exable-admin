@@ -1,18 +1,15 @@
-// User types
-export interface User {
-  id: string;
-  email: string;
-  name: string;
-  role: string;
-}
-
 export interface RegistrationPayload {
   email: string;
-  password: string;
   firstName: string;
   lastName: string;
   phoneNumber: string;
   type: 'ADMIN';
+  acceptEmail?: boolean;
+  subscriptionLevel?: number;
+  mfaEnabled?: boolean;
+  city? : string;
+  province? : string;
+  password: string;
 }
 
 export interface RegisteredUser {
@@ -25,6 +22,8 @@ export interface RegisteredUser {
   acceptEmail: boolean;
   subscriptionLevel: number;
   mfaEnabled: boolean;
+  city? : string;
+  province? : string;
 }
 
 export interface ApiResponse<T> {
@@ -35,7 +34,7 @@ export interface ApiResponse<T> {
 }
 
 export interface UserState {
-  currentUser: User | null;
+  currentUser: RegisteredUser | null;
   loading: boolean;
   error: string | null;
 }

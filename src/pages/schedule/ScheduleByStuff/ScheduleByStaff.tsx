@@ -1,5 +1,5 @@
-import ClassCard from '@/components/ClassCard';
-import StaffCard from '@/components/StaffCard';
+import ClassCard from '@components/ClassCard';
+import StaffCard from '@components/StaffCard';
 import React from 'react';
 import styles from './ScheduleByStaff.module.css';
 

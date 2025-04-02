@@ -1,6 +1,6 @@
 
 
-import Button from "@/components/Button";
+import Button from "@components/Button";
 import { useRef } from "react";
 
 export default function Exercise() {

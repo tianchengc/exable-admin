@@ -1,37 +1,40 @@
 import { useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../../store/hooks';
-import { registerUser } from '../../store/actions/userActions';
-import { RegistrationPayload } from '../../store/types';
-import image from '../../assets/register_image.svg';
-import logo from '../../assets/logo.svg';
+import { useAppDispatch, useAppSelector } from '@store/hooks';
+import { RegistrationPayload } from '@store/types';
+import image from '@assets/register_image.svg';
+import logo from '@assets/logo.svg';
 import Footer from '@components/Footer';
-import styles from './register.module.css';
+import styles from './Register.module.css';
 import { Checkbox, Form, Modal } from 'antd';
 import Button from '@components/Button';
 import TermsAndConditionsModal from '@components/TermsAndConditionsModal/index';
 import InputField from '@components/InputField';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { registerUser, selectIsLoggedIn } from '@store/slices/userSlice';
 
 export const Register: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const [isModalOpened, setIsModalOpened] = React.useState(false);
+  const isLoggedIn = useAppSelector(selectIsLoggedIn);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/');
+    }
+  }, [isLoggedIn, navigate]);
 
   const handleSubmit = async (formData: RegistrationPayload) => {
     const { firstName, lastName, email, phoneNumber, password } = formData;
-    const result = await dispatch(registerUser({
+    dispatch(registerUser({
       firstName,
       lastName,
       email,
       phoneNumber,
       password,
-      type: 'ADMIN',
+      type: 'ADMIN'
     }));
-    
-    if (result.success) {
-      navigate('/login');
-    }
   };
 
   const onSubmit = async () => {
@@ -203,9 +206,15 @@ export const Register: React.FC = () => {
                   I want to stay up to date with the latest news
                 </Checkbox>
               </Form.Item>
-              <Form.Item className={`${styles.checkboxRow} ${styles.buttonContainer}`}>
-                <Button className="kin-btn" type="primary" onClick={onSubmit}>
-                  Save
+              <Form.Item className={styles.buttonContainer}>
+                <Button category="primary" onClick={onSubmit}>
+                  Create Account
+                </Button>
+                
+              </Form.Item>
+              <Form.Item className={styles.buttonContainer}>
+                <Button category="secondary" onClick={() => navigate('/login')}>
+                  Already Have Account
                 </Button>
               </Form.Item>
             </Form>

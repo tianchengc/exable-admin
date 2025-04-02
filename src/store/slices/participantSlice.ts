@@ -31,3 +31,4 @@ const participantSlice = createSlice({
 
 export const { clearError } = participantSlice.actions;
 export default participantSlice.reducer;
+export type { ParticipantState };

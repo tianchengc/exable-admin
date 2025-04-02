@@ -1,13 +1,14 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
-import register from '../../assets/login_image_2.svg';
+import logo from '@assets/logo.svg';
+import register from '@assets/login_image_2.svg';
 import Footer from '@components/Footer';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '@store/hooks';
 import styles from './signin.module.css';
-import { loginUser } from '../../store/slices/userSlice';
+import { loginUser } from '@store/slices/userSlice';
 import Button from '@components/Button';
-import InputField from '@/components/InputField';
+import InputField from '@components/InputField';
+import { selectIsLoggedIn } from '@store/slices/userSlice';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -16,19 +17,20 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   
   const { loading, error } = useAppSelector((state) => state.user);
+  const isLoggedIn = useAppSelector(selectIsLoggedIn)
 
-  const handleLogin = async (e: FormEvent) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/');
+    }
+  }, [isLoggedIn, navigate]);
 
-    const result = await dispatch(loginUser({
+  const handleLogin = (e: FormEvent) => {
+    dispatch(loginUser({
       email,
       password,
       type: 'ADMIN'
     }));
-
-    if (loginUser.fulfilled.match(result)) {
-      navigate('/');
-    }
   };
 
   return (
@@ -74,7 +76,7 @@ const SignIn = () => {
             <div className={styles.buttonContainer}>
               <Button
                 category="primary"
-                onClick={() => handleLogin}
+                onClick={handleLogin}
                 disabled={loading}
               >Sign in
               </Button>
