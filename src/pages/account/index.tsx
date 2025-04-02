@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import { Page } from '../../components/Page';
-import { ProfessionalInfo } from './components/professional-info';
+import { ProfessionalInfo } from './components/ProfessionalInfo';
 import './style.css';
 
 export const Account: FunctionComponent<{}> = () => {

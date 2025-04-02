@@ -104,6 +104,7 @@
 
 .buttonContainer {
   justify-self: center;
+  margin-bottom: 1em;
 }
 
 .imageWrapper {

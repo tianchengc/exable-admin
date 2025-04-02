@@ -3,8 +3,11 @@ import { useNavigate } from 'react-router';
 import { UserOutlined, CalendarOutlined } from '@ant-design/icons';
 import styles from './Menu.module.css';
 import classNames from 'classnames';
+import { selectCurrentUser } from '@store/slices/userSlice';
+import { useAppSelector } from '@store/hooks';
+import { RegisteredUser } from '@store/types';
 
-const userInfo = {
+const dummyInfo = {
   avatar: 'src/assets/participants.svg',
   username: 'John Doe',
   date: '2024-11-30',
@@ -31,19 +34,21 @@ export const Menus = () => {
     navigate(key);
   };
 
+  const userProfile: RegisteredUser = useAppSelector(selectCurrentUser);
+
   const dom = true ? (
     <div className={styles.menuContainer}>
       <div className="w-full flex justify-center items-center flex-col mt-10 mb-5">
         <img
-          src={userInfo.avatar}
+          src={dummyInfo.avatar}
           alt="User Avatar"
           className={styles.avatarImage}
         />
 
         <p className="m-0 text-center text-sm text-white">
-          {userInfo.username}
+          {userProfile ? (userProfile.firstName + userProfile.lastName) : dummyInfo.username}
         </p>
-        <p className="m-0 text-center text-sm text-white">{userInfo.date}</p>
+        {/* <p className="m-0 text-center text-sm text-white">{dummyInfo.date}</p> */}
       </div>
       <div className={styles.menu}>
         {menuList.map((item, index) => (

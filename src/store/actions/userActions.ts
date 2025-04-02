@@ -1,10 +1,9 @@
 import axios from 'axios';
-import { User } from '../types';
 import * as types from './types';
-import { AppDispatch } from '../store';
 import { RegistrationPayload, ApiResponse, RegisteredUser } from '../types';
+import { AppDispatch } from '..';
 
-export const setUser = (user: User) => ({
+export const setUser = (user: RegisteredUser) => ({
   type: types.SET_USER,
   payload: user,
 });

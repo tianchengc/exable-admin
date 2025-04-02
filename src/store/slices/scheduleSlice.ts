@@ -37,3 +37,4 @@ const scheduleSlice = createSlice({
 
 export const { clearError } = scheduleSlice.actions;
 export default scheduleSlice.reducer;
+export type { ScheduleState };

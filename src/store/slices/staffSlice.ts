@@ -35,3 +35,4 @@ const staffSlice = createSlice({
 
 export const { clearError } = staffSlice.actions;
 export default staffSlice.reducer;
+export type { StaffState };
