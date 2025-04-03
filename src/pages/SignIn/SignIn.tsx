@@ -2,7 +2,7 @@ import { useState, FormEvent, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '@assets/logo.svg';
 import register from '@assets/login_image_2.svg';
-import Footer from '@components/Footer';
+import Footer from '@components/footer';
 import { useAppDispatch, useAppSelector } from '@store/hooks';
 import styles from './signin.module.css';
 import { loginUser } from '@store/slices/userSlice';
