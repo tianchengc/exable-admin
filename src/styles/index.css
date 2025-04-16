@@ -51,4 +51,7 @@ code {
   font-size: var(--icon-size);
 }
 
+.exable-select .ant-select-selector {
+  border-radius: var(--border-radius);
+}
 

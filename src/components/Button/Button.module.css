@@ -18,13 +18,13 @@
 }
 
 .buttonFull {
-  width: 100%;
+  min-width: 100%;
 }
 
 .buttonRegular {
-  width: 180px;
+  min-width: 180px;
 }
 
 .buttonSmall {
-  width: 80px;
+  min-width: 80px;
 }
