@@ -26,6 +26,45 @@ export interface RegisteredUser {
   province? : string;
 }
 
+export interface KinesiologistInfo {
+  accreditationBody?: string;
+  accreditationNumber?: string;
+  approved?: boolean;
+  availableTimeBitmap?: string;
+  bio?: string;
+  degree?: string;
+  experiences?: number;
+  insurancePaperUrl?: string;
+  offerFreeConsultation?: boolean;
+  specialization?: string;
+  userId?: number;
+};
+
+export interface ParticipantInfo {
+  abilitiesTo10?: string;
+  barriers?: string;
+  chronicCondition?: string;
+  emergencyContactName?: string;
+  emergencyContactPhone?: string;
+  eulaInfo?: string;
+  level?: number;
+  sessionType?: string;
+  smartGoals?: string;
+  userId?: number;
+  willingImprovingHealth?: number;
+};
+
+export interface UserProfile extends RegisteredUser {
+  avatar?: string;
+  birthDate?: string;
+  language?: string;
+  interests?: string;
+  password?: string;
+
+  kinesiologistInfo?: KinesiologistInfo;
+  participantInfo?: ParticipantInfo;
+}
+
 export interface ApiResponse<T> {
   code: number;
   message: string;
@@ -34,7 +73,7 @@ export interface ApiResponse<T> {
 }
 
 export interface UserState {
-  currentUser: RegisteredUser | null;
+  currentUser: UserProfile | null;
   loading: boolean;
   error: string | null;
 }

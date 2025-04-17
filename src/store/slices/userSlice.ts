@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { UserState, RegisteredUser, ApiResponse, RegistrationPayload } from '../types';
+import apiClient from '../../network';
+import { UserState, RegisteredUser, ApiResponse, RegistrationPayload, UserProfile } from '../types';
+import { message } from 'antd';
 
 const initialState: UserState = {
   currentUser: null,
@@ -11,16 +12,18 @@ const initialState: UserState = {
 export const loginUser = createAsyncThunk(
   'user/login',
   (credentials: { email: string; password: string; type: string }, { rejectWithValue }) => {
-    return axios.post<ApiResponse<RegisteredUser>>(
-      `${import.meta.env.VITE_API_BASE_URL}/user/login`,
+    return apiClient.post<ApiResponse<RegisteredUser>>(
+      '/user/login',
       credentials
     )
     .then((response) => {
+      message.success('Login successful');
       return response.data.data;
     })
     .catch((error) => {
-      if (axios.isAxiosError(error)) {
-        return rejectWithValue(error.response?.data?.message || 'Login failed');
+      if (error instanceof Error && 'serverMessage' in error) {
+        message.error('Login failed');
+        return rejectWithValue(error.serverMessage || 'Login failed');
       }
       return rejectWithValue('An error occurred');
     });
@@ -30,22 +33,56 @@ export const loginUser = createAsyncThunk(
 export const registerUser = createAsyncThunk(
   'user/register',
   (userData: RegistrationPayload, { rejectWithValue }) => {
-    return axios.post<ApiResponse<RegisteredUser>>(
-      `${import.meta.env.VITE_API_BASE_URL}/user/register`,
+    return apiClient.post<ApiResponse<RegisteredUser>>(
+      '/user/register',
       userData
     )
     .then((response) => {
-      if (response.status === 200 && response.data.code === 0) {
-        return response.data.data;
-      } else if (response.data.code === -501) {
-        return rejectWithValue('Email already in use. Please sign in.');
-      } else {
-        return rejectWithValue(response.data.message);
-      }
+      message.success('Registration successful');
+      return response.data.data;
     })
     .catch((error) => {
-      if (axios.isAxiosError(error)) {
-        return rejectWithValue(error.response?.data?.message || 'Registration failed');
+      if (error instanceof Error && 'serverMessage' in error) {
+        message.error('Registration failed');
+        return rejectWithValue(error.serverMessage || 'Registration failed');
+      }
+      return rejectWithValue('An error occurred');
+    });
+  }
+);
+
+export const getCurrentUser = createAsyncThunk(
+  'user/me',
+  (_, { rejectWithValue }) => {
+    return apiClient.get<ApiResponse<UserProfile>>('/user/me')
+    .then((response) => {
+      return response.data.data;
+    })
+    .catch((error) => {
+      if (error instanceof Error && 'serverMessage' in error) {
+        message.error('Failed to fetch user data');
+        return rejectWithValue(error.serverMessage || 'Failed to fetch user data');
+      }
+      return rejectWithValue('An error occurred');
+    });
+  }
+);
+
+export const updateUser = createAsyncThunk(
+  'user/modify',
+  (user: UserProfile, { rejectWithValue }) => {
+    return apiClient.post<ApiResponse<any>>('/user/modify', user)
+    .then((response) => {
+      if (response.data.code !== 0) {
+        return rejectWithValue(response.data.message || 'Failed to update user data');
+      }
+      message.success('User updated successfully');
+      return user;
+    })
+    .catch((error) => {
+      if (error instanceof Error && 'serverMessage' in error) {
+        message.error('Failed to update user data');
+        return rejectWithValue(error.serverMessage || 'Failed to update user data');
       }
       return rejectWithValue('An error occurred');
     });
@@ -93,6 +130,36 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(registerUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      });
+      
+    builder
+      .addCase(getCurrentUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getCurrentUser.fulfilled, (state, action: PayloadAction<UserProfile>) => {
+        state.loading = false;
+        state.currentUser = action.payload;
+        state.error = null;
+      })
+      .addCase(getCurrentUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      });
+
+    builder
+      .addCase(updateUser.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateUser.fulfilled, (state, action: PayloadAction<UserProfile>) => {
+        state.loading = false;
+        state.currentUser = action.payload;
+        state.error = null;
+      })
+      .addCase(updateUser.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });
