@@ -4,11 +4,6 @@ import React from 'react';
 import styles from './ScheduleByStaff.module.css';
 
 const StaffSchedule: React.FC = () => {
-  // const navigate = useNavigate();
-
-  // const handleNavigation = (path: string) => {
-  //   navigate(path);
-  // };
 
   return (
     <div className={styles.staffSchedulePage}>

@@ -17,12 +17,12 @@ import { ParticipantProfilePage } from './pages/participant-profile';
 import NoMatch from './pages/no-match/no-match';
 import ClassSchedule from './pages/class_schedule';
 import SchedulePage from './pages/Schedule/SchedulePage';
-import Staff_Schedule from './pages/Schedule/ScheduleByStuff/ScheduleByStaff';
+import StaffSchedule from './pages/Schedule/ScheduleByStuff/ScheduleByStaff';
 import { ExerciseLibraryPage } from './pages/ExerciseLibrary/ExerciseLibraryPage';
 import Register from './pages/Register';
 import { ReportsPage } from './pages/reports';
 import { Dashboard } from './pages/dashboard';
-import StaffList from './pages/staff/staffList';
+import StaffList from './pages/Staff/StaffList';
 import TestPage from './pages/class-details/TestPage';
 import useAuthInterceptor from './network/useAuthInterceptor';
 
@@ -54,7 +54,7 @@ const AppContent = () => {
         {/* Schedule related */}
         <Route path="schedule" element={<SchedulePage />} />
         <Route path="class_schedule" element={<ClassSchedule />} />
-        <Route path="staff_schedule" element={<Staff_Schedule />} />
+        <Route path="staff_schedule" element={<StaffSchedule />} />
         
         {/* Other main routes */}
         <Route path="exercises" element={<ExerciseLibraryPage />} />
