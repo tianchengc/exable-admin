@@ -1,5 +1,5 @@
 import { Layout, Skeleton } from 'antd';
-import { ErrorBoundary } from './error-boundary';
+import { ErrorBoundary } from './ErrorBoundary';
 
 interface PageProps {
   title?: string;

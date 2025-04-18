@@ -27,3 +27,15 @@ npm install
 ```bash
 npm run dev
 ```
+
+### :firefox: Running on Firefox (Localhost)
+
+If you are serving this project on `localhost` and using Firefox, you need to configure Firefox to avoid restrictions related to cookies and HTTPS. Follow these steps:
+
+1. Open Firefox and type `about:config` in the address bar, then press Enter.
+2. Accept the warning message to proceed to the advanced settings.
+3. Search for the following settings and update them:
+   - `network.cookie.sameSite.noneRequiresSecure` → Set this to `false`.
+   - *(Optional)* `network.cookie.sameSite.laxByDefault` → Set this to `false` if you encounter issues with cookies.
+
+These changes will allow the app to function correctly in a local development environment without HTTPS.

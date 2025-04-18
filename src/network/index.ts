@@ -1,13 +1,15 @@
 import axios from 'axios'
 import * as auth from '../utils/auth'
-const instance = axios.create({
-    baseURL: '/api',
+const apiClient = axios.create({
+    baseURL: `${import.meta.env.VITE_API_BASE_URL}`,
+    withCredentials: true,
     responseType: 'json',
     transformRequest: (data, headers) => {
         headers['Content-Type'] = 'application/json'
         return JSON.stringify(data)
     },
     transformResponse: (data) => {
+        data = JSON.parse(data)
         if (data.code !== 0) {
             if (data.code === -401 || data.code === -403) {
                 auth.removeAuth()
@@ -17,12 +19,11 @@ const instance = axios.create({
             }
             throw new NetworkError(data.code as number, data.message as string, data.traceId as string)
         }
-        return data.data
+        return data
     },
 })
 
-
-export default instance
+export default apiClient
 
 export class NetworkError extends Error {
     code?: number

@@ -1,0 +1,150 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background-color: var(--page-background);
+  overflow: auto;
+  padding: 2em;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 50%;
+  height: 100%;
+  border-radius: var(--card-radius);
+  background-color: var(--card-background);
+  min-width: 640px;
+  padding: 1em;
+  gap: 1em;
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 1em;
+}
+
+.formRow {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.formColumn {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+  height: 100%;
+}
+
+.formRow InputField,
+.formRow ExSelect {
+  flex: 1;
+}
+
+.formFooter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.accountBox {
+  width: 688px;
+  height: 505px;
+  border-radius: 8px;
+  background: rgba(73, 160, 187, 1);
+}
+
+.accountBox .subTitle {
+  position: relative;
+  left: 24px;
+  top: 20px;
+  width: 182px;
+  height: 29px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--background-color);
+  text-align: left;
+}
+
+.accountBox .formLarge {
+  width: 284px;
+  height: 178px;
+  border-radius: 17px;
+  background: var(--background-color);
+  color: var(--primary-color);
+  padding: 15px;
+  resize: none;
+}
+
+.accountBox .formSmall {
+  width: 284px;
+  height: 33px;
+  border-radius: 17px;
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+.accountBox .form-large::placeholder,
+.accountBox .formSmall::placeholder {
+  color: var(--placeholder-color);
+  font-family: var(--font-family);
+}
+
+.uploadIcon {
+  font-size: var(--icon-size);
+  color: var(--icon-color);
+}
+
+.textarea {
+  flex: 1 1 auto;
+}
+
+.uploadButton {
+  width: 100%;
+  border: 1px dashed white;
+  border-radius: var(--card-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.uploadContainer {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 96px;
+}
+
+.uploadIcon {
+  color: white;
+}
+
+.uploadText {
+  color: white;
+}

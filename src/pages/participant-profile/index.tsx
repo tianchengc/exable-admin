@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import { UpcomingSession } from './components/upcoming-block';
-import Progress from '../../components/progress';
-import ProfileSummary from '../../components/profile-summary';
-import ProgramInformation from '../../components/program-information';
-import QuestionnaireCompletion from '../../components/questionnaire-completion';
+import Progress from '../../components/Progress';
+import ProfileSummary from '../../components/ProfileSummary';
+import ProgramInformation from '../../components/ProfileInformation';
+import QuestionnaireCompletion from '../../components/QuestionnaireCompletion';
 import { PerformanceMeasure } from '../../components/performance-measure';
 import Header from './components/header';
 
